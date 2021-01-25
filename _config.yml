@@ -120,7 +120,7 @@ menu:
   home: /
   categories: /categories/
   #about: /about/
-  #archives: /archives/
+  archives: /archives/
   #tags: /tags/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
@@ -393,11 +393,11 @@ wildfire:
   # version - It's recommended to use the following versions.
   loaderVersion: 1.2.5 # https://www.npmjs.com/package/wildfire-comment
   useDev: true
-  version: 0.5.6 
+  version: 0.5.6
   # database config
   databaseProvider: firebase # or wilddog
   firebase: # your firebase config goes here ↓
-    apiKey: 
+    apiKey:
     authDomain:
     databaseURL:
     projectId:
@@ -408,8 +408,8 @@ wildfire:
   # other configs
   theme: light # or dark
   locale: en # or other locales, e.g. zh-CN
-  defaultAvatarURL: 
-# Any question? 
+  defaultAvatarURL:
+# Any question?
 # Raise an issue here: https://github.com/cheng-kang/wildfire/issues
 # </wildfire>
 
@@ -462,7 +462,7 @@ gitalk:
 #google_site_verification:
 
 # Google Analytics
-#google_analytics:
+google_analytics: G-SCBKKJKN3R
 
 # Yandex Webmaster tools verification setting
 # See: https://webmaster.yandex.ru/
