@@ -45,7 +45,7 @@ public class CommentRepository {
 
 ![persistence_lifecycle](/assets/persistence_lifecycle.jpg)
 
-- 준영속(new/transient) : 영속성 컨텍스트와 관계가 없는 엔티티
+- 비영속(new/transient) : 영속성 컨텍스트와 관계가 없는 엔티티
 ``` java
 Comment comment = new Comment();
 ```
@@ -53,7 +53,7 @@ Comment comment = new Comment();
 ``` java
 em.persist(comment);
 ```
-- 비영속(detached) : 영속성 컨텍스트에서 관리하고 있다가 분리된 엔티티
+- 준영속(detached) : 영속성 컨텍스트에서 관리하고 있다가 분리된 엔티티
 ``` java
 em.detach(comment);
 em.clear(); // 영속성 컨텍스트 초기화
