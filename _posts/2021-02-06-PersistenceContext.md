@@ -162,6 +162,6 @@ N+1 관련 내용 : [링크](https://mangchhe.github.io/jpa/2021/01/31/N+1Proble
 
 긴 글 읽어주셔서 감사합니다
 
-> ### Reference
+> ## Reference
 
 [자바 ORM 표준 JPA 프로그래밍, 김영한 저자](https://book.naver.com/bookdb/book_detail.nhn?bid=9252528)
