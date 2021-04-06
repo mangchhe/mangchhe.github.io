@@ -20,7 +20,7 @@ MSA는 여러 개의 서비스를 한곳에 모아 패키징하여 관리하는 
 
 `Eureka`는 이러한 서비스들을 한대 모아 관리하고 각 서비스들의 호스트 이름과 포트를 하드 코딩하지 않고도 서비스 서로를 찾아 통신할 수 있게 해준다
 
-![eureka](/assets/eureka_p6pbetbmc.PNG)
+![eureka](/assets/eureka.PNG)
 
 위 그림에서 서로 다른 서비스 인스턴스들에 정보에 대해서 `Eureka(ServiceDiscovery)`에 등록하게 되면 클라이언트가 요청 정보를 API Gateway에 전달하게 되면 `ServiceDiscovery`에게 요청 정보가 어느 서비스에 있는지 물어보게 되고 등록되어 있는 서비스들 중에 찾아 `API Gateway`에 전달해주면 해당하는 인스턴스에게 값을 요청하고 클라이언트에게 다시 응답이 전달되게 된다
 
