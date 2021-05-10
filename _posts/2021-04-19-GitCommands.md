@@ -1,5 +1,5 @@
 ---
-title: Git 자주 쓰는 명령어 모음
+title: 【Git】 자주 쓰는 명령어 모음
 decription: 형상관리 도구인 Git을 이용하면서 자주 사용했던 명령어들을 정리해보자
 categories:
  - Git

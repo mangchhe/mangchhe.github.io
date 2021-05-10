@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 .posts-expand .post-title {
   font-size: 26px;
   text-align: center;
   word-break: break-word;
   font-weight: $posts-expand-title-font-weight;
+  font-family: 'Jua', sans-serif;
 
   @include mobile() {
     font-size: 22px;

@@ -1,5 +1,5 @@
 ---
-title: Netflix Zuul에 대해서 실습을 통해 알아보자
+title: 【Spring Cloud】 Netflix Zuul에 대해서 실습을 통해 알아보자
 decription: 서비스들을 찾아가기 위해서 거치게 관문과 같은 역할을 하는 Zuul API Gateway에 대해서 알아보자
 categories:
  - SpringCloud

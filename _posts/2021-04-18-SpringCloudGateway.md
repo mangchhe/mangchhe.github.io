@@ -1,5 +1,5 @@
 ---
-title: Spring Cloud Gateway 구현과 필터, 로드밸런싱 적용 방법을 실습을 통해 알아보자
+title: 【Spring Cloud】 Gateway로 Filter, LoadBalancer 구현
 decription: Spring Cloud Gateway를 구현하는 방법부터 여러 종류의 필터들과 로드밸런싱 적용에 대해서 알아보자
 categories:
  - SpringCloud
