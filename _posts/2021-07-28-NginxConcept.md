@@ -4,7 +4,7 @@ decription:
 categories:
  - WEB
 tags:
- - Was
+ - was
  - load balancer
  - proxy
  - nginx

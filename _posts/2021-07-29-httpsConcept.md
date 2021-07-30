@@ -1,15 +1,16 @@
 ---
-title: HTTPS와 동작 원리를 알아보고 Nginx에 HTTPS 적용해보기
+title: HTTPS 동작 원리를 알아보고 Nginx에 HTTPS 적용해보기
 decription:
 categories:
  - WEB
 tags:
- - HTTPS
- - Web
+ - https
+ - web
  - nginx
+ - wireshark
 ---
 
-> https가 무엇인지, 동작 원리에 대해서 배우고 Nginx에 HTTPS를 적용해보자
+> https가 무엇인지, 동작 원리에 대해서 배우고 Nginx에 HTTPS를 적용해보고 wireshark를 통해 실제로 네트워크도 어떻게 전송되고 있는지 확인해보자
 
 > ## HTTPS(HyperText Transfer Protocol Secure)란?
 
@@ -50,6 +51,57 @@ HTTPS는 HTTP 통신 과정에 평문 데이터를 주고 받는 과정에 그�
 **⑤ [공개키 복호화]** 서버는 가지고 있는 비밀키를 가지고 공개키로 암호화된 클라이언트 대칭키를 복호화한다.
 
 **⑥ [HTTPS 통신]** 클라이언트, 서버는 같은 대칭키로 암/복호화하며 통신을 진행할 수 있다.
+
+> ## Wireshark로 보는 http, https 보안 차이점
+
+wireshark로 http와 https일 때 각각 POST 요청을 보내어 어떻게 다른지 확인해보자
+
+``` java
+@RestController
+public class TestController {
+
+    @PostMapping("/signup")
+    public String signup(@RequestBody TestDto testDto) {
+        System.out.println(testDto.id + " " + testDto.pw);
+        return "success";
+    }
+
+}
+@Getter @Setter
+public class TestDto {
+
+    String id;
+    String pw;
+}
+```
+
+간단하게 Spring Boot로 아이디와 비밀번호를 받아 회원가입을 하는 controller와 dto 생성한 다음 서버로 가서 어플리케이션을 실행시켜준다. 물론 실제 회원가입 로직을 짜진 않았다.
+
+![postmansighup](/assets/postmansighup.JPG)
+
+postman을 이용해서 http, https 각각 요청을 보낼 준비를 한다.
+
+![wiresharkHttp](/assets/wiresharkHttp.JPG)
+
+첫 번째로 http로 Post 요청을 보냈다. 아마 http 통신 과정을 한번 공부해봤다면 익숙한 용어들이 보이게 될 것이다. 모르겠다면 -> [HTTP 동작 과정](https://mangchhe.github.io/web/2021/02/19/HttpActionProcess/)
+
+3-way handshake를 거쳐 연결을 수립하고 요청과 응답이 오가고 keep-alive가 유지가 되는 것 같다. 사실 keep-alive가 어떻게 유지되는지까지는 알지 못한다.
+
+![wiresharkHttp2](/assets/wiresharkHttp2.JPG)
+
+요청 Body를 확인해보면 내가 postman을 통해 body에 담아 요청 보냈던 내용들이 내용들이 엄청 허무하게 보이는 것을 확인할 수 있다. 이것이 실제 개인의 개인정보라면 엄청난 보안 이슈가 될 것이다.
+
+자 그러면 https를 살펴보자
+
+![wiresharkHttps](/assets/wiresharkHttps.JPG)
+
+위에서 살펴봤던대로 client hello, server hello가 실행되고 그 다음 줄부터 Change Cipher Spec, 위에서 봤던 공개키로 암호화하여 대칭키를 전달하는 과정인 것 같다. 이 부분을 보면 Application Data도 함께 들어있는데 대칭키로 암호화하여 요청 데이터를 같이 보내는 것으로 확인할 수 있다. 그다음 Apllication Data는 대칭키로 암호화한 클라이언트에게 보내는 응답 메세지가 될 것이다.
+
+![wiresharkHttps2](/assets/wiresharkHttps2.JPG)
+
+Application Data를 http와 같이 읽어보기 위해서 확인해본 결과 http와는 다르게 내용들이 암호화되어 있어서 확인이 불가능한 것으로 확인할 수 있다.
+
+이정도면... https를 적용해야되는 이유가 설명이 된다..??
 
 > ## Nginx 적용
 
