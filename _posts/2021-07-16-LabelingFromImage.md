@@ -14,7 +14,7 @@ tags:
 
 > ## 상황
 
-![label_situation](/assets/label_situation.JPG)
+![label_situation](/assets/postImages/LabelingFromImage/label_situation.JPG)
 
 다양한 객체들이 있는 화면에서 초록색을 가지는 객체의 이미지만 뽑아내고 싶거나 객체 갯수 등을 알고싶을 때 어떻게 해야 될까?
 
@@ -62,7 +62,7 @@ _, src_bin = cv2.threshold(src, 0, 255, cv2.THRESH_OTSU)
 
 영어를 그대로 해석하면 잔디 + 불 알고리즘이다. 알고리즘이 잔디에 불을 붙인 형태로 로직이 처리되기 때문에 붙여진 이름이다. 그러면 이 알고리즘이 무엇인가?
 
-![label_explanation](/assets/label_explanation.JPG)
+![label_explanation](/assets/postImages/LabelingFromImage/label_explanation.JPG)
 
 시작 지점으로부터 사방으로 퍼져가며 객체를 찾는 방식이다. 위 그림에 대략적으로 흘러가는 알고리즘에 대해서 작성하였다. 이해가 안간다면 다음 [백준 링크](https://www.acmicpc.net/problem/21938)에서 문제를 풀어보도록 하자.
 
@@ -82,7 +82,7 @@ cnt, labels, stats, centroids = cv2.connectedComponentsWithStats(src_bin)
 
 > ## 라벨링 결과
 
-![label_result](/assets/label_result.JPG)
+![label_result](/assets/postImages/LabelingFromImage/label_result.JPG)
 
 ``` python
 import cv2
@@ -113,7 +113,7 @@ cv2.waitKey(0)
 
 색상 추출과 팽창의 개념을 모른다면 → [링크](https://mangchhe.github.io/imageprocess/2021/06/07/ExtractDarkColorFromImage/)
 
-![label_result2](/assets/label_result2.JPG)
+![label_result2](/assets/postImages/LabelingFromImage/label_result2.JPG)
 
 ``` python
 import cv2

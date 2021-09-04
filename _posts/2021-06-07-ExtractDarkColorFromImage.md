@@ -16,7 +16,7 @@ tags:
 
 이전 포스터에서는 파란 사각형의 면 색깔이 모두 같아서 추출하는 데에 큰 문제가 없었다. 하지만 **만약에 면의 색깔이 다 같지 않다면 어떻게 될까?**
 
-![extractImageDarkColor1](/assets/extractImageDarkColor1.PNG)
+![extractImageDarkColor1](/assets/postImages/ExtractDarkColorFromImage/extractImageDarkColor1.PNG)
 
 왼쪽 사진 사각형을 보면 여러 가지 색상이 섞여 있는 것을 알 수 있다. 여기서 파란색(0, 255, 0)을 그대로 추출하게 된다면 오른쪽 사진처럼 사각형 전체가 아닌 해당하는 일부분만 추출이 될 것이다.
 
@@ -33,7 +33,7 @@ tags:
 
 우선 팽창이 무엇인지 모른다면 팽창이 무엇인지부터 알아보자
 
-![extractImageDarkColor2](/assets/extractImageDarkColor2.PNG)
+![extractImageDarkColor2](/assets/postImages/ExtractDarkColorFromImage/extractImageDarkColor2.PNG)
 
 위 사진에서 회색 바탕은 이미지이며 각 사각형은 픽셀, 빨간색으로 둘러쌓인 곳이 연산을 수행할 범위이고 노란색이 현재 연산의 대상이라고 생각하면 된다. 현재 마스크의 크기는 3x3으로 지정했으며 두 가지의 상황이 나타나있다.
 
@@ -41,11 +41,11 @@ tags:
 
 정리하면 특정 픽셀 기준으로 마스크의 크기 안에 흰색(1)이 하나라도 존재할 경우 그 특정 픽셀로 흰색 그 외에는 검은색(0)으로 변경된다.
 
-![extractImageDarkColor3](/assets/extractImageDarkColor3.PNG)
+![extractImageDarkColor3](/assets/postImages/ExtractDarkColorFromImage/extractImageDarkColor3.PNG)
 
 팽창을 하면 위 사진과 같이 흰색 부분이 확장된 것을 확인할 수 있고 Mask의 크기와 연산을 반복해서 확장될 영역의 크기를 결정할 수 있다.
 
-![extractImageDarkColor4](/assets/extractImageDarkColor4.png)
+![extractImageDarkColor4](/assets/postImages/ExtractDarkColorFromImage/extractImageDarkColor4.png)
 
 위 사진은 기존의 이미지와 팽창 연산한 이미지의 비트 and 연산을 통해 사각형을 추출한 것을 볼 수 있다.
 
@@ -79,7 +79,7 @@ inRange를 이용하기 위해서는 색상값을 BGR 값이 아닌 HSV를 이�
 
 관련 내용 : [링크](https://docs.opencv.org/3.4/da/d97/tutorial_threshold_inRange.html)
 
-![extractImageDarkColor5](/assets/extractImageDarkColor5.PNG)
+![extractImageDarkColor5](/assets/postImages/ExtractDarkColorFromImage/extractImageDarkColor5.PNG)
 
 결과적으로 inRange()를 이용해서도 사각형 추출이 잘되는 것을 알 수 있다.
 

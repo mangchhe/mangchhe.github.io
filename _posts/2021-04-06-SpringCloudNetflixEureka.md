@@ -20,7 +20,7 @@ MSA는 여러 개의 서비스를 한곳에 모아 패키징하여 관리하는 
 
 `Eureka`는 이러한 서비스들을 한대 모아 관리하고 각 서비스들의 호스트 이름과 포트를 하드 코딩하지 않고도 서비스 서로를 찾아 통신할 수 있게 해준다
 
-![eureka](/assets/eureka.PNG)
+![eureka](/assets/postImages/SpringCloudNetflixEureka/eureka.PNG)
 
 위 그림에서 서로 다른 서비스 인스턴스들에 정보에 대해서 `Eureka(ServiceDiscovery)`에 등록하게 되면 클라이언트가 요청 정보를 API Gateway에 전달하게 되면 `ServiceDiscovery`에게 요청 정보가 어느 서비스에 있는지 물어보게 되고 등록되어 있는 서비스들 중에 찾아 `API Gateway`에 전달해주면 해당하는 인스턴스에게 값을 요청하고 클라이언트에게 다시 응답이 전달되게 된다
 
@@ -109,7 +109,7 @@ public class EcommerceApplication {
 어플리케이션을 실행시에 처음 실행 되는 자바 코드 파일에 가서 `@EnableEurekaServer` 어노테이션을 달아줘야 Eureka 서버가 정상적으로 구동되는 것을 확인할 수 있다
 `localhost:8761`로 접속하게 되면 아래와 대시보드 화면이 나타나는 것을 확인할 수 있다
 
-![eurekaServer](/assets/eurekaServer.PNG)
+![eurekaServer](/assets/postImages/SpringCloudNetflixEureka/eurekaServer.PNG)
 
 이 대시보드는 유레카 서버가 제공하는 기본적인 정보들을 담고 있다
 서버가 언제 가동이 되었는지, 나에게 등록된 인스턴스(MicroSerivce)들에 대한 정보 등이 있다
@@ -125,7 +125,7 @@ public class EcommerceApplication {
 
 > #### 의존성(dependency)
 
-![EurekaClient](/assets/EurekaClient.PNG)
+![EurekaClient](/assets/postImages/SpringCloudNetflixEureka/EurekaClient.PNG)
 
 이번에는 서비스 기능을 구현하기 위해서 `Eureka` 외에도 추가적인 의존성을 추가해주었다면
 아까는 `Eureka Server`를 추가해주었다면 이번에는 `Eureka Discovery Client`를 추가해주도록 하자
@@ -169,9 +169,9 @@ public class UserServiceApplication {
 
 **이때 유의해야할 점은 아까 작성한 Eureka Server도 마찬가지로 미리 실행시켜주어야 한다**
 
-![eurekaServerRegister](/assets/eurekaServerRegister.PNG)
+![eurekaServerRegister](/assets/postImages/SpringCloudNetflixEureka/eurekaServerRegister.PNG)
 
-![eurekaServerRegister2](/assets/eurekaServerRegister2.PNG)
+![eurekaServerRegister2](/assets/postImages/SpringCloudNetflixEureka/eurekaServerRegister2.PNG)
 
 위 사진과 같이 해당 서비스가 서버에 등록되었음을 확인할 수 있다
 
@@ -193,7 +193,7 @@ java -jar <생성된 jar파일명> --server.port=8002
 java -jar <생성된 jar파일명> --server.port=8003
 ```
 
-![eurekaServerRegister4](/assets/eurekaServerRegister4.PNG)
+![eurekaServerRegister4](/assets/postImages/SpringCloudNetflixEureka/eurekaServerRegister4.PNG)
 
 위 사진처럼 세 개의 서비스가 등록된 것을 확인할 수 있다
 
@@ -208,7 +208,7 @@ server:
 
 0으로 지정하게되면 랜덤한 포트가 지정이 된다
 
-![eurekaServerRegister5](/assets/eurekaServerRegister5.PNG)
+![eurekaServerRegister5](/assets/postImages/SpringCloudNetflixEureka/eurekaServerRegister5.PNG)
 
 0포트라고 적혀있지만 마우스를 올려보면 왼쪽 하단에 진짜 포트가 적혀있는 것을 확인할 수 있다
 
@@ -222,7 +222,7 @@ eureka:
 
 이를 해결하기 위해서 `instance-id`를 다음과 같이 지정해주게된다
 
-![eurekaServerRegister6](/assets/eurekaServerRegister6.PNG)
+![eurekaServerRegister6](/assets/postImages/SpringCloudNetflixEureka/eurekaServerRegister6.PNG)
 
 두 개 이상의 같은 서비스를 키더라도 구분되어 확인할 수 있을 것이다
 

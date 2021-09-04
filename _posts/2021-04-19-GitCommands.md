@@ -190,7 +190,7 @@ git rebase -i HEAD~?
 
 -i 옵션을 붙이게 되면 아래 사진과 같이 편집 상태로 들어가게 되고 원하는 명령어를 붙여서 커밋 내용들을 수정할 수 있다.
 
-![gitRebase](/assets/gitRebase.PNG)
+![gitRebase](/assets/postImages/GitCommands/gitRebase.PNG)
 
 위 사진은 명령어 뒤에 HEAD~1을 붙였고 만약 HEAD~3와 같이 붙이게 된다면 이전 커밋 내용 세개가 나타나게 될 것이다
 

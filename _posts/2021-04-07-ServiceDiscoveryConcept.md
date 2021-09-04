@@ -17,7 +17,7 @@ tags:
 
 > ## 왜 필요하지?
 
-![why service discovery](/assets/why%20service%20discovery.png)
+![why service discovery](/assets/postImages/ServiceDiscoveryConcept/why%20service%20discovery.png)
 
 여러 서비스들을 운용하기 위해서 클라우드 환경에서 인스턴스를 생성하여 구축할 것이다 이때 클라우드 환경에서 인스턴스는 AutoScaling, 생성, 삭제, 확장 등을 거치면서 IP나 Port들이 동적으로 변경될 가능성이 많다 그러면 그때마다 서비스 변경사항에 대해서 일일이 알아내고 수정하고 하기에는 수십 ~ 수백개의 서비스들을 일일이 관리하기 어려울 뿐더러 클라이언트가 원하는 정보를 얻기 위해 요청 할 서비스를 찾기에 어려움을 겪을 것이다
 
@@ -30,7 +30,7 @@ tags:
 
 > ### 클라이언트 사이드 디스커버리
 
-![client-side discovery](/assets/client-side%20discovery.png)
+![client-side discovery](/assets/postImages/ServiceDiscoveryConcept/client-side%20discovery.png)
 
 서비스 클라이언트가 Service register에서 서비스의 위치를 찾아서 호출하는 방식이다
 
@@ -48,7 +48,7 @@ Eureka에 대해서 알아보기 → [링크](https://mangchhe.github.io/springc
 
 > ### 서버 사이드 디스커버리
 
-![server-side discovery](/assets/server-side%20discovery.png)
+![server-side discovery](/assets/postImages/ServiceDiscoveryConcept/server-side%20discovery.png)
 
 호출 되는 서비스 앞에 로드밸런서를 넣는 방식이고, 클라이언트는 로드밸런서를 호출하면 로드밸런서가 Service Register로 부터 등록된 서비스의 위치를 전달하는 방식이다
 

@@ -22,7 +22,7 @@ tags:
 
 > ### JVM 구성
 
-![JVM](/assets/JVM.PNG)
+![JVM](/assets/postImages/JVMConcept/JVM.PNG)
 
 - .java .class
   - 자바 컴파일러를 통하여 .java를 컴파일하여 .class 파일인 바이트코드로 변환
@@ -39,7 +39,7 @@ tags:
 - Stack
   - 지역변수나 메소드의 매개변수, 임시적으로 사용되는 변수나 메소드의 정보가 저장되는 공간
 
-![JVM2](/assets/JVM2.PNG)
+![JVM2](/assets/postImages/JVMConcept/JVM2.PNG)
 
 - PC Register
   - 현재 수행중인 JVM 명령어 주소를 저장하는 공간, 스레드가 어떤 부분을 어떤 명령어로 수행할지를 저장하는 공간
@@ -48,7 +48,7 @@ tags:
   - JAVA가 아닌 다른 언어로 작성된 코드를 위한 공간
 
 
-![JVM3](/assets/JVM3.PNG)
+![JVM3](/assets/postImages/JVMConcept/JVM3.PNG)
 
 - Execution Engine
   - Class Load에 의해 로드된 클래스 파일의 바이트 코드들을 실행

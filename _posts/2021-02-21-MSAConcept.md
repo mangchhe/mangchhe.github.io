@@ -17,7 +17,7 @@ tags:
 
 소규모 프로젝트에 적합하고 대학교에서 하던 프로젝트 또는 스터디에서 진행하던 포트폴리오는 대부분 다음과 같은 방식으로 진행함
 
-![monolithicArchitecture](/assets/monolithicArchitecture.PNG)
+![monolithicArchitecture](/assets/postImages/MSAConcept/monolithicArchitecture.PNG)
 
 > ### 장점
 
@@ -39,7 +39,7 @@ tags:
 
 대형 프로젝트에 적합하고, 트래픽을 많이 요구하는 곳에서 필요
 
-![microserivcearchitecture](/assets/microserivcearchitecture.PNG)
+![microserivcearchitecture](/assets/postImages/MSAConcept/microserivcearchitecture.PNG)
 
 **API Gateway** : 클라이언트와 웹서비스 사이에 중단 다리 역할을 한다
 - 공통 로직 구현, 서비스를 나누면 공통으로 로직을 짜야 하는 경우가 생긴다 ex) 인증, 인가

@@ -16,7 +16,7 @@ tags:
 
 현재 진행중인 프로젝트에서 프론트(리액트), 백엔드(스프링)으로 나누어 소셜 로그인을 개발을 진행하였다. API 서버 역할을 하는 백엔드 입장에서 뷰를 보여줄 수 없었기 때문에 프론트에서 필요한 최소 데이터만 받아 로그인을 시키는 아래와 같은 방식으로 로직을 구성하였다.
 
-![kakaoLogin](/assets/kakaoLogin.JPG)
+![kakaoLogin](/assets/postImages/SpringKakaoLogin/kakaoLogin.JPG)
 
 카카오 개발자 사이트를 보며 그러면 한 단계씩 알아가보자
 
@@ -26,12 +26,12 @@ tags:
 
 프론트가 받아서 백엔드에 전달해야 할 인가코드이다. 아래 사진을 보자.
 
-![kakaoLogin_code](/assets/kakaoLogin_code.JPG)
+![kakaoLogin_code](/assets/postImages/SpringKakaoLogin/kakaoLogin_code.JPG)
 
 뷰를 담당하는 프론트는 사용자를 요청 파라미터에 맞춰 카카오톡 로그인 창으로 보내며 로그인을 유도한다. 로그인이 성공하게 된다면 응답으로 빨간색으로 박스 쳐진 Code를 받게 되는데 이것이 인가코드이다.
 받게 된 인가코드를 백엔드에게 전달한다.
 
-![kakaoLogin_data](/assets/kakaoLogin_data.JPG)
+![kakaoLogin_data](/assets/postImages/SpringKakaoLogin/kakaoLogin_data.JPG)
 
 요청 파라미터 필요한 데이터는 카카오 개발자 사이트로 들어가 애플리케이션을 하나 만들고 메인에 있는 REST API키와 네비게이션 바를 눌러 카카오 로그인을 클릭하게 되면 오른쪽 사진과 같이 리다이렉션 URL를 작성하여 얻을 수 있다. 리다이렉션 URL을 작성하기 전에 꼭 활성화 설정을 ON 해주셔야 한다.
 
@@ -39,11 +39,11 @@ tags:
 
 프론트에서 받은 인가코드를 이용하여 우리는 Access Token을 얻어야 한다.
 
-![kakaoLogin_access](/assets/kakaoLogin_access.JPG)
+![kakaoLogin_access](/assets/postImages/SpringKakaoLogin/kakaoLogin_access.JPG)
 
 위 사진을 보게 되면 grant_type, client_id, redirect_uri, 프론트에게 받은 code를 가지고 요청을 보내게 되면 access_token을 얻을 수 있는 것을 알 수 있다. client_id, redirect_uri는 프론트와 맞춰서 동일하게 작성하면 된다.
 
-![kakaoLogin_data2](/assets/kakaoLogin_data2.JPG)
+![kakaoLogin_data2](/assets/postImages/SpringKakaoLogin/kakaoLogin_data2.JPG)
 
 client_secret을 추가하여 보안을 강화하고 싶으면 카카오 로그인 - 보안에 들어가면 위 사진과 페이지가 나타나게 되고 코드를 발급받으면 된다.
 
@@ -81,11 +81,11 @@ public String getAccessTokenByCode(String code) {
 
 인가코드로 요청해서 얻게된 access_token으로 사용자 정보를 얻을 수 있다.
 
-![kakaoLogin_user](/assets/kakaoLogin_user.JPG)
+![kakaoLogin_user](/assets/postImages/SpringKakaoLogin/kakaoLogin_user.JPG)
 
 access_token을 담아 요청하게 되면 허가된 사용자 정보를 받게된다.
 
-![kakaoLogin_data3](/assets/kakaoLogin_data3.JPG)
+![kakaoLogin_data3](/assets/postImages/SpringKakaoLogin/kakaoLogin_data3.JPG)
 
 받을 데이터 권한을 결정하기 위해서는 카카오 로그인 - 동의 항목에 들어가면 위 사진이 뜨는데 필요한 데이터의 상태를 동의로 필수 동의, 선택 동의로 바꿔주면 된다.
 

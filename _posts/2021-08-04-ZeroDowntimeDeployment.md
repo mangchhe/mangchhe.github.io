@@ -37,7 +37,7 @@ tags:
 
 롤링 배포는 현재 사용 중인 인스턴스 내에서 새 버전으로 점진적으로 하나씩 교체해나가는 것이다.
 
-![rollingDeployment](/assets/ZeroDowntimeDeployment/rollingDeployment.JPG)
+![rollingDeployment](/assets/postImages/ZeroDowntimeDeployment/rollingDeployment.JPG)
 
 이 방식을 이용하게 된다면 기존에 유지하고 있는 인스턴스로만 진행하기 때문에 추가적으로 비용이 발생하지않는다. 하지만 새로운 버전으로 교체하는 과정에서 일부 인스턴스가 연결되어 있지 않기 때문에 트래픽을 감당할 수 있는 선에서 진행해야하며 이전 버전과 새로운 버전의 호환성 문제도 생각해야 한다.
 
@@ -45,7 +45,7 @@ tags:
 
 블루그린 배포는 블루는 이전 버전, 그린은 새로운 버전으로 지칭하며 구버전과 동일한 인스턴스 환경을 가진 새로운 버전을 만들어 로드 밸런싱에 연결 시키고 이전 버전을 해제시키는 방식이다.
 
-![blueGreenDeployment](/assets/ZeroDowntimeDeployment/blueGreenDeployment.JPG)
+![blueGreenDeployment](/assets/postImages/ZeroDowntimeDeployment/blueGreenDeployment.JPG)
 
 이 방식은 이전 버전과 새로운 버전의 호환성이나 트래픽 문제는 해결이 됐지만 자원을 두배로 소모한다는 단점을 가지고 있다.
 
@@ -53,7 +53,7 @@ tags:
 
 카나리 배포는 이전 버전의 인스턴스를 새로운 버전의 인스턴스로 점진적으로 바꿔나가는 방식이다.
 
-![canaryDeployment](/assets/ZeroDowntimeDeployment/canaryDeployment.JPG)
+![canaryDeployment](/assets/postImages/ZeroDowntimeDeployment/canaryDeployment.JPG)
 
 새로운 버전의 제공 범위를 늘려가는 과정 속에서 문제점을 발견하거나 사용자들의 피드백을 받을 수 있다. 하지만 롤링 배포와 마찬가지로 이전 버전과 새로운 버전이 함께 공존하기 때문에 호환성 문제가 생길 수 있다.
 
@@ -160,11 +160,11 @@ sudo service nginx reload
 
 위 내용은 아까 nginx 설정을 동적으로 변경하기 위해서 필요한 소스이며 이전 소스에 nginx 설정 변경 소스 필요 부분에 들어가면 된다.
 
-![blueGreenSource](/assets/ZeroDowntimeDeployment/blueGreenSource.JPG)
+![blueGreenSource](/assets/postImages/ZeroDowntimeDeployment/blueGreenSource.JPG)
 
 합치면 위와 같은 소스가 나오게 된다.
 
-![blueGreenExample](/assets/ZeroDowntimeDeployment/blueGreenExample.JPG)
+![blueGreenExample](/assets/postImages/ZeroDowntimeDeployment/blueGreenExample.JPG)
 
 쉘 스크립트가 완성되었으니 실행시키게 되면 새로운 서비스를 생성하고 이전 서비스를 제거하고 라우팅 설정까지 진행이 되며 요청을 보내게 되면 올바르게 버전이 변경된 것을 확인할 수 있다.
 

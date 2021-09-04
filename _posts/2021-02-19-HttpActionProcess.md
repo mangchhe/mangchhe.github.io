@@ -16,7 +16,7 @@ tags:
 
 > ### 약식 설명
 
-![httpProcess](/assets/httpProcess.jpg)
+![httpProcess](/assets/postImages/HttpActionProcess/httpProcess.jpg)
 
 > ### 1. 검색창에 URL 주소 입력
 
@@ -24,7 +24,7 @@ tags:
 
 > #### URL 주소 형식
 
-![url](/assets/url.PNG)
+![url](/assets/postImages/HttpActionProcess/url.PNG)
 
 > ### 2. DNS 서버에서 도메인 네임 검색
 
@@ -34,7 +34,7 @@ tags:
 
 네이버를 검색할 때 www.naver.com 라고 적을 것이다 이 도메인을 보면 누가봐도 네이버 주소라는 것을 알 수 있을 것이다
 
-![navernslookup](/assets/navernslookup.PNG)
+![navernslookup](/assets/postImages/HttpActionProcess/navernslookup.PNG)
 
 원래 네이버에 접속하기 위해서는 위 사진에 있는 IP 주소를 입력하여 매번 접속을 시도해야되지만 해당 주소에 대해서 DNS 서버에 도메인 네임으로 naver.com을 등록해두었기 때문에 IP를 알지 못하여도 접속이 가능하다
 
@@ -56,7 +56,7 @@ HTTP 메시지를 전송하기 전에 클라이언트와 서버 간에 안전한
 
 Header, Body 구조로 이루어진 HTTP 메시지를 요청한다
 
-![httpMessageRequest](/assets/httpMessageRequest.PNG)
+![httpMessageRequest](/assets/postImages/HttpActionProcess/httpMessageRequest.PNG)
 
 > #### Header
 
@@ -103,7 +103,7 @@ Header, Body 구조로 이루어진 HTTP 메시지를 요청한다
 - Status code : 응답 상태 코드
 - Statue Text : 응답 상태 부가 설명
 
-![httpMessageResponse](/assets/httpMessageResponse.PNG)
+![httpMessageResponse](/assets/postImages/HttpActionProcess/httpMessageResponse.PNG)
 
 > #### Header
 

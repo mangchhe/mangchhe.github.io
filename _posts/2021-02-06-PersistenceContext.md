@@ -43,7 +43,7 @@ public class CommentRepository {
 
 엔티티 생명주기에는 총 4가지의 상태가 존재한다
 
-![persistence_lifecycle](/assets/persistence_lifecycle.jpg)
+![persistence_lifecycle](/assets/postImages/PersistenceContext/persistence_lifecycle.jpg)
 
 - 비영속(new/transient) : 영속성 컨텍스트와 관계가 없는 엔티티
 ``` java
@@ -104,7 +104,7 @@ em.createQuery("select c from Comment c", Comment.class); // <- flush() 발생
 
 영속성 컨텍스트 내부에는 1차 캐시라는 공간이 존재하고 그 곳에 **영속 상태의 엔티티들이 모두 저장**된다
 
-![1차 캐시](/assets/1_cach.jpg)
+![1차 캐시](/assets/postImages/PersistenceContext/1_cach.jpg)
 
 1차 캐시는 ID로 식별하기 때문에 ID - Entity와 같이 Map 구조로 존재한다
 

@@ -13,7 +13,7 @@ tags:
 
 > ## 개요
 
-![mappedby](/assets/mappedby.png)
+![mappedby](/assets/postImages/BidirectionalMapping/mappedby.png)
 
 위 그림과 같이 게시글(Board)과 댓글(Comment)의 다대일 양방향 연관관계에 대해서 살펴보겠습니다.
 
@@ -109,8 +109,8 @@ class BoardTest {
 }
 ```
 
-![mappedby_board](/assets/mappedby_board.PNG)
-![mappedby_comment](/assets/mappedby_comment.PNG)
+![mappedby_board](/assets/postImages/BidirectionalMapping/mappedby_board.PNG)
+![mappedby_comment](/assets/postImages/BidirectionalMapping/mappedby_comment.PNG)
 
 결과는 다음과 같다 분명 `board.addComment(comment)` 를 이용하여 댓글을 저장하였지만 데이터베이스를 열어보면 저장되어있지 않을 것을 볼 수 있다
 
@@ -139,8 +139,8 @@ public class Board {
 
 `comment.setBoard(this)` 해당 메소드를 불러올 때 해당 주인을 가지고 외래키 설정을 해주면 된다
 
-![mappedby_board2](/assets/mappedby_board2.PNG)
-![mappedby_comment2](/assets/mappedby_comment2.PNG)
+![mappedby_board2](/assets/postImages/BidirectionalMapping/mappedby_board2.PNG)
+![mappedby_comment2](/assets/postImages/BidirectionalMapping/mappedby_comment2.PNG)
 
 데이터베이스를 열어 확인해보면 제대로 적용이 된것을 확인할 수 있을 것이다
 

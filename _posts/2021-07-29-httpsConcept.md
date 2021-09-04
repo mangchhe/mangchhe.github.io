@@ -16,7 +16,7 @@ tags:
 
 HTTPS는 HTTP 통신 과정에 평문 데이터를 주고 받는 과정에 그대로 탈취&변조가 가능하다는 점과 같은 보안에 취약한 문제점들을 해결한 프로토콜이다.
 
-![osi4plusssl](/assets/osi4plusssl.JPG)
+![osi4plusssl](/assets/postImages/HttpsConcept/osi4plusssl.JPG)
 
 네트워크 통신 과정을 나타낸 TCP/IP 4계층이며 SSL & TLS라는 보안 계층이 추가되어 암호화와 인증 등을 보장한다.
 
@@ -38,7 +38,7 @@ HTTPS는 HTTP 통신 과정에 평문 데이터를 주고 받는 과정에 그�
 
 > ## 동작 원리
 
-![sslhandshake](/assets/sslhandshake.JPG)
+![sslhandshake](/assets/postImages/HttpsConcept/sslhandshake.JPG)
 
 **① [Client Hello]** 클라이언트는 브라우저가 사용하는 SSL & TLS 버전 정보, 브라우저가 지원하는 암호화 방식, 브라우저가 생성한 임의의 난수를 서버에 전송한다.
 
@@ -77,27 +77,27 @@ public class TestDto {
 
 간단하게 Spring Boot로 아이디와 비밀번호를 받아 회원가입을 하는 controller와 dto 생성한 다음 서버로 가서 어플리케이션을 실행시켜준다. 물론 실제 회원가입 로직을 짜진 않았다.
 
-![postmansighup](/assets/postmansighup.JPG)
+![postmansighup](/assets/postImages/HttpsConcept/postmansighup.JPG)
 
 postman을 이용해서 http, https 각각 요청을 보낼 준비를 한다.
 
-![wiresharkHttp](/assets/wiresharkHttp.JPG)
+![wiresharkHttp](/assets/postImages/HttpsConcept/wiresharkHttp.JPG)
 
 첫 번째로 http로 Post 요청을 보냈다. 아마 http 통신 과정을 한번 공부해봤다면 익숙한 용어들이 보이게 될 것이다. 모르겠다면 -> [HTTP 동작 과정](https://mangchhe.github.io/web/2021/02/19/HttpActionProcess/)
 
 3-way handshake를 거쳐 연결을 수립하고 요청과 응답이 오가고 keep-alive가 유지가 되는 것 같다. 사실 keep-alive가 어떻게 유지되는지까지는 알지 못한다.
 
-![wiresharkHttp2](/assets/wiresharkHttp2.JPG)
+![wiresharkHttp2](/assets/postImages/HttpsConcept/wiresharkHttp2.JPG)
 
 요청 Body를 확인해보면 내가 postman을 통해 body에 담아 요청 보냈던 내용들이 내용들이 엄청 허무하게 보이는 것을 확인할 수 있다. 이것이 실제 개인의 개인정보라면 엄청난 보안 이슈가 될 것이다.
 
 자 그러면 https를 살펴보자
 
-![wiresharkHttps](/assets/wiresharkHttps.JPG)
+![wiresharkHttps](/assets/postImages/HttpsConcept/wiresharkHttps.JPG)
 
 위에서 살펴봤던대로 client hello, server hello가 실행되고 그 다음 줄부터 Change Cipher Spec, 위에서 봤던 공개키로 암호화하여 대칭키를 전달하는 과정인 것 같다. 이 부분을 보면 Application Data도 함께 들어있는데 대칭키로 암호화하여 요청 데이터를 같이 보내는 것으로 확인할 수 있다. 그다음 Apllication Data는 대칭키로 암호화한 클라이언트에게 보내는 응답 메세지가 될 것이다.
 
-![wiresharkHttps2](/assets/wiresharkHttps2.JPG)
+![wiresharkHttps2](/assets/postImages/HttpsConcept/wiresharkHttps2.JPG)
 
 Application Data를 http와 같이 읽어보기 위해서 확인해본 결과 http와는 다르게 내용들이 암호화되어 있어서 확인이 불가능한 것으로 확인할 수 있다.
 
@@ -156,6 +156,6 @@ server {
 
 설정 하는 방법을 모르겠다면 -> [링크](https://mangchhe.github.io/was/2021/07/28/NginxConcept/)
 
-![sslresult](/assets/sslresult.JPG)
+![sslresult](/assets/postImages/HttpsConcept/sslresult.JPG)
 
 그림과 같이 HTTPS가 적용된 것을 확인할 수 있고 인증서에 들어가보면 발급자가 Let's Encrypt로 되어있는 것을 확인할 수 있다.

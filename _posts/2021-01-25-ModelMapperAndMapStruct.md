@@ -356,7 +356,7 @@ MemberKrDTO result3 = MemberMapper.INSTANCE.entityToMemberKrDTO(member);
 }
 ```
 
-![mappingSpeed](/assets/mappingSpeed.PNG)
+![mappingSpeed](/assets/postImages/ModelMapperAndMapStruct/mappingSpeed.PNG)
 
 ModelMapper와 MapStruct를 50만번 동작하여 걸린 시간을 체크한 결과, 필자 컴퓨터 기준으로 ModelMapper는 약 3초 MapStruct는 약 0.008초로 **MapStruct가 월등히 속도가 빠른 걸**로 확인되었다
 
@@ -370,7 +370,7 @@ ModelMapper와 MapStruct를 50만번 동작하여 걸린 시간을 체크한 결
 
 컴파일 시점에서 어노테이션을 읽어 구현체를 만들어내기 때문에 리플렉션이 발생하지 않는다
 
-![MapStructTest](/assets/MapStructTest.PNG)
+![MapStructTest](/assets/postImages/ModelMapperAndMapStruct/MapStructTest.PNG)
 
 각 해당 프로젝트의 빌드 파일에 `@Mapper`를 구현한 폴더에 가게 되면 이렇게 구현체가 생성되어 있는 것을 볼 수 있을 것이다
 

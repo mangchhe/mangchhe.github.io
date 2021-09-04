@@ -14,17 +14,17 @@ tags:
 
 > ## 이미지 준비
 
-![extractImageColor_square](/assets/extractImageColor_square.PNG)
+![extractImageColor_square](/assets/postImages/ExtractColorFromImage/extractImageColor_square.PNG)
 
 테스트하기 위해서 파란색 사각형이 여러 개 그려진 사진을 준비하였다.
 
 > ## 그림판을 통해 RGB값 구하기
 
-![extractImageColor_square2](/assets/extractImageColor_square2.PNG)
+![extractImageColor_square2](/assets/postImages/ExtractColorFromImage/extractImageColor_square2.PNG)
 
 찾고자 하는 이미지를 그림판에 가져와 스포이드를 통해 찾으려는 색상 위치에 가져다대고 색 편집을 클릭한다.
 
-![extractImageColor_square3](/assets/extractImageColor_square3.PNG)
+![extractImageColor_square3](/assets/postImages/ExtractColorFromImage/extractImageColor_square3.PNG)
 
 색 편집을 누르게 되면 위에 RGB값이 나타나는 것을 확인할 수 있다. 이제 이 RGB값을 통해서 이미지에서 색 추출을 해보도록 하자
 
@@ -100,7 +100,7 @@ np.where()를 이용하여 찾고자 하는 위치를 먼저 찾고 색상을 �
 
 > ## 결과
 
-![extractImageColor_square4](/assets/extractImageColor_square4.png)
+![extractImageColor_square4](/assets/postImages/ExtractColorFromImage/extractImageColor_square4.png)
 
 위 세 개의 소스 코드를 이용하면 다른 사각형과 다른 색상을 가지는 사각형이 노란색으로 변화되어 파일이 저장되는 것을 볼 수 있다.
 
@@ -112,7 +112,7 @@ np.where()를 이용하여 찾고자 하는 위치를 먼저 찾고 색상을 �
 
 배열은 numpy를 사용하고 있지만, 반복문을 이용하는 너무 구시대적 방법을 이용했던 것 같아 numpy를 이용한 방법이 어떤 것이 있을까 찾아보다가 where이라는 메소드를 찾게 되었고 이 메소드를 이용하면 속도를 크게 향상 시킬 수 있다는 것을 알게 되었다.
 
-![extractImageColor_square5](/assets/extractImageColor_square5.PNG)
+![extractImageColor_square5](/assets/postImages/ExtractColorFromImage/extractImageColor_square5.PNG)
 
 현재 예제를 통해 반복문과 where를 이용했을 때를 5번을 반복하여 걸린 시간을 확인했다.
 

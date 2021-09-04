@@ -64,17 +64,17 @@ management:
 
 RabbitMQ를 사용하려면 Erlang을 설치해야한다.
 
-![erlangInstall](/assets/erlangInstall.PNG)
+![erlangInstall](/assets/postImages/ConfigRefreshMethod/erlangInstall.PNG)
 
 > #### [RabbitMQ](https://www.rabbitmq.com/install-windows.html#installer) 설치
 
-![RabbitMQInstall](/assets/RabbitMQInstall.PNG)
+![RabbitMQInstall](/assets/postImages/ConfigRefreshMethod/RabbitMQInstall.PNG)
 
 > #### Erlang, RabbitMQ 환경 변수 설정
 
 설치 후에 환경 변수가 자동으로 설정되어 있지 않다면 PATH에 맞게 직접 추가해준다.
 
-![erlangRabbitMQPath](/assets/erlangRabbitMQPath.PNG)
+![erlangRabbitMQPath](/assets/postImages/ConfigRefreshMethod/erlangRabbitMQPath.PNG)
 
 > #### RabbitMQ Plugin 설치
 
@@ -84,15 +84,15 @@ rabbitmq-plugins enable rabbitmq_management
 
 > #### RabbitMQ 실행 & 접속
 
-![RabbitMQServiceRun](/assets/RabbitMQServiceRun.PNG)
+![RabbitMQServiceRun](/assets/postImages/ConfigRefreshMethod/RabbitMQServiceRun.PNG)
 
 윈도우 키를 눌러서 서비스를 검색하고 RabbitMQ가 정상적으로 실행이 되어 있는지 확인한다.
 
-![RabbitMqConnect](/assets/RabbitMqConnect.PNG)
+![RabbitMqConnect](/assets/postImages/ConfigRefreshMethod/RabbitMqConnect.PNG)
 
 http://localhost:15672/ 로 접속하게 되면 위와 같이 username, password를 입력할 수 있는데 default 값으로 guest, guest로 설정되어있어 입력하면 된다.
 
-![RabbitMqConnect2](/assets/RabbitMqConnect2.PNG)
+![RabbitMqConnect2](/assets/postImages/ConfigRefreshMethod/RabbitMqConnect2.PNG)
 
 로그인하고 다음과 같은 창을 만나게 되면 준비는 끝났다고 볼수 있다.
 
@@ -175,7 +175,7 @@ rabbitmq 정보들에 대해서 기입하고 actuator 기능에 busrefresh를 �
 
 > ### ConfigService, MicroServices 구동
 
-![RabbitMqConnect3](/assets/RabbitMqConnect3.PNG)
+![RabbitMqConnect3](/assets/postImages/ConfigRefreshMethod/RabbitMqConnect3.PNG)
 
 구동을 하고 RabbitMQ gui에 들어가서 Connections를 확인하게 되면 다음과 같이 구동하고 연결된 서비스들에 대한 상태들이 나타나게 된다.
 

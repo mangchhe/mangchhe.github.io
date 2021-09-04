@@ -17,7 +17,7 @@ tags:
 
 > ## API Gateway가 왜 필요한가?
 
-![apiGateway_architecture](/assets/apiGateway_architecture.png)
+![apiGateway_architecture](/assets/postImages/ApiGatewayConcept/apiGateway_architecture.png)
 
 위 그림은 클라이언트 사이드에서 각 MicroSerivce 들을 호출하는 모습이다 서비스가 생성이 되거나 호스트네임이 변경이 되는 경우 서비스들은 독립적으로 빌드하고 배포할 수 있기 때문에 문제는 없다 하지만 문제는 클라이언트 사이드에서 발생한다
 
@@ -25,7 +25,7 @@ tags:
 
 그러다보니 단일 진입점을 가지고 있는 형태로서 개발하는 것이 필요로 하게되었다
 
-![apiGateway_architecture2](/assets/apiGateway_architecture2.png)
+![apiGateway_architecture2](/assets/postImages/ApiGatewayConcept/apiGateway_architecture2.png)
 
 서버단에서 단일 진입로를 가질 수 있는 API Gateway를 두고 각 microservice들에게 요청되는 모든 정보들에 대해서 클라이언트 사이드 종류에 상관없이 일괄적으로 처리할 수 있게 되었다
 

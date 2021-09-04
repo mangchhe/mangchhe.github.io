@@ -21,7 +21,7 @@ tags:
 
 > ## Spring Colud Config를 사용하는 이유?
 
-![netflixArchitectureDiagram](/assets/netflixArchitectureDiagram.PNG)
+![netflixArchitectureDiagram](/assets/postImages/SpringCloudConfig/netflixArchitectureDiagram.PNG)
 
 위 사진은 Netflix의 마이크로서비스들의 관계를 나타낸 것이다. 한눈에 봐도 복잡해보이는 이러한 어플리케이션이 구성되기 위해서는 수십~백가지의 마이크로서비스들이 모여 통신한다. 각각의 마이크로서비스들은 설정 파일들을 개발 환경(개발 - 테스트 - 배포)에 따라 하나 이상의 설정 파일들이 있을 것이다.
 
@@ -134,7 +134,7 @@ spring:
 
 http://localhost:8888/{yml명}/{profile명} 에 요청하게 되면 아까 전에 생성하였던 ecommerce.yml이 조회되는 것을 확인할 수 있다.
 
-![configLocalReposResult](/assets/configLocalReposResult.PNG)
+![configLocalReposResult](/assets/postImages/SpringCloudConfig/configLocalReposResult.PNG)
 
 > ### MicroService - ConfigService 연동
 
@@ -190,7 +190,7 @@ public class UserController {
 
 > #### 서비스 구동
 
-![configLocalReposResult2](/assets/configLocalReposResult2.PNG)
+![configLocalReposResult2](/assets/postImages/SpringCloudConfig/configLocalReposResult2.PNG)
 
 http://127.0.0.1:<포트번호>/health_check 에 요청을 보내게 되면 applcation.yml에 있는 port 정보와 config service에 있는 ecommerce.yml의 secret, expiration_time 정보와 port는 따로 정보를 준것이 없기 때문에 0으로 나타나있는 것을 확인할 수 있다.
 
@@ -236,8 +236,8 @@ spring:
 
 > #### 테스트
 
-![configLocalReposResult3](/assets/configLocalReposResult3.PNG)
-![configLocalReposResult4](/assets/configLocalReposResult4.PNG)
+![configLocalReposResult3](/assets/postImages/SpringCloudConfig/configLocalReposResult3.PNG)
+![configLocalReposResult4](/assets/postImages/SpringCloudConfig/configLocalReposResult4.PNG)
 
 http://127.0.0.1:<포트번호>/health_check 에 요청을 보내게 되면 설정한 profile 환경에 맞게 설정이 되는 것을 확인할 수 있다.
 
@@ -299,20 +299,20 @@ spring:
 
 > ### 결과
 
-![configNativeReposResult](/assets/configNativeReposResult.PNG)
+![configNativeReposResult](/assets/postImages/SpringCloudConfig/configNativeReposResult.PNG)
 
 현재 로컬 디렉토리에는 다음과 같은 5개의 설정파일들이 존재하고 config service를 구동시켜 설정 파일이 정상 등록이 되었는지 확인해보자
 
 http://localhost:8888/user-service/default
 
-![configNativeReposResult2](/assets/configNativeReposResult2.PNG)
+![configNativeReposResult2](/assets/postImages/SpringCloudConfig/configNativeReposResult2.PNG)
 
 http://localhost:8888/user-service/dev
 
-![configNativeReposResult3](/assets/configNativeReposResult3.PNG)
+![configNativeReposResult3](/assets/postImages/SpringCloudConfig/configNativeReposResult3.PNG)
 
 http://localhost:8888/ecommerce/default
 
-![configNativeReposResult4](/assets/configNativeReposResult4.PNG)
+![configNativeReposResult4](/assets/postImages/SpringCloudConfig/configNativeReposResult4.PNG)
 
 로컬에 있는 각 설정 파일들이 정상적으로 등록되어있는 것을 확인할 수 있다.

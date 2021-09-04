@@ -68,15 +68,15 @@ spring:
 
 > #### 결과
 
-![SpringCloudGatewayResult1](/assets/SpringCloudGatewayResult1.PNG)
+![SpringCloudGatewayResult1](/assets/postImages/SpringCloudGateway/SpringCloudGatewayResult1.PNG)
 
-![SpringCloudGatewayResult2](/assets/SpringCloudGatewayResult2.PNG)
+![SpringCloudGatewayResult2](/assets/postImages/SpringCloudGateway/SpringCloudGatewayResult2.PNG)
 
 API Gateway와 서비스를 실행한 후에 요청하면 목적지로 잘 이동한 것을 확인할 수 있다
 
 > ## Filter 적용
 
-![SpringCloudGatewayFilterConcept](/assets/SpringCloudGatewayFilterConcept.PNG)
+![SpringCloudGatewayFilterConcept](/assets/postImages/SpringCloudGateway/SpringCloudGatewayFilterConcept.PNG)
 
 클라이언트에서 Spring Cloud Gateway로 요청을 하게 될 경우 Gateway Handler에서 요청의 경로가 일치하다고 생각하면 이 핸들러는 요청에 필요항 특정한 필터 체인을 통해 요청을 실행한다
 GlobalFilter, CustomFilter를 거치며 인증&권한, 로깅과 같은 역할을 할 수 있다
@@ -163,11 +163,11 @@ FirstService, SecondService에 요청헤더에 필터에 적용시킨 값이 들
 
 > ### 결과
 
-![SpringCloudGatewayFilterResult1](/assets/SpringCloudGatewayFilterResult1.PNG)
+![SpringCloudGatewayFilterResult1](/assets/postImages/SpringCloudGateway/SpringCloudGatewayFilterResult1.PNG)
 
 요청을 했을 때 first-request-header가 추가된 것을 확인할 수 있다
 
-![SpringCloudGatewayFilterResult2](/assets/SpringCloudGatewayFilterResult2.PNG)
+![SpringCloudGatewayFilterResult2](/assets/postImages/SpringCloudGateway/SpringCloudGatewayFilterResult2.PNG)
 
 응답을 받았을 때 first-response-header가 추가 된 것을 확인할 수 있다
 
@@ -231,7 +231,7 @@ AbstractGatewayFilterFactory를 상속 받아 구현하고 apply 메소드에 �
 
 > ### 결과
 
-![SpringCloudGatewayCustomFilterResult1](/assets/SpringCloudGatewayCustomFilterResult1.PNG)
+![SpringCloudGatewayCustomFilterResult1](/assets/postImages/SpringCloudGateway/SpringCloudGatewayCustomFilterResult1.PNG)
 
 요청이 들어왔을 때 요청 id, uri가 로그에 기록되고 응답시 응답코드가 기록된 것을 확인할 수 있다
 
@@ -309,7 +309,7 @@ cloud:
 
 > ### 결과
 
-![SpringCloudGatewayGlobalFilterResult1](/assets/SpringCloudGatewayGlobalFilterResult1.PNG)
+![SpringCloudGatewayGlobalFilterResult1](/assets/postImages/SpringCloudGateway/SpringCloudGatewayGlobalFilterResult1.PNG)
 
 **GlobalFilter pre** - CustomFilter pre/post - **GlobalFilter post** 순으로 적용된 것을 확인할 수 있다
 
@@ -415,7 +415,7 @@ CustomFilter에 Config 정보를 설정하기 위해서는 이전에 GlobalFilte
 
 > ### 결과
 
-![SpringCloudGatewayLoggingFilterResult1](/assets/SpringCloudGatewayLoggingFilterResult1.PNG)
+![SpringCloudGatewayLoggingFilterResult1](/assets/postImages/SpringCloudGateway/SpringCloudGatewayLoggingFilterResult1.PNG)
 
 GlobalFilter pre - CustomFilter pre - **LoggingFilter pre/post** - CustomFilter post - GlobalFilter post와 같이 LogginFilter가 마지막에 실행되는 것을 확인할 수 있다
 
@@ -488,12 +488,12 @@ eureka:
 
 > ## 결과
 
-![SpringCloudGatewayRoad1](/assets/SpringCloudGatewayRoad1.PNG)
+![SpringCloudGatewayRoad1](/assets/postImages/SpringCloudGateway/SpringCloudGatewayRoad1.PNG)
 
 Eureka Service와 Spring Cloud Gateway를 실행한 후 같은 내용의 서비스를 두 개 실행한 것을 확인할 수 있다
 
-![SpringCloudGatewayRoad2](/assets/SpringCloudGatewayRoad2.PNG)
-![SpringCloudGatewayRoad3](/assets/SpringCloudGatewayRoad3.PNG)
+![SpringCloudGatewayRoad2](/assets/postImages/SpringCloudGateway/SpringCloudGatewayRoad2.PNG)
+![SpringCloudGatewayRoad3](/assets/postImages/SpringCloudGateway/SpringCloudGatewayRoad3.PNG)
 
 
 요청을 하게 되면 서로 다른 포트에 요청이 분산되는 것을 로그를 보고 확인할 수 있다

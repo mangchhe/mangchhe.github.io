@@ -12,7 +12,7 @@ tags:
 
 > ## Spring MVC 동작 과정
 
-![springMvcLifeCycle](/assets/springMvcLifeCycle.PNG)
+![springMvcLifeCycle](/assets/postImages/SpringMvcLifeCycle/springMvcLifeCycle.PNG)
 
 1. `DispacherServlet`이 Client의 요청을 받음
 2. `HandlerMapping`이 알맞은 Controller 메소드 정보(핸들러)를 탐색
@@ -28,7 +28,7 @@ tags:
 
 > ### Filter와 Interceptor 추가
 
-![springMvcLifeCycle2](/assets/springMvcLifeCycle2.PNG)
+![springMvcLifeCycle2](/assets/postImages/SpringMvcLifeCycle/springMvcLifeCycle2.PNG)
 
 - <mark style='background-color: #fff5b1'>Filter는 전체적인 Request단에서 어떤 처리가 필요할 때 동작, 문자 인코딩 등</mark>
   - `DispacherServlet`를 거치기 전 1번 전에 추가된다

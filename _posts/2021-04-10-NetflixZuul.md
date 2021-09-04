@@ -17,17 +17,17 @@ tags:
 - API Gateway → [클릭](https://mangchhe.github.io/springcloud/2021/04/08/ApiGatewayConcept/)
 - MSA에서 여러 클라이언트 요청을 적절한 서비스로 보내기 위한 Proxy 역할을 한다
 
-![zuul_maintenance](/assets/zuul_maintenance.PNG)
+![zuul_maintenance](/assets/postImages/NetflixZuul/zuul_maintenance.PNG)
 
 netflix-zuul이 maintenance 모드가 되어 더이상 개발 및 패치가 이루어지지 않기 때문에 간단하게 다뤄보려고 한다
 
-![zuul_maintenance2](/assets/zuul_maintenance2.PNG)
+![zuul_maintenance2](/assets/postImages/NetflixZuul/zuul_maintenance2.PNG)
 
 위 사진을 보면 Zuul을 대체품으로 Spring Cloud Gateway를 사용하는 것을 추천한다
 
 > ## 실습
 
-![zuul_ex](/assets/zuul_ex.PNG)
+![zuul_ex](/assets/postImages/NetflixZuul/zuul_ex.PNG)
 
 두 개의 서비스를 만들고 Zuul을 이용하여 요청이 왔을때 각 서비스에 보내는 방법에 대해서 배우고 필터 등록까지 해보자
 
@@ -42,7 +42,7 @@ netflix-zuul이 maintenance 모드가 되어 더이상 개발 및 패치가 이�
 
 > #### 의존성(dependency)
 
-![zuul_service](/assets/zuul_service.PNG)
+![zuul_service](/assets/postImages/NetflixZuul/zuul_service.PNG)
 
 > #### application.yml
 
@@ -102,7 +102,7 @@ public class FirstServiceController {
 
 > #### 의존성(dependency)
 
-![zuul_config](/assets/zuul_config.PNG)
+![zuul_config](/assets/postImages/NetflixZuul/zuul_config.PNG)
 
 > #### application.yml
 
@@ -143,8 +143,8 @@ public class ZuulServiceApplication {
 
 > ### 결과
 
-![zuul_firstservice](/assets/zuul_firstservice.PNG)
-![zuul_secondservice](/assets/zuul_secondservice.PNG)
+![zuul_firstservice](/assets/postImages/NetflixZuul/zuul_firstservice.PNG)
+![zuul_secondservice](/assets/postImages/NetflixZuul/zuul_secondservice.PNG)
 
 localhost:8080/first-service/wecome -> localhost:8081/first-service/welcome
 
@@ -205,7 +205,7 @@ ZuulFilter는 HttpServletRequest를 다루지 않기 때문에 최상위에 있�
 
 > ### 결과
 
-![zuulFilterLogging](/assets/zuulFilterLogging.PNG)
+![zuulFilterLogging](/assets/postImages/NetflixZuul/zuulFilterLogging.PNG)
 
 다음과 같이 요청이 들어오면 url에 대한 정보가 기록되는 것을 확인할 수 있다
 
