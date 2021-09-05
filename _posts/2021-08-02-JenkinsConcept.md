@@ -14,7 +14,7 @@ tags:
 
 > ## Jenkins 사용 이유
 
-![bored](/assets/postImages/JenkinsConcept/bored.jpg)
+![bored](/assets/postImages/common/bored.jpg)
 
 여러 프로젝트를 진행하면서 배포를 할 때마다 많이 애를 먹었다. 프로젝트를 수정하고 변경사항들을 배포 서버에 적용하기까지 개발하는 시간 못지 않게 많은 시간을 들였던 것 같다.
 
