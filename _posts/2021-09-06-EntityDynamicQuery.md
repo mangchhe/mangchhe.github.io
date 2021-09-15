@@ -1,5 +1,5 @@
 ---
-title: "【JPA】 @DynamicInsert, @DynamicUpdate 실습"
+title: 【JPA】 @DynamicInsert, @DynamicUpdate 실습
 decription: "@DynamicInsert, @DynamicUpdate를 사용해보고 성능을 비교해보자"
 categories:
  - JPA
