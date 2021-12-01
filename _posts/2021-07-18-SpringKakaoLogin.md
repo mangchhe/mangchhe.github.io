@@ -1,8 +1,8 @@
 ---
-title: 【Spring Boot】 REST API를 이용한 카카오 로그인 구현
+title: "[Spring Boot] REST API를 이용한 카카오 로그인 구현"
 decription:
 categories:
- - Spring
+ - SpringBoot
 tags:
  - SpringBoot
  - Social
@@ -12,7 +12,9 @@ tags:
 
 > Spring Boot + JPA + JWT를 이용하여 백엔드에서 카카오 로그인을 시키기 위해서 어떠한 동작이 이루어지는지 알아보자
 
-> ## 개요
+# 개요
+
+<hr>
 
 현재 진행중인 프로젝트에서 프론트(리액트), 백엔드(스프링)으로 나누어 소셜 로그인을 개발을 진행하였다. API 서버 역할을 하는 백엔드 입장에서 뷰를 보여줄 수 없었기 때문에 프론트에서 필요한 최소 데이터만 받아 로그인을 시키는 아래와 같은 방식으로 로직을 구성하였다.
 
@@ -22,7 +24,9 @@ tags:
 
 사이트 → [링크](https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api)
 
-> ## 인가코드 (프론트)
+# 인가코드 (프론트)
+
+<hr>
 
 프론트가 받아서 백엔드에 전달해야 할 인가코드이다. 아래 사진을 보자.
 
@@ -35,7 +39,9 @@ tags:
 
 요청 파라미터 필요한 데이터는 카카오 개발자 사이트로 들어가 애플리케이션을 하나 만들고 메인에 있는 REST API키와 네비게이션 바를 눌러 카카오 로그인을 클릭하게 되면 오른쪽 사진과 같이 리다이렉션 URL를 작성하여 얻을 수 있다. 리다이렉션 URL을 작성하기 전에 꼭 활성화 설정을 ON 해주셔야 한다.
 
-> ## Access Token (백엔드)
+# Access Token (백엔드)
+
+<hr>
 
 프론트에서 받은 인가코드를 이용하여 우리는 Access Token을 얻어야 한다.
 
@@ -47,7 +53,7 @@ tags:
 
 client_secret을 추가하여 보안을 강화하고 싶으면 카카오 로그인 - 보안에 들어가면 위 사진과 페이지가 나타나게 되고 코드를 발급받으면 된다.
 
-> #### 구현 소스
+## 구현 소스
 
 ``` java
 public String getAccessTokenByCode(String code) {
@@ -77,7 +83,9 @@ public String getAccessTokenByCode(String code) {
 }
 ```
 
-> ## 사용자 정보 (백엔드)
+# 사용자 정보 (백엔드)
+
+<hr>
 
 인가코드로 요청해서 얻게된 access_token으로 사용자 정보를 얻을 수 있다.
 
@@ -89,7 +97,7 @@ access_token을 담아 요청하게 되면 허가된 사용자 정보를 받게�
 
 받을 데이터 권한을 결정하기 위해서는 카카오 로그인 - 동의 항목에 들어가면 위 사진이 뜨는데 필요한 데이터의 상태를 동의로 필수 동의, 선택 동의로 바꿔주면 된다.
 
-> #### 구현 소스
+## 구현 소스
 
 ``` java
 public String getUserInfoByAccessToken(String accessToken) {
@@ -108,11 +116,13 @@ public String getUserInfoByAccessToken(String accessToken) {
 }
 ```
 
-> ## 회원가입 & JWT 토큰 생성 (백엔드)
+# 회원가입 & JWT 토큰 생성 (백엔드)
+
+<hr>
 
 이제 얻게된 사용자 정보들을 토대로 회원가입을 진행해야 한다. 이유는 회원가입을 시키지 않는다면 다음에 접속할 때에 소셜 로그인을 하여 했던 작업들이 전부 날아가기 때문이다. 만약에 데이터를 유지할 필요가 없다면 그냥 JWT token만 생성해서 전달해도 무방하다.
 
-> #### 구현 소스
+## 구현 소스
 
 ``` java
 @Service
@@ -205,6 +215,8 @@ public class SocialController {
 
 요청을 받는 컨트롤러 부분이며 유저 정보를 추출하여 서비스에 등록된 회원이면 JWT 토큰만 생성하여 헤더에 담아 전달하고 회원이 아니라면 회원가입을 진행한다.
 
-> ## 결론
+# 결론
+
+<hr>
 
 이번 카카오톡 소셜 로그인을 진행하면서 REST API를 활용해 볼 수 있었고 다른 서비스의 소셜 로그인 또는 developer에서 제공하는 여러 API들에 대해서 이전보다 쉽게 접근할 수 있게 되었다.

@@ -1,5 +1,5 @@
 ---
-title: Spring Cloud Netflix Eureka에 대해서 실습을 통해 알아보자
+title: "[Spring Cloud] Netflix Eureka에 대해서 실습을 통해 알아보자"
 decription: 서비스들이 동적으로 확장, 축소가 이루어지는 것을 관리하는 위한 서버인 Eureka(Service Discovery Server)에 대해서 배워보자
 categories:
  - SpringCloud
@@ -12,7 +12,9 @@ tags:
 
 > 서비스들이 동적으로 확장, 축소가 이루어지는 것을 관리하는 위한 서버인 Eureka(Service Discovery Server)에 대해서 배워보자
 
-> ## Spring Cloud Netflix Eureka란?
+# Spring Cloud Netflix Eureka란?
+
+<hr>
 
 MSA는 여러 개의 서비스를 한곳에 모아 패키징하여 관리하는 방식이 아닌 각 서비스들을 독립적으로 관리하고 유기적으로 조립시킬 수 있는 방식이다
 
@@ -30,15 +32,17 @@ MSA는 여러 개의 서비스를 한곳에 모아 패키징하여 관리하는 
 4. `API Gateway`는 정보를 받아 해당 서비스에 요청
 5. 클라이언트에게 응답
 
-> ## Spring Cloud Netflix Eureka 실습
+# Spring Cloud Netflix Eureka 실습
+
+<hr>
 
 실제 코드를 작성을 통해 `Eureka`에 대해서 알아보자
 
 **예제 소스 파일** : [Github](https://github.com/mangchhe/WEB_Cloud_Tutorial)
 
-> ### Eureka Server
+## Eureka Server
 
-> #### 개발 환경
+### 개발 환경
 
 - SpringBoot 2.4.4
 - Maven
@@ -72,7 +76,7 @@ MSA는 여러 개의 서비스를 한곳에 모아 패키징하여 관리하는 
 프로젝트 생성시에 Eureka Server를 선택하여 추가해주었다면 pom.xml 파일안에 위와 같이 의존성이 등록되어 있는 것을 확인할 수 있다
 만약에 없다면 수동으로 추가해주면 된다
 
-> #### 설정 파일 수정(application.yml)
+### 설정 파일 수정(application.yml)
 
 ``` yml
 server:
@@ -92,7 +96,7 @@ eureka:
 `register-with-eureka`과 `fetch-registry`를 false로 설정해주어야 한다
 이유는 eureka 라이브러리가 포함된채 어플리케이션을 가동시키면 위에 두 설정이 true로 되서 클라이언트 역할로 전화부에 등록하듯이 자신의 정보를 자신에게 등록하는 현상이되어 의미 없는 작업이다
 
-> #### Eureka 서버 실행
+### Eureka 서버 실행
 
 ``` java
 @SpringBootApplication
@@ -114,23 +118,23 @@ public class EcommerceApplication {
 이 대시보드는 유레카 서버가 제공하는 기본적인 정보들을 담고 있다
 서버가 언제 가동이 되었는지, 나에게 등록된 인스턴스(MicroSerivce)들에 대한 정보 등이 있다
 
-> ### Eureka client
+## Eureka client
 
-> #### 개발 환경
+### 개발 환경
 
 - SpringBoot 2.4.4
 - Maven
 - Java 11
 - SpringCloud 2020.0.2
 
-> #### 의존성(dependency)
+### 의존성(dependency)
 
 ![EurekaClient](/assets/postImages/SpringCloudNetflixEureka/EurekaClient.PNG)
 
 이번에는 서비스 기능을 구현하기 위해서 `Eureka` 외에도 추가적인 의존성을 추가해주었다면
 아까는 `Eureka Server`를 추가해주었다면 이번에는 `Eureka Discovery Client`를 추가해주도록 하자
 
-> #### 설정 파일 수정(application.yml)
+### 설정 파일 수정(application.yml)
 
 ```
 server:
@@ -151,7 +155,7 @@ eureka:
 해당 서비스의 포트와 고유네임, 아까와는 다르게 `register-with-eureka`, `fetch-registry`를 true로 설정한다
 추가로 `service-url.defaultZone`를 추가하여 `eureka server`의 url를 작성해주면 된다
 
-> #### Eureka 클라이언트 실행
+### Eureka 클라이언트 실행
 
 ``` java
 @SpringBootApplication
@@ -175,7 +179,7 @@ public class UserServiceApplication {
 
 위 사진과 같이 해당 서비스가 서버에 등록되었음을 확인할 수 있다
 
-> #### 서비스 여러 개 등록 - 1
+### 서비스 여러 개 등록 - 1
 
 서비스를 하나만 키는 것이 여러 개를 켜보자 이때 yml 파일에 들어가서 포트를 하드코딩하는 것이 아니라 어플리케이션 실행시 `-Dserver.port=8002`와 같은 옵션을 주어 동적으로 변경하는 것이 바람직하다
 
@@ -197,7 +201,7 @@ java -jar <생성된 jar파일명> --server.port=8003
 
 위 사진처럼 세 개의 서비스가 등록된 것을 확인할 수 있다
 
-> #### 서비스 여러 개 등록 - 2
+### 서비스 여러 개 등록 - 2
 
 위와 같이 하게 되면 매번 옵션을 주어 포트를 임의로 지정해줘야하는 것은 불편한 작업이 아닐 수가 없다
 

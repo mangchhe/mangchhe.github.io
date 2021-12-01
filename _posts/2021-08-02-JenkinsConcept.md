@@ -1,5 +1,5 @@
 ---
-title: 【Spring Boot】 Jenkins와 Github를 연동하여 빌드&배포 적용하기
+title: "[DevOps] Jenkins와 Github를 연동하여 빌드&배포 적용하기"
 decription:
 categories:
  - DevOps
@@ -12,7 +12,9 @@ tags:
 
 > Jenkins이 무엇인지, 설치 방법, Github 연동 방법, webhook을 이용해 push 했을 때 자동으로 감지하여 자동으로 빌드&배포 하는 방법을 알아보고 배포 하는 과정 속에서 마주쳤던 EC2 메모리 부족 현상, Java verison conflict 문제들에 대해서 추가로 해결해보자
 
-> ## Jenkins 사용 이유
+# Jenkins 사용 이유
+
+<hr>
 
 ![bored](/assets/postImages/common/bored.jpg)
 
@@ -64,23 +66,27 @@ sh bepo.sh
 
 그래서 이번에 큰맘 먹고 평소에 줄곧 들어왔던 Jenkins를 한번 써보자하여 시작하게 되었다.
 
-> ## Jenkins란?
+# Jenkins란?
+
+<hr>
 
 소프트웨어 개발 시에 CI/CD를 제공하는 소프트웨어이다.
 
-> #### CI(Continuous Integration)
+## CI(Continuous Integration)
 
 지속적인 통합을 의미한다. 어플리케이션의 새로운 코드 변경 사항이 정기적으로 빌드 및 테스트 되어 공유 repository로 통합되는 것이다. 보통 어플리케이션 하나를 개발하기 위해서는 다수의 개발자들이 모여서 브랜치를 나누어서 기능 별로 개발하게되고 commit하게 되는데 이러한 자동 빌드 및 테스트 툴이 없다면 빌드, 테스트, 병합을 매 기능마다 수동으로 해줘야하기 때문에 상당히 번거롭게 될 것이다.
 
-> #### CD(Continuous Deployment)
+## CD(Continuous Deployment)
 
 지속적인 배포를 의미한다. 앞서 말했던 CI, 개발한 내용들이 빌드와 테스트를 거쳐 공유 repository로 통합이 되게 되면 프로덕션으로 즉, 배포(=운영) 서버로 바로 반영되어 제공되어지는 것을 말한다.
 
-> #### 결론
+## 결론
 
 Jenkins를 이용하면 자동으로 빌드 -> 테스트를 거쳐 공유 repository로 통합되게 되고 통합된 내용들이 자동으로 배포(=운영) 서버로 반영되어 서비스를 제공하게 도와주는 툴이다.
 
-> ## Jenkins 설치 방법
+# Jenkins 설치 방법
+
+<hr>
 
 해당 내용은 AWS EC2, Ubuntu 18.04 LTS에서 진행된다.
 
@@ -164,7 +170,9 @@ netstat -nltp # 8080 -> 9090 port 변경 확인
 
 jenkins url을 설정한 후 Start using Jenkins를 누르고 설치를 완료한다.
 
-> ## Jenkins 설정 전 준비사항
+# Jenkins 설정 전 준비사항
+
+<hr>
 
 jenkins와 연동할 github 저장소와 Spring Boot를 이용해 간단한 API 예제를 준비한다.
 
@@ -206,7 +214,9 @@ free # Mem 말고 Swap 부분이 추가된 것을 볼 수 있다.
 
 만약에 자신이 EC2 프리 티어를 쓰고 있다면 위 방식으로 HDD 일정 부분을 RAM처럼 사용하게 해서 메모리를 늘려주어야 한다. 이렇게 하지 않는다면 jenkins에서 빌드를 누르면 cpu가 100%까지 올라가 먹통이 되는 것을 볼 수 있다. 나는 안 그럴 거라고 생각한다면 이 설정을 하지 않고 한번 경험해보는 것도 추천한다.
 
-> ## Jenkins 프로젝트 생성&빌드
+# Jenkins 프로젝트 생성&빌드
+
+<hr>
 
 ![jenkinsConfig1](/assets/postImages/JenkinsConcept/jenkinsConfig1.JPG)
 
@@ -256,7 +266,9 @@ Press <enter> to keep the current choice[*], or type selection number:
 
 설정 후에 다시 Build Now를 클릭해 재빌드하게 되면 성공적으로 빌드가 되는 것을 확인할 수 있다.
 
-> ## Github 변경 감지 설정
+# Github 변경 감지 설정
+
+<hr>
 
 Webhook을 설정해서 원격 git 저장소에 변경사항이 생겼을 경우 자동으로 빌드되게 만들어보자
 
@@ -287,7 +299,9 @@ git push
 
 예제를 수정해서 원격 저장소로 push를 하게 되면 위 사진과 같이 push를 감지해서 설정해놓았던 내용대로 재빌드&배포를 실행하는 것을 확인할 수 있다.
 
-> ## 빌드 이후 배포 설정
+# 빌드 이후 배포 설정
+
+<hr>
 
 빌드는 성공적으로 동작하니 이제 배포를 해보도록 하자
 
@@ -348,7 +362,9 @@ push를 감지하고 방금 설정한 배포 스크립트가 시작되어 자동
 
 이렇게 자동 배포가 된 내용들은 변경 사항에 들어가서 쉽게 확인할 수도 있다.
 
-> ## Reference
+# Reference
+
+<hr>
 
 - [https://hbot.tistory.com/40](https://hbot.tistory.com/40)
 - [https://tape22.tistory.com/22](https://tape22.tistory.com/22)

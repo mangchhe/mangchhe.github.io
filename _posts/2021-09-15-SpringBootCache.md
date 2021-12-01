@@ -1,5 +1,5 @@
 ---
-title: 【Spring Boot】 @Cacheable, @CachePut, @CacheEvict 캐시 사용기
+title: "[Spring Boot] @Cacheable, @CachePut, @CacheEvict 캐시 사용기"
 decription: spring-boot-starter-cache를 이용해 캐시 사용법을 알아보고 locust로 실제 성능이 향상 되었는지 확인해보자
 categories:
  - SpringBoot
@@ -10,7 +10,9 @@ tags:
 
 > spring-boot-starter-cache를 이용해 캐시 사용법을 알아보고 locust로 실제 성능이 향상 되었는지 확인해보자
 
-> ## 캐시(Cache)란?
+# 캐시(Cache)란?
+
+<hr>
 
 **자주 사용되는 데이터를 저장하는 공간**을 의미한다. 이것을 왜 사용하느냐? 자주 사용되는 데이터를 매번 요청 때마다 생성하여 응답하는 것보다는 생성된 데이터를 저장해놓고 똑같은 요청이 왔을 때 로직을 거치지 않고 데이터를 반환해주는 것이 서버에 리소스 사용을 줄일 수 있으므로 성능을 향상시킬 수 있다.
 
@@ -35,11 +37,13 @@ tags:
 
 참고로 spring-boot-starter에서 제공하는 캐시는 서버를 끌 때 데이터가 날아가기 때문에 유지하고 싶다면 redis와 같은 외부 저장소를 이용해야 한다.
 
-> ## 실습
+# 실습
+
+<hr>
 
 내가 프로젝트에서 활용했던 사례를 토대로 실습을 하려고 한다. 시나리오는 사용자 프로필을 가져와야 하는데 프로필을 가져오는 로직 처리가 한 번에 여러 쿼리문을 요구하고 빈번하게 요청을 해서 한 번 만들어진 프로필 데이터를 캐싱하여 사용하는 것이다.
 
-> ### 의존성(Dependency)
+## 의존성(Dependency)
 
 ``` yml
 dependencies {
@@ -47,7 +51,7 @@ dependencies {
 }
 ```
 
-> ### @EnableCaching
+## @EnableCaching
 
 ``` java
 @SpringBootApplication
@@ -59,7 +63,7 @@ public class CacheApplication {
 }
 ```
 
-> ### @Cacheable
+## @Cacheable
 
 ``` java
 @Cacheable(value = "userDetail", key = "#userId")
@@ -75,7 +79,7 @@ public UserDetailsDto findUserDetails(Long userId) {
 }
 ```
 
-> ### @CachePut
+## @CachePut
 
 ``` java
 @CachePut(value = "userDetail", key = "#updateUserDto.id")
@@ -89,7 +93,7 @@ public UserDetailsDto updateProfile(UpdateUserDto updateUserDto) {
 }
 ```
 
-> ### @CacheEvict
+## @CacheEvict
 
 ``` java
 @CacheEvict(value = "userDetail", key = "#userId")
@@ -98,7 +102,7 @@ public void deleteUser(Long userId) {
 }
 ```
 
-> ### 설명
+## 설명
 
 `@Cacheable`, `@CachePut`, `@CacheEvict` 를 사용하게 되면 쉽게 캐시를 이용할 수 있다.
 
@@ -116,9 +120,11 @@ public void deleteUser(Long userId) {
 
 `key::value : 캐싱 데이터`의 형태가 되어 예제에서는 `userDetail::<userId>` : `UserDetailsDto` 값이 저장되는 것이다.
 
-> ## 결과
+# 결과
 
-> ### logging
+<hr>
+
+## logging
 
 ``` java
 @GetMapping("/{userId}")
@@ -136,7 +142,7 @@ public ResponseEntity<UserDetailsDto> getUserDetails(@PathVariable Long userId) 
 
 캐시가 적용되지 않았을 때는 꾸준히 20ms 정도의 latency가 발생하는 것을 확인할 수 있고 적용되었을 때는 첫 번째 캐싱하기 전 요청 이외에는 평균 2ms의 latency가 발생하는 것을 확인할 수 있다.
 
-> ### locust
+## locust
 
 ``` python
 from locust import HttpUser, task
@@ -154,6 +160,8 @@ class PerfomanceTest(HttpUser):
 
 500명이 동시 접속하여 접근하려고 했을 때의 차이이다. 위가 캐싱 적용 전 아래가 캐싱 적용 후이다. 응답 평균 시간과 동시 초당 접속자 수를 비교해보면 두 배 가까이 차이 나는 것을 확인할 수 있는 것으로 보았을 때 성능이 확실히 개선된 것을 확인할 수 있다.
 
-> ## Reference
+# Reference
+
+<hr>
 
 - [https://www.baeldung.com/spring-cache-tutorial](https://www.baeldung.com/spring-cache-tutorial)

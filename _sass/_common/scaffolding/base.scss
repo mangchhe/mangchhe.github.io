@@ -65,21 +65,6 @@ img {
   height: auto;
 }
 
-
-hr {
-  margin: 40px 0;
-  height: 3px;
-  border: none;
-  background-color: $gray-lighter;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    white,
-    white 4px,
-    transparent 4px,
-    transparent 8px
-  );
-}
-
 blockquote {
   padding: 0 15px;
   color: $grey-dim;
@@ -96,4 +81,35 @@ dt { font-weight: $font-weight-bolder; }
 dd {
   margin: 0;
   padding: 0;
+}
+
+
+// custom
+
+h1 {
+  margin: 40px 0 0 0;
+  color: #fc6423;
+}
+
+h2, h3, h4, h5 {
+  color: $black-light;
+}
+
+hr {
+  margin: 10px 0px 20px 0px;
+  height: 1px;
+  border: none;
+  background-color: $grey-dark;
+}
+
+strong {
+  color: #f8743c;
+}
+
+blockquote > p {
+  margin: 0;
+}
+
+ul {
+  padding: 0px 0px 0px 25px;
 }

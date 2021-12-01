@@ -1,5 +1,5 @@
 ---
-title: API Gateway Service란?
+title: "[Spring Cloud] API Gateway Service란?"
 decription: API Gateway가 왜 필요한지, 무슨 역할을 하는지 알아보자
 categories:
  - SpringCloud
@@ -11,11 +11,15 @@ tags:
 
 > API Gateway가 왜 필요한지, 무슨 역할을 하는지 알아보자
 
-> ## API Gateway Service란?
+# API Gateway Service란?
+
+<hr>
 
 사용자가 설정한 라우팅 설정에 따라서  End-Point로 클라이언트 대신에 요청하고 응답하면 다시 사용자에게 전달해주는 Proxy 역할을 해준다
 
-> ## API Gateway가 왜 필요한가?
+# API Gateway가 왜 필요한가?
+
+<hr>
 
 ![apiGateway_architecture](/assets/postImages/ApiGatewayConcept/apiGateway_architecture.png)
 
@@ -31,7 +35,9 @@ tags:
 
 이렇게 클라이언트 사이드에 앱들은 각 microservice들을 상대할 필요 없이 API Gateway만 상대하면 되기 때문에 의사 전달이 더 수월해질 수 있다
 
-> ## API Gateway의 특징
+# API Gateway의 특징
+
+<hr>
 
 - 인증 및 권한 부여
   - microservice마다 인증과 권한에 대해 구현하는 것이 아닌 단일 작업을 할 수 있다
@@ -45,6 +51,8 @@ tags:
 - IP 허용 목록에 추가
   - 일종의 방화벽 역할을 할 수가 있다
 
-> ## 참고
+# Reference
+
+<hr>
 
 [이미지](https://docs.microsoft.com/ko-kr/dotnet/architecture/microservices/architect-microservice-container-applications/direct-client-to-microservice-communication-versus-the-api-gateway-pattern)

@@ -1,26 +1,28 @@
 ---
-title: JVM(Java Virtual Machine)이란?
+title: "[Java] JVM(Java Virtual Machine)이란?"
 decription: 자바 가상머신인 JVM이 무엇인지, 하는 역할과 어떻게 구성되어있는지 알아보자
 categories:
- - JAVA
+ - Java
 tags:
- - JAVA
+ - Java
  - JVM
 ---
 
 > 자바 가상머신인 JVM이 무엇인지, 하는 역할과 어떻게 구성되어있는지 알아보자
 
-> ## JVM(Java Virtual Machine)이란?
+# JVM(Java Virtual Machine)이란?
+
+<hr>
 
 **자바를 실행하기 위한 기계**라고 말할 수 있다 그 말은 자바로 작성된 어플리케이션은 모두 JVM에서만 실행 가능하기 때문에 JVM이 없어서는 안되는 존재이다
 
-> ### JVM이 해주는 역할?
+## JVM이 해주는 역할?
 
 - Java 어플리케이션을 클래스로더로 읽어들여 자바 API를 함께 실행
 - Java와 OS 사이의 중개자 역할, OS에 종속적이지 않고 JVM이 깔려있다면 어디서든 실행 가능
 - 메모리 관리, Garbage Collection 수행
 
-> ### JVM 구성
+## JVM 구성
 
 ![JVM](/assets/postImages/JVMConcept/JVM.PNG)
 

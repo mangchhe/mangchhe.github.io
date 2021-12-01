@@ -196,25 +196,31 @@ $(document).ready(function () {
       $brand.size() > 0 && sequence.push({
         e: $brand,
         p: {opacity: 1},
-        o: {duration: 200}
+        o: {duration: 30}
       });
 
-      NexT.utils.isMist() && hasElement([$logoLineTop, $logoLineBottom]) &&
+      // only Mist schema 해제
+
+      hasElement([$logoLineTop, $logoLineBottom]) &&
       sequence.push(
         getMistLineSettings($logoLineTop, '100%'),
         getMistLineSettings($logoLineBottom, '-100%')
       );
 
+      // 제목
+      // default duration : 200
       hasElement($title) && sequence.push({
         e: $title,
         p: {opacity: 1, top: 0},
-        o: { duration: 200 }
+        o: { duration: 30 }
       });
 
+      // 부제목
+      // default duration : 200
       hasElement($subtitle) && sequence.push({
         e: $subtitle,
         p: {opacity: 1, top: 0},
-        o: {duration: 200}
+        o: {duration: 30}
       });
 
       if (sequence.length > 0) {
@@ -226,13 +232,13 @@ $(document).ready(function () {
         integrator.next();
       }
 
-
+      // default duration : 500
       function getMistLineSettings (element, translateX) {
         return {
           e: $(element),
           p: {translateX: translateX},
           o: {
-            duration: 500,
+            duration: 30,
             sequenceQueue: false
           }
         };
@@ -251,10 +257,12 @@ $(document).ready(function () {
       }
     },
 
+
+    // default duration : 500
     menu: function (integrator) {
       $('.menu-item').velocity('transition.slideDownIn', {
         display: null,
-        duration: 200,
+        duration: 30,
         complete: function () {
           integrator.next();
         }

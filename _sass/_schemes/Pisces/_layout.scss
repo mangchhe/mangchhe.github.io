@@ -127,3 +127,28 @@
     padding-right: 260px;
   }
 }
+
+// custom
+
+.logo-line-before,
+.logo-line-after {
+  display: block;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 75%;
+
+  @include mobile() { display: none; }
+
+  i {
+    position: relative;
+    display: block;
+    height: 2px;
+    background: $black-deep;
+    @include mobile() { height: 3px; }
+  }
+}
+
+.use-motion {
+  .logo-line-before i { left: -100%; }
+  .logo-line-after i { right: -100%; }
+}

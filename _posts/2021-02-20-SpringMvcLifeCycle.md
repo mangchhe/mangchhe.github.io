@@ -1,16 +1,18 @@
 ---
-title: Spring MVC Framework 동작 과정
+title: "[Spring Boot] Spring MVC Framework 동작 과정"
 decription: 평소에 사용하는 Spring Framework가 요청을 받고 뷰를 보여주기까지 어떤 과정을 거치는지에 대해서 알아보자
 categories:
- - Spring
+ - SpringBoot
 tags:
- - Spring
+ - SpringBoot
  - MVC
 ---
 
 > 평소에 사용하는 Spring Framework가 요청을 받고 뷰를 보여주기까지 어떤 과정을 거치는지에 대해서 알아보자
 
-> ## Spring MVC 동작 과정
+# Spring MVC 동작 과정
+
+<hr>
 
 ![springMvcLifeCycle](/assets/postImages/SpringMvcLifeCycle/springMvcLifeCycle.PNG)
 
@@ -26,7 +28,7 @@ tags:
 10. 얻어진 View를 `DispacherServlet`에 전달
 11. 최종 결과물 Client에게 전달
 
-> ### Filter와 Interceptor 추가
+## Filter와 Interceptor 추가
 
 ![springMvcLifeCycle2](/assets/postImages/SpringMvcLifeCycle/springMvcLifeCycle2.PNG)
 

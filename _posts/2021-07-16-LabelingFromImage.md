@@ -1,5 +1,5 @@
 ---
-title: 【영상 처리】 파이썬으로 원하는 객체 라벨링하기
+title: "[영상 처리] 파이썬으로 원하는 객체 라벨링하기"
 decription:
 categories:
  - ImageProcess
@@ -12,7 +12,9 @@ tags:
 
 > 이전 포스터에서 모폴로지 연산과 inRange() 함수를 통해 색상을 추출하는 방법에 대해서 알아보았고 이번 포스터는 찾으려고 하는 색상에 대해서 라벨링(Labeling)를 하는 방법에 대해서 알아보자.
 
-> ## 상황
+# 상황
+
+<hr>
 
 ![label_situation](/assets/postImages/LabelingFromImage/label_situation.JPG)
 
@@ -20,17 +22,21 @@ tags:
 
 이때 영상처리 기법 **라벨링(Labeling)** 을 사용하면 위 내용들을 한번에 해결할 수 있다.
 
-> ## 라벨링(Labeling)이란?
+# 라벨링(Labeling)이란?
+
+<hr>
 
 이미지 내에서 주위 같은 픽셀값들을 가지는 픽셀들을 그룹화하여 그룹별로 번호를 매긴 것이다.
 
-> ## 라벨링 과정 설명
+# 라벨링 과정 설명
+
+<hr>
 
 1. image grayscale
 2. image 이진화(binarization)
 3. grassfire algorithm
 
-> #### image grayscale
+## image grayscale
 
 컬러 이미지를 흑백 이미지로 변환해야 한다. 이유는 간단하다. RGB라고 한다면 색상이 RGB(255(R) * 255(G) * 255(B))개로 너무 다양해서 시간이 오래걸리고 다양한만큼 비슷한 색상을 걸러내기 위해서 if(최저색상 < 색상 < 최대색상)과 같은 조건문이 필요로 한다.
 쉽게 말해서 **컬러 이미지 -> 흑백 이미지 지 변환 작업을 해야하고 하는 이유는 컬러 이미지를 이용하면 시간이 오래 걸리고 비효율적이기 때문이다.**
@@ -43,7 +49,7 @@ src = cv2.imread('파일명.jpg', cv2.IMREAD_GRAYSCALE)
 gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
 ```
 
-> #### image 이진화(binarization)
+## image 이진화(binarization)
 
 0 ~ 255의 픽셀값을 가지는 흑백 이미지를 255(백)과 0(흑) 픽셀값만 가지는 이미지로 변환하는 것을 말한다.
 임계값을 정하여 임계값 보다 낮은 값을 가지면 흑, 임계값 보다 높은 값을 가지면 백으로 만든다.
@@ -58,7 +64,7 @@ gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
 _, src_bin = cv2.threshold(src, 0, 255, cv2.THRESH_OTSU)
 ```
 
-> #### grassfire algorithm
+## grassfire algorithm
 
 영어를 그대로 해석하면 잔디 + 불 알고리즘이다. 알고리즘이 잔디에 불을 붙인 형태로 로직이 처리되기 때문에 붙여진 이름이다. 그러면 이 알고리즘이 무엇인가?
 
@@ -80,7 +86,9 @@ _, src_bin = cv2.threshold(src, 0, 255, cv2.THRESH_OTSU)
 cnt, labels, stats, centroids = cv2.connectedComponentsWithStats(src_bin)
 ```
 
-> ## 라벨링 결과
+# 라벨링 결과
+
+<hr>
 
 ![label_result](/assets/postImages/LabelingFromImage/label_result.JPG)
 
@@ -107,7 +115,9 @@ cv2.imshow('dst', dst)
 cv2.waitKey(0)
 ```
 
-> ## 라벨링 응용
+# 라벨링 응용
+
+<hr>
 
 원하는 색상만 객체 라벨링을 이용해보자
 

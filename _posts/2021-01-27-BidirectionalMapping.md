@@ -1,5 +1,5 @@
 ---
-title: 【JPA】 다대일 양방향 연관관계 주인 설정에 대해서 학습하기
+title: "[JPA] 다대일 양방향 연관관계 주인 설정에 대해서 학습하기"
 decription: 다대일 양방향 연관관계의 주인을 어떻게 설정하는지 사용할 때 어떤 부분에 대해서 조심해야되는지에 대해서 배워보자
 categories:
  - JPA
@@ -11,7 +11,9 @@ tags:
 
 > 다대일 양방향 관계에서 연관관계의 주인을 어떻게 설정하는지 사용할 때 어떤 부분에 대해서 조심해야되는지에 대해서 배워보자
 
-> ## 개요
+# 개요
+
+<hr>
 
 ![mappedby](/assets/postImages/BidirectionalMapping/mappedby.png)
 
@@ -19,7 +21,9 @@ tags:
 
 **예제 소스 파일** : [Github](https://github.com/mangchhe/WEB_JPA_Tutorial)
 
-> ## 연관관계의 주인을 설정하는 이유
+# 연관관계의 주인을 설정하는 이유
+
+<hr>
 
 `@OneToMany`을 설정했는데 왜 `mappedBy`라는 속성을 이용하여 연관관계 주인을 정해주어야 할까?
 
@@ -32,7 +36,9 @@ tags:
 
 서로 다른 두 객체를 관리하기에는 부담이 두배가 되기 때문에 둘 중 하나를 외래키, 즉 연관관계 주인으로 정해야 할것이다
 
-> ## 연관관계의 주인 설정하는 방법
+# 연관관계의 주인 설정하는 방법
+
+<hr>
 
 ``` java
 @Entity
@@ -64,9 +70,11 @@ public class Board {
 
 > 이때 Entity에 @Setter 사용은 지양하는 것이 왠만하면 변경에 있어서 의미있는 이름을 갖는 사용자 메소드를 선언하여 사용하는 것이 좋다 편의상 나는 @Setter 어노테이션을 이용하여 진행하겠습니다
 
-> ## 사용 시 주의사항
+# 사용 시 주의사항
 
-> ### 문제 발생
+<hr>
+
+## 문제 발생
 
 ``` java
 public class Board {
@@ -116,7 +124,7 @@ class BoardTest {
 
 이유는 연관관계의 주인이 아닌 곳에서 추가하려고 했기 외래키를 조작하려고 했기 때문이다
 
-> ### 문제 해결
+## 문제 해결
 
 **연관관계의 주인만이 외래키를 관리할 수 있고 연관관계의 주인이 아니면 읽기만 할 수 있다**
 
@@ -144,7 +152,7 @@ public class Board {
 
 데이터베이스를 열어 확인해보면 제대로 적용이 된것을 확인할 수 있을 것이다
 
-> ### 의문점
+## 의문점
 
 ``` java
 public class Board {
@@ -171,6 +179,8 @@ public class Board {
 
 끝까지 읽어주셔서 감사합니다.
 
-> ## Reference
+# Reference
+
+<hr>
 
 [자바 ORM 표준 JPA 프로그래밍, 김영한 저자](https://book.naver.com/bookdb/book_detail.nhn?bid=9252528)

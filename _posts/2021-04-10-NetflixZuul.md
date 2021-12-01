@@ -1,5 +1,5 @@
 ---
-title: 【Spring Cloud】 Netflix Zuul에 대해서 실습을 통해 알아보자
+title: "[Spring Cloud] Netflix Zuul에 대해서 실습을 통해 알아보자"
 decription: 서비스들을 찾아가기 위해서 거치게 관문과 같은 역할을 하는 Zuul API Gateway에 대해서 알아보자
 categories:
  - SpringCloud
@@ -12,7 +12,9 @@ tags:
 
 > 서비스들을 찾아가기 위해서 거치게 관문과 같은 역할을 하는 Zuul API Gateway에 대해서 알아보자
 
-> ## Zuul이란?
+# Zuul이란?
+
+<hr>
 
 - API Gateway → [클릭](https://mangchhe.github.io/springcloud/2021/04/08/ApiGatewayConcept/)
 - MSA에서 여러 클라이언트 요청을 적절한 서비스로 보내기 위한 Proxy 역할을 한다
@@ -25,26 +27,28 @@ netflix-zuul이 maintenance 모드가 되어 더이상 개발 및 패치가 이�
 
 위 사진을 보면 Zuul을 대체품으로 Spring Cloud Gateway를 사용하는 것을 추천한다
 
-> ## 실습
+# 실습
+
+<hr>
 
 ![zuul_ex](/assets/postImages/NetflixZuul/zuul_ex.PNG)
 
 두 개의 서비스를 만들고 Zuul을 이용하여 요청이 왔을때 각 서비스에 보내는 방법에 대해서 배우고 필터 등록까지 해보자
 
-> ### 개발 환경
+## 개발 환경
 
 - SpringBoot 2.3.9
   - Zuul은 2.4부터 지원하지 않기때문에 2.4버전 아래 버전을 골라 선택하면된다
 - Maven
 - Java 11
 
-> ### FirstSerivce&SecondService
+## FirstSerivce&SecondService
 
-> #### 의존성(dependency)
+### 의존성(dependency)
 
 ![zuul_service](/assets/postImages/NetflixZuul/zuul_service.PNG)
 
-> #### application.yml
+### application.yml
 
 ``` yml
 server:
@@ -74,7 +78,7 @@ eureka:
     register-with-eureka: false
 ```
 
-> #### Controller
+### Controller
 
 ``` java
 @RestController
@@ -98,13 +102,13 @@ public class FirstServiceController {
 }
 ```
 
-> ### ZuulService
+## ZuulService
 
-> #### 의존성(dependency)
+### 의존성(dependency)
 
 ![zuul_config](/assets/postImages/NetflixZuul/zuul_config.PNG)
 
-> #### application.yml
+### application.yml
 
 ``` yml
 server:
@@ -126,7 +130,7 @@ zuul:
 
 zuul.routes 밑에 임의에 이름으로 식별가능한 두개의 서비스명을 적고 경로(path)로 요청을 할 경우 어디로(url) 전달할 지를 결정한다
 
-> #### main
+### main
 
 ``` java
 @SpringBootApplication
@@ -141,7 +145,7 @@ public class ZuulServiceApplication {
 
 `@EnableZuulProxy`를 적어 ZuulService임을 알려주자
 
-> ### 결과
+## 결과
 
 ![zuul_firstservice](/assets/postImages/NetflixZuul/zuul_firstservice.PNG)
 ![zuul_secondservice](/assets/postImages/NetflixZuul/zuul_secondservice.PNG)
@@ -152,9 +156,11 @@ localhost:8080/second-service/wecome -> localhost:8081/second-service/welcome
 
 localhost:8080으로 요청을 하면 zuul에서 요청에 맞는 서비스를 찾아 정보를 전달하게 되고 처리 후 응답을 받아 클라이언트에게 전달하게 된다
 
-> ## 필터 적용
+# 필터 적용
 
-> ### ZuulService
+<hr>
+
+## ZuulService
 
 ``` java
 @Slf4j
@@ -203,13 +209,15 @@ ZuulFilter는 HttpServletRequest를 다루지 않기 때문에 최상위에 있�
 
 `run`을 통해 해당 필터의 동작을 구현한다
 
-> ### 결과
+## 결과
 
 ![zuulFilterLogging](/assets/postImages/NetflixZuul/zuulFilterLogging.PNG)
 
 다음과 같이 요청이 들어오면 url에 대한 정보가 기록되는 것을 확인할 수 있다
 
-> ## 참고
+# Reference
+
+<hr>
 
 [Zuul maintenance](https://spring.io/blog/2018/12/12/spring-cloud-greenwich-rc1-available-now#spring-cloud-netflix-projects-entering-maintenance-mode)
 [Zuul Reference](https://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/2.2.1.RELEASE/reference/html/)

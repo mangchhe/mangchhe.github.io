@@ -1,9 +1,10 @@
 ---
-title: ModelMapper와 MapStruct에 대해서 학습하기
+title: "[Java] ModelMapper와 MapStruct에 대해서 학습하기"
 decription: Object Mapping을 위한 ModelMapper와 MapStruct에 대해서 의존성 설정, 매핑 사용법과 차이점을 알아보자
 categories:
- - Spring
+ - Java
 tags:
+ - Java
  - SpringBoot
  - DTO
  - ModelMapper
@@ -12,13 +13,15 @@ tags:
 
 > Object Mapping을 위한 ModelMapper와 MapStruct에 대해서 의존성 설정, 매핑 사용법과 차이점을 알아보자
 
-> ## 개요
+# 개요
+
+<hr>
 
 `ModelMapper`와 `MapStruct`는 Entity를 DTO로 변환하거나 DTO를 Entity를 변환하려고 할때 사용하게 된다.
 
-**예제 소스 파일** : [Github](https://github.com/mangchhe/WEB_DTO_Tutorial)
+예제 소스 파일 : [Github](https://github.com/mangchhe/WEB_DTO_Tutorial)
 
-> ### Why?
+## Why?
 
 라이브러리를 이용하여 변환하려는 이유가 무엇일까?
 
@@ -74,9 +77,11 @@ public MemberDTO entityToDTO(){
 쉽게 말하면, `생산성`과 `유지보수`가 떨어지게 될것이다
 이러한 문제를 지금부터 배우려고 하는 라이브러리를 통하여 해결할 수 있다
 
-> ## ModelMapper
+# ModelMapper
 
-> ### 의존성 설정
+<hr>
+
+## 의존성 설정
 
 ``` java
 dependencies {
@@ -89,7 +94,7 @@ build.gradle에 다음과 같이 의존성을 추가하면 된다
 
 다른 빌드 도구 **maven을 사용하는 경우**나 **다른 버전을 사용하고 싶을 경우** [의존성](https://mvnrepository.com/artifact/org.modelmapper/modelmapper)이 경로로 들어가서 의존성 설정을 하면 된다
 
-> ### Entity & DTO
+## Entity & DTO
 
 ``` java
 public class Member {
@@ -116,7 +121,7 @@ public class MemberDTO {
 ```
 해당 코드는 `@Entity`, `@Builder`, `@Data` 가 달려있지 않지만 달려있다고 가정하고 진행하겠다
 
-> ### Bean Configuration
+## Bean Configuration
 
 ```java
 @Configuration
@@ -134,7 +139,7 @@ public class ApplicationConfig {
 
 추가적인 내용은 http://modelmapper.org/user-manual/configuration/#matching-strategies 레퍼런스를 참조하길 바란다
 
-> ### Test Code
+## Test Code
 
 ``` java
 @SpringBootTest
@@ -184,18 +189,20 @@ Assertions.assertThat(result2.getWeight()).isEqualTo(member.getWeight());
 Assertions.assertThat(result2.getCreatedDate()).isEqualTo(member.getCreatedDate());
 ```
 
-> ### 주의사항
+## 주의사항
 
-- **만들어지는 대상은 Getter 만드는 대상은 Setter가 필요하다**
-Entity가 DTO로 변환된다고 한다면 Entity에는 각 필드값을 읽을 수 있는 Getter가 존재해야되고 DTO는 필드값을 넣을 수 있는 Setter들이 존재해야 한다
+- **만들어지는 대상은 Getter 만드는 대상은 Setter가 필요하다.**
+    - Entity가 DTO로 변환된다고 한다면 Entity에는 각 필드값을 읽을 수 있는 Getter가 존재해야되고 DTO는 필드값을 넣을 수 있는 Setter들이 존재해야 한다
 - **필드 작명, Standard(Default Staragy) 기준**
-필드 이름이 같을 경우 자동으로 매핑이 이루어지지만, 필드이름이 다를 경우 매핑이 이루어지지 않는다
+    - 필드 이름이 같을 경우 자동으로 매핑이 이루어지지만, 필드이름이 다를 경우 매핑이 이루어지지 않는다
 - **연관 관계에 있는 것**
-현재 예제를 보면 Memeber가 Name과 연관 관계를 가지고 있다 이때 매핑하기 위해서 이름이 같아도 가능하지만 같은 이름이 존재할 수도 있다 그렇기에 DTO에서 firstName을 nameFirstName 으로 `참조객체이름명+필드명`로 카멜 케이스로 작성해도 된다
+    - 현재 예제를 보면 Memeber가 Name과 연관 관계를 가지고 있다 이때 매핑하기 위해서 이름이 같아도 가능하지만 같은 이름이 존재할 수도 있다 그렇기에 DTO에서 firstName을 nameFirstName 으로 `참조객체이름명+필드명`로 카멜 케이스로 작성해도 된다
 
-> ## MapStruct
+# MapStruct
 
-> ### 의존성 설정
+<hr>
+
+## 의존성 설정
 
 ``` java
 dependencies {
@@ -212,7 +219,7 @@ build.gradle에 다음과 같이 의존성을 추가하면 된다
 
 다른 빌드 도구 `maven을 사용하는 경우` [의존성](https://mapstruct.org/documentation/installation/)이 경로로 들어가서 의존성 설정을 하면 된다
 
-> ### Entity & DTO
+## Entity & DTO
 
 ``` java
 public class Member {
@@ -239,7 +246,7 @@ public class MemberDTO {
 ```
 해당 코드는 `@Entity`, `@Builder`, `@Data` 가 달려있지 않지만 달려있다고 가정하고 진행하겠다
 
-> ### Util Interface
+## Util Interface
 
 ``` java
 @Mapper
@@ -259,7 +266,7 @@ public interface MemberMapper {
 target 속성은 변환 되어야 할 필드명이고 expression은 변환 되어지는 객체에서 매핑할 필드을 불러오는 메소드를 불러주면 된다
 작성할 때 주의해야 할 점은 `java(메소드)`로 감싸주고 작성해야한다
 
-> ### Test Code
+## Test Code
 
 ``` java
 @Test
@@ -296,11 +303,10 @@ Assertions.assertThat(result2.getWeight()).isEqualTo(member.getWeight());
 Assertions.assertThat(result2.getCreatedDate()).isEqualTo(member.getCreatedDate());
 ```
 
-> ### 주의사항
+## 주의사항
 
-- **만들어지는 대상은 Getter 만드는 대상은 Setter가 필요하다**
-Entity가 DTO로 변환된다고 한다면 Entity에는 각 필드값을 읽을 수 있는 Getter가 존재해야되고 DTO는 필드값을 넣을 수 있는 Setter들이 존재해야 한다
-
+- **만들어지는 대상은 Getter 만드는 대상은 Setter가 필요하다.**
+    - Entity가 DTO로 변환된다고 한다면 Entity에는 각 필드값을 읽을 수 있는 Getter가 존재해야되고 DTO는 필드값을 넣을 수 있는 Setter들이 존재해야 한다
 - **필드명이 다를 경우나 Default 값을 주고 싶을 경우**
 
 ``` java
@@ -329,9 +335,11 @@ MemberKrDTO result3 = MemberMapper.INSTANCE.entityToMemberKrDTO(member);
 ```
 사용 방법은 위의 같이 해당 변환 메소드를 불러주면 된다
 
-> ## ModelMapper vs MapStruct
+# ModelMapper vs MapStruct
 
-> ### ModelMapper와 MapStruct의 속도 비교
+<hr>
+
+## ModelMapper와 MapStruct의 속도 비교
 
 ``` java
 //given
@@ -360,15 +368,13 @@ MemberKrDTO result3 = MemberMapper.INSTANCE.entityToMemberKrDTO(member);
 
 ModelMapper와 MapStruct를 50만번 동작하여 걸린 시간을 체크한 결과, 필자 컴퓨터 기준으로 ModelMapper는 약 3초 MapStruct는 약 0.008초로 **MapStruct가 월등히 속도가 빠른 걸**로 확인되었다
 
-> ### 속도 차이가 나는 이유
+## 속도 차이가 나는 이유
 
-- **ModelMapper**
+- ModelMapper
+    - `modelMapper.map(member, MemberDTO.class)` 매핑이 일어날 때 리플렉션이 발생한다
 
-`modelMapper.map(member, MemberDTO.class)` 매핑이 일어날 때 리플렉션이 발생한다
-
-- **MapStruct**
-
-컴파일 시점에서 어노테이션을 읽어 구현체를 만들어내기 때문에 리플렉션이 발생하지 않는다
+- MapStruct
+    - 컴파일 시점에서 어노테이션을 읽어 구현체를 만들어내기 때문에 리플렉션이 발생하지 않는다
 
 ![MapStructTest](/assets/postImages/ModelMapperAndMapStruct/MapStructTest.PNG)
 
