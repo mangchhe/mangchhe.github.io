@@ -19,7 +19,7 @@ tags:
 
 위 그림과 같이 게시글(Board)과 댓글(Comment)의 다대일 양방향 연관관계에 대해서 살펴보겠습니다.
 
-**예제 소스 파일** : [Github](https://github.com/mangchhe/WEB_JPA_Tutorial)
+예제 소스 파일 : [Github](https://github.com/mangchhe/WEB_JPA_Tutorial)
 
 # 연관관계의 주인을 설정하는 이유
 

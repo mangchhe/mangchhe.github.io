@@ -39,7 +39,7 @@ h2, h3, h4, h5, h6 { margin: 20px 0 15px; }
   }
 }
 
-p { margin: 0 0 25px 0; }
+p { margin: 0 0 10px 0; }
 
 a {
   color: $link-color;
@@ -93,6 +93,17 @@ h1 {
 
 h2, h3, h4, h5 {
   color: $black-light;
+}
+
+.post-body {
+  h1 { counter-increment: first; counter-reset: second; }
+  h1::before { content: counter(first)". "; }
+  h2 { counter-increment: second; counter-reset: third; }
+  h2::before { content: counter(first)"-"counter(second)". "; }
+  h3 { counter-increment: third; counter-reset: fourth; }
+  h3::before { content: counter(first)"-"counter(second)"-"counter(third)"."; }
+  h4 { counter-increment: fourth; counter-reset: fifth; }
+  h4::before { content: counter(first)"-"counter(second)"-"counter(third)"-"counter(fourth)"."; }
 }
 
 hr {
