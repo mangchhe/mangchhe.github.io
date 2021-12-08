@@ -14,9 +14,18 @@ tags:
 
 <hr>
 
-사용자(Client)와 DispatchServlet 사이에 위치하며 오고 가는 요청과 응답에 대해서 검사하거나 변경할 수 있는 것이다. 그렇기 때문에 전역으로 처리하기 위한 로깅 처리, 인코딩 변환, XSS 방어, 인증 처리에 이용될 수 있다.
+사용자(Client)와 DispatcherServlet 사이에 위치하며 **오고 가는 요청과 응답에 대해서 검사하거나 변경할 수 있는 것**이다. 그렇기 때문에 전역으로 처리하기 위한 로깅 처리, 인코딩 변환, XSS 방어, 인증 처리에 이용될 수 있다.
 
-![FilterTest0](/assets/postImages/SpringBootFilter/FilterTest0.jpeg)
+![Filter0](/assets/postImages/SpringBootFilter/Filter0.png)
+
+# 실습 환경
+
+<hr>
+
+- Spring Boot 2.6.0
+- Java 11
+
+깃허브 링크 : [클릭](https://github.com/mangchhe/Spring_Tutorial/tree/main/Filter/Java)
 
 # 필터 구현
 
@@ -116,7 +125,7 @@ class HelloControllerTest {
 
 ## 결과
 
-![FilterTest1](/assets/postImages/SpringBootFilter/FilterTest1.png)
+![Filter1](/assets/postImages/SpringBootFilter/Filter1.png)
 
 # 심화
 
@@ -223,11 +232,14 @@ class HelloControllerTest {
 
 ## 결과
 
-![FilterTest2](/assets/postImages/SpringBootFilter/FilterTest2.png)
+![Filter2](/assets/postImages/SpringBootFilter/Filter2.png)
 
-/ 진입부터 보게 되면 세 개의 필터 모두 해당 url을 가지고 있기 때문에 전부 실행되는데 이때 우선순위가 first > second > third 이기 때문에 순서대로 실행되는 것을 알 수 있다.
-
-/second-filter 진입 시에는 두 번째 필터만, /third-filter 진입 시에는 세 번째 필터만 진입하는 것을 알 수 있다.
+- <font color='red'>/ 진입</font>
+    - 세 개의 필터 모두 해당 url을 가지고 있기 때문에 전부 실행되는데 이때 우선순위가 first > second > third 이기 때문에 순서대로 실행되는 것을 알 수 있다.
+- <font color='blue'>/second-filter 진입</font>
+    - 두 번째 필터만 해당 url을 포함하기 때문에 두 번째 필터만 진입하는 것을 알 수 있다.
+- <font color='green'>/third-filter 진입</font>
+    - 세 번째 필터만 해당 url을 포함하기 때문에 세 번째 필터만 진입하는 것을 알 수 있다.
 
 # 주의할 점
 
