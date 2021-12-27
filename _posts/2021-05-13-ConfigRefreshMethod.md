@@ -1,6 +1,6 @@
 ---
 title: "[Spring Cloud] Configuration 정보 갱신 방법 With Bus"
-decription: 이전 포스터에서 Spring Cloud Config를 이용하여 설정 파일들을 따로 관리하는 서버를 구축하였다. 이때 Config Server에 있는 Configuration 정보들이 변경이 이루어지게 되면 변경된 내용들을 어떻게 마이크로서비스들에게 전달할 수 있는지에 대해서 actuator, Spring Cloud Bus에 대해서 배워보려고 한다.
+description: 이전 포스터에서 Spring Cloud Config를 이용하여 설정 파일들을 따로 관리하는 서버를 구축하였다. 이때 Config Server에 있는 Configuration 정보들이 변경이 이루어지게 되면 변경된 내용들을 어떻게 마이크로서비스들에게 전달할 수 있는지에 대해서 actuator, Spring Cloud Bus에 대해서 배워보려고 한다.
 categories:
  - SpringCloud
 tags:
@@ -10,8 +10,6 @@ tags:
  - RabbitMQ
  - AMQP
 ---
-
-> 이전 포스터에서 Spring Cloud Config를 이용하여 설정 파일들을 따로 관리하는 서버를 구축하였다. 이때 Config Server에 있는 Configuration 정보들이 변경이 이루어지게 되면 변경된 내용들을 어떻게 마이크로서비스들에게 전달할 수 있는지에 대해서 actuator, Spring Cloud Bus를 이용하여 배워보려고 한다.
 
 # Configuration 갱신 방법
 

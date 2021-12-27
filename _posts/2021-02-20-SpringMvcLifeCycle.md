@@ -1,14 +1,12 @@
 ---
 title: "[Spring Boot] Spring MVC Framework 동작 과정"
-decription: 평소에 사용하는 Spring Framework가 요청을 받고 뷰를 보여주기까지 어떤 과정을 거치는지에 대해서 알아보자
+description: 평소에 사용하는 Spring Framework가 요청을 받고 뷰를 보여주기까지 어떤 과정을 거치는지에 대해서 알아보자
 categories:
  - SpringBoot
 tags:
  - SpringBoot
  - MVC
 ---
-
-> 평소에 사용하는 Spring Framework가 요청을 받고 뷰를 보여주기까지 어떤 과정을 거치는지에 대해서 알아보자
 
 # Spring MVC 동작 과정
 

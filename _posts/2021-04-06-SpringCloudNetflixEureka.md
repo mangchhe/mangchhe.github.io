@@ -1,6 +1,6 @@
 ---
 title: "[Spring Cloud] Netflix Eureka에 대해서 실습을 통해 알아보자"
-decription: 서비스들이 동적으로 확장, 축소가 이루어지는 것을 관리하는 위한 서버인 Eureka(Service Discovery Server)에 대해서 배워보자
+description: 서비스들이 동적으로 확장, 축소가 이루어지는 것을 관리하는 위한 서버인 Eureka(Service Discovery Server)에 대해서 배워보자
 categories:
  - SpringCloud
 tags:
@@ -9,8 +9,6 @@ tags:
  - Eureka
  - Service Discovery
 ---
-
-> 서비스들이 동적으로 확장, 축소가 이루어지는 것을 관리하는 위한 서버인 Eureka(Service Discovery Server)에 대해서 배워보자
 
 # Spring Cloud Netflix Eureka란?
 

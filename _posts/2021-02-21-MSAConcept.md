@@ -1,6 +1,6 @@
 ---
 title: "[Spring Cloud] Monolithic? MSA? 개념과 차이점을 알아보자"
-decription: Spring Cloud에 대해서 배워보려고 하니 MSA라는 말이 계속 눈에 띄였다 그리하여 MSA의 개념과 그것에 상반된 개념을 가진 Monolithic도 함께 알아보자
+description: Spring Cloud에 대해서 배워보려고 하니 MSA라는 말이 계속 눈에 띄였다 그리하여 MSA의 개념과 그것에 상반된 개념을 가진 Monolithic도 함께 알아보자
 categories:
  - SpringCloud
 tags:
@@ -8,8 +8,6 @@ tags:
  - MSA
  - Monolithic
 ---
-
-> Spring Cloud에 대해서 배워보려고 하니 MSA라는 말이 계속 눈에 띄였다 그리하여 MSA의 개념과 그것에 상반된 개념을 가진 Monolithic도 함께 알아보자
 
 # Monolithic Architecture이란?
 

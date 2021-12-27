@@ -1,6 +1,6 @@
 ---
 title: "[WEB] Nginx? 왜 쓰는지? 설치와 사용법에 대해서 알아보자"
-decription:
+description: Nginx를 왜 쓰는지, Apache 서버와 차이점은 무엇인지, Nginx 설치하는 방법과 사용법에 대해서 알아보자
 categories:
  - WEB
 tags:
@@ -10,8 +10,6 @@ tags:
  - nginx
  - apache
 ---
-
-> Nginx를 왜 쓰는지, Apache 서버와 차이점은 무엇인지, Nginx 설치하는 방법과 사용법에 대해서 알아보자
 
 # Nginx를 쓰게된 이유?
 

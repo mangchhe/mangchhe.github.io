@@ -1,6 +1,6 @@
 ---
 title: "[Spring Cloud] Service Discovery란?"
-decription: Service Discovery가 왜 필요한지, Service Discovery의 종류와 구현 방법에 대해서 배워보자
+description: Service Discovery가 왜 필요한지, Service Discovery의 종류와 구현 방법에 대해서 배워보자
 categories:
  - SpringCloud
 tags:
@@ -8,8 +8,6 @@ tags:
  - MSA
  - Service Discovery
 ---
-
-> Service Discovery가 왜 필요한지, Service Discovery의 종류와 구현 방법에 대해서 배워보자
 
 # Service Discovery란?
 

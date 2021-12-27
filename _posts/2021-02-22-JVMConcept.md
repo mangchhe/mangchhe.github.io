@@ -1,14 +1,12 @@
 ---
 title: "[Java] JVM(Java Virtual Machine)이란?"
-decription: 자바 가상머신인 JVM이 무엇인지, 하는 역할과 어떻게 구성되어있는지 알아보자
+description: 자바 가상머신인 JVM이 무엇인지, 하는 역할과 어떻게 구성되어있는지 알아보자
 categories:
  - Java
 tags:
  - Java
  - JVM
 ---
-
-> 자바 가상머신인 JVM이 무엇인지, 하는 역할과 어떻게 구성되어있는지 알아보자
 
 # JVM(Java Virtual Machine)이란?
 

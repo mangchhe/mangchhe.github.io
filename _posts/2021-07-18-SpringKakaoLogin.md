@@ -1,6 +1,6 @@
 ---
 title: "[Spring Boot] REST API를 이용한 카카오 로그인 구현"
-decription:
+description: Spring Boot + JPA + JWT를 이용하여 백엔드에서 카카오 로그인을 시키기 위해서 어떠한 동작이 이루어지는지 알아보자
 categories:
  - SpringBoot
 tags:
@@ -9,8 +9,6 @@ tags:
  - Kakao
  - Jwt
 ---
-
-> Spring Boot + JPA + JWT를 이용하여 백엔드에서 카카오 로그인을 시키기 위해서 어떠한 동작이 이루어지는지 알아보자
 
 # 개요
 

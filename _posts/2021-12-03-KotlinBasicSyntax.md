@@ -1,13 +1,11 @@
 ---
 title: "[Kotlin] 공식 홈페이지 기본 문법 정리"
-decription: 공식 홈페이지 코틀린 기본 문법 정리
+description: 공식 홈페이지 코틀린 기본 문법 정리
 categories:
  - Kotlin
 tags:
  - Kotlin
 ---
-
-> 공식 홈페이지 코틀린 기본 문법 정리
 
 # 시작(entry point)
 

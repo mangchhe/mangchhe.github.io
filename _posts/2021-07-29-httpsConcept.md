@@ -1,6 +1,6 @@
 ---
 title: "[WEB] HTTPS 동작 원리를 알아보고 Nginx에 HTTPS 적용해보기"
-decription:
+description: https가 무엇인지, 동작 원리에 대해서 배우고 Nginx에 HTTPS를 적용해보고 wireshark를 통해 실제로 네트워크도 어떻게 전송되고 있는지 확인해보자
 categories:
  - WEB
 tags:
@@ -9,8 +9,6 @@ tags:
  - nginx
  - wireshark
 ---
-
-> https가 무엇인지, 동작 원리에 대해서 배우고 Nginx에 HTTPS를 적용해보고 wireshark를 통해 실제로 네트워크도 어떻게 전송되고 있는지 확인해보자
 
 # HTTPS(HyperText Transfer Protocol Secure)란?
 

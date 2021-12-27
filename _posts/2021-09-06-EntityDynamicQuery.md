@@ -1,6 +1,6 @@
 ---
 title: "[JPA] @DynamicInsert, @DynamicUpdate 실습"
-decription: "@DynamicInsert, @DynamicUpdate를 사용해보고 성능을 비교해보자"
+description: "@DynamicInsert, @DynamicUpdate를 사용해보고 성능을 비교해보자"
 categories:
  - JPA
 tags:
@@ -8,8 +8,6 @@ tags:
  - Spring Data JPA
  - Entity
 ---
-
-> DB default 적용 시에 발생했던 문제에 대해서 다양한 해결 방안을 알아보고, @DynamicInsert, @DynamicUpdate를 사용해보고 성능을 비교해보자
 
 # 쓰게된 이유
 

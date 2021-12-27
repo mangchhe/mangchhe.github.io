@@ -1,14 +1,12 @@
 ---
 title: "[DB] 프로그래머스 SQL 고득점 Kit 문제 정답"
-decription: 프로그래머스 SQL 고득점 Kit 문제 정답
+description: 프로그래머스 SQL 고득점 Kit 문제 정답
 categories:
  - DB
 tags:
  - DB
  - Mysql
 ---
-
-> 프로그래머스 SQL 고득점 Kit 문제 정답
 
 # SELECT
 

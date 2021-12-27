@@ -1,14 +1,12 @@
 ---
 title: "[Spring Boot] Filter 구현"
-decription: Filter가 간단하게 무엇인지, 구현 방법과 body를 얻어올 때 주의해야 할 점에 대해서 알아보려고 한다.
+description: Filter가 간단하게 무엇인지, 구현 방법과 body를 얻어올 때 주의해야 할 점에 대해서 알아보려고 한다.
 categories:
  - SpringBoot
 tags:
  - SpringBoot
  - Filter
 ---
-
-> Filter가 간단하게 무엇인지, 구현 방법과 body를 얻어올 때 주의해야 할 점에 대해서 알아보려고 한다.
 
 # Filter란?
 

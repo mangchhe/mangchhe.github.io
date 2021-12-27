@@ -1,6 +1,6 @@
 ---
 title: "[DevOps] Jenkins와 Github를 연동하여 빌드&배포 적용하기"
-decription:
+description: Jenkins이 무엇인지, 설치 방법, Github 연동 방법, webhook을 이용해 push 했을 때 자동으로 감지하여 자동으로 빌드&배포 하는 방법을 알아보고 배포 하는 과정 속에서 마주쳤던 EC2 메모리 부족 현상, Java verison conflict 문제들에 대해서 추가로 해결해보자
 categories:
  - DevOps
 tags:
@@ -9,8 +9,6 @@ tags:
  - Webhook
  - Spring Boot
 ---
-
-> Jenkins이 무엇인지, 설치 방법, Github 연동 방법, webhook을 이용해 push 했을 때 자동으로 감지하여 자동으로 빌드&배포 하는 방법을 알아보고 배포 하는 과정 속에서 마주쳤던 EC2 메모리 부족 현상, Java verison conflict 문제들에 대해서 추가로 해결해보자
 
 # Jenkins 사용 이유
 

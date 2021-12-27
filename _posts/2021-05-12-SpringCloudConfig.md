@@ -1,6 +1,6 @@
 ---
 title: "[Spring Cloud] Config 구현"
-decription: 분산 시스템에서 서로 다른 기능을 하는 MicroService의 설정 파일들을 Spring Cloud Config를 이용하여 효율적으로 관리하는 방법에 대해서 알아보는 시간을 가져보자
+description: 분산 시스템에서 서로 다른 기능을 하는 MicroService의 설정 파일들을 Spring Cloud Config를 이용하여 효율적으로 관리하는 방법에 대해서 알아보는 시간을 가져보자
 categories:
  - SpringCloud
 tags:
@@ -9,8 +9,6 @@ tags:
  - Spring Cloud Config
  - Git
 ---
-
-> 분산 시스템에서 서로 다른 기능을 하는 MicroService의 설정 파일들을 Spring Cloud Config를 이용하여 효율적으로 관리하는 방법에 대해서 알아보는 시간을 가져보자
 
 # Spring Cloud Config 란
 

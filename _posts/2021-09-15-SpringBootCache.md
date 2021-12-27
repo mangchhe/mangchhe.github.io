@@ -1,14 +1,12 @@
 ---
 title: "[Spring Boot] @Cacheable, @CachePut, @CacheEvict 캐시 사용기"
-decription: spring-boot-starter-cache를 이용해 캐시 사용법을 알아보고 locust로 실제 성능이 향상 되었는지 확인해보자
+description: spring-boot-starter-cache를 이용해 캐시 사용법을 알아보고 locust로 실제 성능이 향상 되었는지 확인해보자
 categories:
  - SpringBoot
 tags:
  - SpringBoot
  - Cache
 ---
-
-> spring-boot-starter-cache를 이용해 캐시 사용법을 알아보고 locust로 실제 성능이 향상 되었는지 확인해보자
 
 # 캐시(Cache)란?
 

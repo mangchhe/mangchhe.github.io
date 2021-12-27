@@ -1,14 +1,12 @@
 ---
 title: "[Algorithm] 평방 분할(Sqrt Decomposition)"
-decription: 평방 분할(Square Root Decomposition) 공부
+description: 평방 분할(Square Root Decomposition) 공부
 categories:
  - Algorithm
 tags:
  - Algorithm
  - SegmentTree
 ---
-
-> 평방 분할(Square Root Decomposition) 공부
 
 # Sqrt Decomposition이란?
 

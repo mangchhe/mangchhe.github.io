@@ -1,6 +1,6 @@
 ---
 title: "[Spring Cloud] API Gateway Service란?"
-decription: API Gateway가 왜 필요한지, 무슨 역할을 하는지 알아보자
+description: API Gateway가 왜 필요한지, 무슨 역할을 하는지 알아보자
 categories:
  - SpringCloud
 tags:
@@ -8,8 +8,6 @@ tags:
  - MSA
  - API Gateway
 ---
-
-> API Gateway가 왜 필요한지, 무슨 역할을 하는지 알아보자
 
 # API Gateway Service란?
 

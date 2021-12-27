@@ -1,6 +1,6 @@
 ---
 title: "[영상 처리] 파이썬으로 원하는 객체 라벨링하기"
-decription:
+description: 이전 포스터에서 모폴로지 연산과 inRange() 함수를 통해 색상을 추출하는 방법에 대해서 알아보았고 이번 포스터는 찾으려고 하는 색상에 대해서 라벨링(Labeling)를 하는 방법에 대해서 알아보자.
 categories:
  - ImageProcess
 tags:
@@ -9,8 +9,6 @@ tags:
  - OpenCV
  - Numpy
 ---
-
-> 이전 포스터에서 모폴로지 연산과 inRange() 함수를 통해 색상을 추출하는 방법에 대해서 알아보았고 이번 포스터는 찾으려고 하는 색상에 대해서 라벨링(Labeling)를 하는 방법에 대해서 알아보자.
 
 # 상황
 

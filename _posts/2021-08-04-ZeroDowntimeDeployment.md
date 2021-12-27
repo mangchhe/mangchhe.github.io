@@ -1,6 +1,6 @@
 ---
 title: "[DevOps] 무중단 배포에 대해서 알아보고 Nginx와 함께 간단한 실습 예제 구현"
-decription:
+description: 무중단 배포의 종류에 대해서 배워보고 Spring Boot + Nginx를 이용해 블루 그린 배포를 실습해보자
 categories:
  - DevOps
 tags:
@@ -12,8 +12,6 @@ tags:
  - Nginx
  - Deployment
 ---
-
-> 무중단 배포의 종류에 대해서 배워보고 Spring Boot + Nginx를 이용해 블루 그린 배포를 실습해보자
 
 # 무중단 배포?
 

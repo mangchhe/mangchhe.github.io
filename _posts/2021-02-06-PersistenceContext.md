@@ -1,14 +1,12 @@
 ---
 title: "[JPA] 영속성 컨텍스트(Persistence Context)란 무엇일까?"
-decription: 영속성 컨텍스트(Persistence Context)는 무엇인지, 엔티티의 생명주기와 영속성 컨텍스트의 특징에 대해서 알아보자
+description: 영속성 컨텍스트(Persistence Context)는 무엇인지, 엔티티의 생명주기와 영속성 컨텍스트의 특징에 대해서 알아보자
 categories:
  - JPA
 tags:
  - JPA
  - DAO
 ---
-
-> 영속성 컨텍스트(Persistence Context)는 무엇인지, 엔티티의 생명주기와 영속성 컨텍스트의 특징에 대해서 알아보자
 
 # 영속성 컨텍스트란?
 

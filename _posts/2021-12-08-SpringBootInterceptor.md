@@ -1,14 +1,12 @@
 ---
 title: "[Spring Boot] Interceptor 구현"
-decription: Spring Boot 인터셉터 구현
+description: Spring Boot 인터셉터 구현
 categories:
  - SpringBoot
 tags:
  - SpringBoot
  - Interceptor
 ---
-
-> Spring Boot 인터셉터 구현
 
 # 인터셉터(Interceptor)란?
 
