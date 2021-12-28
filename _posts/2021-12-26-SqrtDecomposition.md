@@ -6,13 +6,14 @@ categories:
 tags:
  - Algorithm
  - SegmentTree
+ - SqrtDecomposition
 ---
 
 # Sqrt Decomposition이란?
 
 <hr>
 
-어떤 연속되는 특정 구간 쿼리를 처리하기 위해서 원소들의 각 구간을 √N개로 분할하여 관리하는 알고리즘이다.
+어떤 연속되는 특정 구간 쿼리를 처리하기 위해서 **원소들의 각 구간을 √N개로 분할하여 관리**하는 알고리즘이다.
 
 원소의 개수가 N, 쿼리의 개수 M이라고 한다면
 
@@ -32,7 +33,7 @@ tags:
 
 구간합 소스를 예제로 구현해보자
 
-문제 링크 : [바로가기](https://www.acmicpc.net/problem/2042)
+문제 링크 : [2042_구간 합 구하기](https://www.acmicpc.net/problem/2042)
 
 ## 초기화(init)
 
@@ -144,6 +145,6 @@ if __name__ == '__main__':
 
 <hr>
 
-- [https://www.acmicpc.net/problem/2042](https://www.acmicpc.net/problem/2042)
-- [https://www.acmicpc.net/problem/14427](https://www.acmicpc.net/problem/14427)
-- [https://www.acmicpc.net/problem/16978](https://www.acmicpc.net/problem/16978)
+- [2042_구간 합 구하기](https://www.acmicpc.net/problem/2042)
+- [14427_수열과 쿼리 15](https://www.acmicpc.net/problem/14427)
+- [16978_수열과 쿼리 22](https://www.acmicpc.net/problem/16978)
