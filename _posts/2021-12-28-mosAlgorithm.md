@@ -35,7 +35,7 @@ tags:
 
 일단 이 알고리즘을 쓰기 위해서는 update 연산이 없어야 한다. 왜냐하면 쿼리를 내 맘대로 재배치할 것이기 때문이다. 쿼리를 재배치할 때 기준은 [s, e] 구간 쿼리가 있을 때 왼쪽을 기준으로 sqrt(s)한 결과 값으로 오름차순, 그리고 왼쪽 값이 같을 때 오른쪽 구간도 오름차순 해주면 된다.
 
-![mosDescription](/assets/postImages/mosAlgorithm/mosDescription.png){: width="500" }
+![mosDescription](/assets/postImages/MosAlgorithm/mosDescription.png){: width="500" }
 
 위 사진을 보면 배열이 있고 검은색 선(세 개의 쿼리)이 정렬되어있는 사진이다. 빨간색으로 색칠된 부분은 이미 이전에 계산해놓은 값을 가져다가 쓰기 때문에 따로 계산해 줄 필요가 없으므로 이러한 이점을 이용해서 푸는 알고리즘이다.
 
@@ -75,7 +75,7 @@ query.sort(key=lambda x: (int(x[0] ** .5), x[1]))
 
 ## 다음 쿼리로 이동
 
-![mosMove](/assets/postImages/mosAlgorithm/mosMove.png){: width="500" }
+![mosMove](/assets/postImages/MosAlgorithm/mosMove.png){: width="500" }
 
 아까 투 포인터와 닮았다고 말했고 현재 쿼리 구간을 다음 쿼리 구간으로 왼쪽, 오른쪽 포인터 지점을 변경시켜주는 것이 필요하다. 이때 움직일 때마다 힘을 바로 계산해주면 된다. 이렇게 해주지 않으면 나중에 힘을 계산할 때 존재할 수 있는 자연수의 배열을 linear search 해야 하기 때문이다.
 
