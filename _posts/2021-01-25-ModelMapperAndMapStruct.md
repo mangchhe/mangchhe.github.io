@@ -1,8 +1,8 @@
 ---
-title: "[Java] ModelMapper와 MapStruct에 대해서 학습하기"
+title: "[Spring] ModelMapper와 MapStruct에 대해서 학습하기"
 description: Object Mapping을 위한 ModelMapper와 MapStruct에 대해서 의존성 설정, 매핑 사용법과 차이점을 알아보자
 categories:
- - Java
+ - Spring
 tags:
  - Java
  - SpringBoot
