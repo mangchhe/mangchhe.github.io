@@ -1,6 +1,6 @@
 ---
-title: "[DB] 기본키, 외래키는 쿼리로 변경이 가능할까?"
-description: 기본키와 외래키가 쿼리로 변경이 가능한지 알아보자
+title: "[DB] 기본키, 외래키는 값 변경이 가능할까?"
+description: 기본키와 외래키는 값 변경이 가능한지 알아보자
 categories:
  - DB
 tags:
