@@ -1,5 +1,5 @@
 ---
-title: "의식적인 연습으로 TDD, 리팩토링 연습하기"
+title: "[우아한테크세미나] 의식적인 연습으로 TDD, 리팩토링 연습하기"
 description: 박재성 - 의식적인 연습으로 TDD, 리팩토링 연습하기
 categories:
  - 세미나
@@ -53,8 +53,6 @@ tags:
 ![requirements](/assets/postImages/TddOkkyReview/requirements.png)
 
 ### 실패하는 코드 작성
-
-<img>
 
 ```java
 public class StringCalculatorTest {
