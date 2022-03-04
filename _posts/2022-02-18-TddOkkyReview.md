@@ -1,6 +1,6 @@
 ---
 title: "[우아한테크세미나] 의식적인 연습으로 TDD, 리팩토링 연습하기"
-description: 박재성 - 의식적인 연습으로 TDD, 리팩토링 연습하기
+description: 의식적인 연습으로 TDD, 리팩토링 연습하기 by 박재성
 categories:
  - 세미나
 tags:

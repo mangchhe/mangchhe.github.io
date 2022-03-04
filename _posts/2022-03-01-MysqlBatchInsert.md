@@ -250,8 +250,8 @@ class UserRepositoryTest {
 <hr>
 
 - 각 6만 건의 데이터를 삽입을 비교
-- single insert : 76ms
-- batch insert : 2ms
+- single insert : 76s
+- batch insert : 2s
 - 성능 : single insert < batch insert
 
 # Reference
