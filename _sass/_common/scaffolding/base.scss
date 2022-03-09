@@ -101,9 +101,9 @@ h2, h3, h4, h5 {
   h2 { counter-increment: second; counter-reset: third; }
   h2::before { content: counter(first)"-"counter(second)". "; }
   h3 { counter-increment: third; counter-reset: fourth; }
-  h3::before { content: counter(first)"-"counter(second)"-"counter(third)"."; }
+  h3::before { content: counter(first)"-"counter(second)"-"counter(third)". "; }
   h4 { counter-increment: fourth; counter-reset: fifth; }
-  h4::before { content: counter(first)"-"counter(second)"-"counter(third)"-"counter(fourth)"."; }
+  h4::before { content: counter(first)"-"counter(second)"-"counter(third)"-"counter(fourth)". "; }
 }
 
 hr {
