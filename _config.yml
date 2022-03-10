@@ -378,15 +378,6 @@ han: false
 # Duoshuo ShortName
 #duoshuo_shortname:
 
-# Disqus
-disqus:
-  enable: true
-  shortname: JooHyun
-  count: false
-  # hide comments (visitors need to click to load the comments)
-  # count need to be false when hide is true
-  hide: false
-
 # <wildfire>
 wildfire:
   enable: false
