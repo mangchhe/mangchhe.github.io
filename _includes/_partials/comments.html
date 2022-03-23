@@ -1,13 +1,5 @@
 {% if page.comments %}
   <div class="comments" id="comments">
-    <!-- utterance comments -->
-    <script src="https://utteranc.es/client.js"
-            repo="mangchhe/blog-comments"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-    </script>
     {% if site.duoshuo and site.duoshuo.shortname or site.duoshuo_shortname %}
       <div class="ds-thread" data-thread-key="{{ page.url | relative_url }}"
            data-title="{{ page.title }}" data-url="{{ page.url | absolute_url }}">
