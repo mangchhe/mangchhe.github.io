@@ -1,4 +1,5 @@
 ---
+published: true
 title: "[Spring Boot] TestContainers 사용해보기"
 description: TestContainers를 이용해 테스트 환경을 분리해보자
 categories:
