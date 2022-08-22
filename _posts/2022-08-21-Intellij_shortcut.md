@@ -33,6 +33,7 @@ tags:
 |현재 포커싱된 파일 내에서 해당 글자 모두 찾기|Command + F|
 |해당 글자를 포함하는 파일 모두 찾기|Command + Shift + F|
 |모두 찾기|Shift + Shift|
+|최근 열었던 파일 목록 보기|Command + E|
 
 ## Refactor
 
