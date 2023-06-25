@@ -151,7 +151,7 @@ defaults:
       type: posts
     values:
       layout: Post
-      permalink: /:categories/:year/:month/:day/:title
+      permalink: /:categories/:year/:month/:day/:title/
       content-type: post
 
 
