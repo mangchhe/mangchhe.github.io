@@ -76,7 +76,7 @@ picture {
 }
 
 blockquote {
-  padding: $base-spacing 0 $base-spacing $base-spacing;
+  padding: $base-spacing $base-spacing $base-spacing $base-spacing;
   margin: $base-spacing 0;
   color: $dark-gray-color;
   line-height: 1.8;
@@ -84,6 +84,7 @@ blockquote {
   background-color: lighten($light-gray-color, 15%);
   p {
     margin: 0;
+    font-size: 14px;
   }
 }
 
