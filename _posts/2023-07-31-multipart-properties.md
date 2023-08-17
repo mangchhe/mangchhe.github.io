@@ -23,6 +23,8 @@ public class MultipartProperties {
 ## 공식 문서
 
 > 
+[MultipartProperties](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/web/servlet/MultipartProperties.html)
+>
 **location** specifies the directory where uploaded files will be stored. When not specified, a temporary directory will be used.
 >
 **max-file-size** specifies the maximum size permitted for uploaded files. The **default is 1MB**
@@ -47,8 +49,3 @@ spring:
             max-request-size: 20MB
             file-size-threshold: 2097152
 ```
-
-
-### Reference
-
-- [MultipartProperties 공식 문서](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/web/servlet/MultipartProperties.html)
