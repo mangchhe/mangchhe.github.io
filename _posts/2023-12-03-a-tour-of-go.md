@@ -41,16 +41,16 @@ func main() {
 
 ```go
 func add(x int, y int) int {
-	return x + y
+    return x + y
 }
 
 func subtract(x, y int) int {
-	return x - y
+    return x - y
 }
 
 func main() {
-	fmt.Println(add(42, 13))
-	fmt.Println(subtract(42, 13))
+    fmt.Println(add(42, 13))
+    fmt.Println(subtract(42, 13))
 }
 ```
 
@@ -60,12 +60,12 @@ func main() {
 
 ```go
 func swap(x, y string) (string, string) {
-	return y, x
+    return y, x
 }
 
 func main() {
-	a, b := swap("hello", "world")
-	fmt.Println(a, b)
+    a, b := swap("hello", "world")
+    fmt.Println(a, b)
 }
 ```
 
@@ -76,13 +76,13 @@ func main() {
 
 ```go
 func split(sum int) (x, y int) {
-	x = sum * 4 / 9
-	y = sum - x
-	return
+    x = sum * 4 / 9
+    y = sum - x
+    return
 }
 
 func main() {
-	fmt.Println(split(17))
+    fmt.Println(split(17))
 }
 ```
 
@@ -111,9 +111,9 @@ func main() {
 var i, j int = 1, 2
 
 func main() {
-	var c, python, java = true, false, "no!"
-	var golang = "go!"
-	fmt.Println(i, j, c, python, java, golang)
+    var c, python, java = true, false, "no!"
+    var golang = "go!"
+    fmt.Println(i, j, c, python, java, golang)
 }
 ```
 
@@ -124,8 +124,8 @@ func main() {
 
 ```go
 func main() {
-	i, j := 3, 4
-	fmt.Println(i, j)
+    i, j := 3, 4
+    fmt.Println(i, j)
 }
 ```
 
@@ -142,23 +142,23 @@ func main() {
 
 ```go
 var (
-	BOOL   bool
-	INT    int
-	INT8   int8
-	INT16  int16
-	INT32  int32
-	INT64  int64
-	UINT   uint
-	UINT8  uint8
-	UINT16 uint16
-	UINT32 uint32
-	UINT64 uint64
-	BYTE   byte
-	RUNE rune
-	FLOAT32 float32
-	FLOAT64 float64
-	COMPLEX64 complex64
-	COMPLEX128 complex128
+    BOOL   bool
+    INT    int
+    INT8   int8
+    INT16  int16
+    INT32  int32
+    INT64  int64
+    UINT   uint
+    UINT8  uint8
+    UINT16 uint16
+    UINT32 uint32
+    UINT64 uint64
+    BYTE   byte
+    RUNE rune
+    FLOAT32 float32
+    FLOAT64 float64
+    COMPLEX64 complex64
+    COMPLEX128 complex128
 )
 ```
 
@@ -169,10 +169,10 @@ var (
 
 ```go
 func main() {
-	var x, y int = 3, 4
-	var f float64 = math.Sqrt(float64(x*x + y*y))
-	var z uint = uint(f)
-	fmt.Println(x, y, f, z)
+    var x, y int = 3, 4
+    var f float64 = math.Sqrt(float64(x*x + y*y))
+    var z uint = uint(f)
+    fmt.Println(x, y, f, z)
 }
 ```
 
@@ -182,13 +182,13 @@ func main() {
 
 ```go
 func main() {
-	i := 42           // int
-	f := 3.142        // float64
-	g := 0.867 + 0.5i // complex128
+    i := 42           // int
+    f := 3.142        // float64
+    g := 0.867 + 0.5i // complex128
 
-	fmt.Printf("i is of type %T\n", i)
-	fmt.Printf("f is of type %T\n", f)
-	fmt.Printf("g is of type %T\n", g)
+    fmt.Printf("i is of type %T\n", i)
+    fmt.Printf("f is of type %T\n", f)
+    fmt.Printf("g is of type %T\n", g)
 }
 ```
 
@@ -201,12 +201,12 @@ func main() {
 const Pi = 3.14
 
 func main() {
-	const World = "World!"
-	fmt.Println("Hello", World)
-	fmt.Println("Happy", Pi, "Day")
+    const World = "World!"
+    fmt.Println("Hello", World)
+    fmt.Println("Happy", Pi, "Day")
 
-	const Truth = true
-	fmt.Println("Go rules?", Truth)
+    const Truth = true
+    fmt.Println("Go rules?", Truth)
 }
 ```
 
@@ -216,19 +216,19 @@ func main() {
 
 ```go
 const (
-	Big   = 1 << 100
-	Small = Big >> 99
+    Big   = 1 << 100
+    Small = Big >> 99
 )
 
 func needInt(x int) int { return x*10 + 1 }
 func needFloat(x float64) float64 {
-	return x * 0.1
+    return x * 0.1
 }
 
 func main() {
-	fmt.Println(needInt(Small))
-	fmt.Println(needFloat(Small))
-	fmt.Println(needFloat(Big))
+    fmt.Println(needInt(Small))
+    fmt.Println(needFloat(Small))
+    fmt.Println(needFloat(Big))
 }
 ```
 
@@ -243,28 +243,28 @@ func main() {
 
 ```go
 func main() {
-	var sum int
+    var sum int
 
-	// 1.
-	for i := 0; i <= 10; i++ {
-		sum += i
-	}
+    // 1.
+    for i := 0; i <= 10; i++ {
+        sum += i
+    }
 
-	// 2.
+    // 2.
     for ; sum < 1000; {
         sum += sum
     }
 
-	// 3.
+    // 3.
     for sum < 1000 {
         sum += sum
     }
-	
-	// 4.
-	for {
-	}
 
-	fmt.Println(sum)
+    // 4.
+    for {
+    }
+
+    fmt.Println(sum)
 }
 ```
 
@@ -274,14 +274,14 @@ func main() {
 
 ```go
 func sqrt(x float64) string {
-	if x < 0 {
-		return sqrt(-x) + "i"
-	}
-	return fmt.Sprint(math.Sqrt(x))
+    if x < 0 {
+        return sqrt(-x) + "i"
+    }
+    return fmt.Sprint(math.Sqrt(x))
 }
 
 func main() {
-	fmt.Println(sqrt(2), sqrt(-4))
+    fmt.Println(sqrt(2), sqrt(-4))
 }
 ```
 
@@ -292,17 +292,17 @@ func main() {
 
 ```go
 func pow(x, n, lim float64) float64 {
-	if v := math.Pow(x, n); v < lim {
-		return v
-	}
-	return lim
+    if v := math.Pow(x, n); v < lim {
+        return v
+    }
+    return lim
 }
 
 func main() {
-	fmt.Println(
-		pow(3, 2, 10),
-		pow(3, 3, 20),
-	)
+    fmt.Println(
+        pow(3, 2, 10),
+        pow(3, 3, 20),
+    )
 }
 ```
 
@@ -312,19 +312,19 @@ func main() {
 
 ```go
 func pow(x, n, lim float64) float64 {
-	if v := math.Pow(x, n); v < lim {
-		return v
-	} else {
-		fmt.Printf("%g >= %g\n", v, lim)
-	}
-	return lim
+    if v := math.Pow(x, n); v < lim {
+        return v
+    } else {
+        fmt.Printf("%g >= %g\n", v, lim)
+    }
+    return lim
 }
 
 func main() {
-	fmt.Println(
-		pow(3, 2, 10),
-		pow(3, 3, 20),
-	)
+    fmt.Println(
+        pow(3, 2, 10),
+        pow(3, 3, 20),
+    )
 }
 ```
 
@@ -337,15 +337,15 @@ func main() {
 
 ```go
 func main() {
-	fmt.Print("Go runs on ")
-	switch os := runtime.GOOS; os {
-	case "darwin":
-		fmt.Println("OS X.")
-	case "linux":
-		fmt.Println("Linux.")
-	default:
-		fmt.Printf("%s.\n", os)
-	}
+    fmt.Print("Go runs on ")
+    switch os := runtime.GOOS; os {
+    case "darwin":
+        fmt.Println("OS X.")
+    case "linux":
+        fmt.Println("Linux.")
+    default:
+        fmt.Printf("%s.\n", os)
+    }
 
     today := time.Now().Weekday()
     switch time.Saturday {
@@ -368,18 +368,18 @@ func main() {
 
 ```go
 func main() {
-	defer fmt.Println("world")
+    defer fmt.Println("world")
 
-	fmt.Println("hello")
+    fmt.Println("hello")
 }
 
 func main() {
     fmt.Println("counting")
-    
+
     for i := 0; i < 10; i++ {
         defer fmt.Println(i)
     }
-    
+
     fmt.Println("done")
 }
 ```
@@ -395,17 +395,17 @@ func main() {
 
 ```go
 func main() {
-	i, j := 42, 2701
+    i, j := 42, 2701
 
-	p := &i
-	fmt.Println(*p)
-	*p = 21
-	fmt.Println(i)
-	fmt.Println(*p)
+    p := &i
+    fmt.Println(*p)
+    *p = 21
+    fmt.Println(i)
+    fmt.Println(*p)
 
-	p = &j
-	*p = *p / 37
-	fmt.Println(j)
+    p = &j
+    *p = *p / 37
+    fmt.Println(j)
 }
 ```
 
@@ -417,15 +417,15 @@ func main() {
 
 ```go
 type Vertex struct {
-	X int
-	Y int
+    X int
+    Y int
 }
 
 func main() {
     vertex := Vertex{1, 2}
     fmt.Println(vertex.X, vertex.Y)
-    
-	// 포인터로도 접근 가능
+
+    // 포인터로도 접근 가능
     vertex2 := &vertex
     vertex2.X = 111
     fmt.Println(vertex.X, vertex.Y)
@@ -438,18 +438,18 @@ func main() {
 
 ```go
 type Vertex struct {
-	X, Y int
+    X, Y int
 }
 
 var (
-	v1 = Vertex{1, 2}  // has type Vertex
-	v2 = Vertex{X: 1}  // Y:0 is implicit
-	v3 = Vertex{}      // X:0 and Y:0
-	p  = &Vertex{1, 2} // has type *Vertex
+    v1 = Vertex{1, 2}  // has type Vertex
+    v2 = Vertex{X: 1}  // Y:0 is implicit
+    v3 = Vertex{}      // X:0 and Y:0
+    p  = &Vertex{1, 2} // has type *Vertex
 )
 
 func main() {
-	fmt.Println(v1, p, v2, v3)
+    fmt.Println(v1, p, v2, v3)
 }
 ```
 
@@ -460,14 +460,14 @@ func main() {
 
 ```go
 func main() {
-	var a [2]string
-	a[0] = "Hello"
-	a[1] = "World"
-	fmt.Println(a[0], a[1])
-	fmt.Println(a)
+    var a [2]string
+    a[0] = "Hello"
+    a[1] = "World"
+    fmt.Println(a[0], a[1])
+    fmt.Println(a)
 
-	primes := [6]int{2, 3, 5, 7, 11, 13}
-	fmt.Println(primes)
+    primes := [6]int{2, 3, 5, 7, 11, 13}
+    fmt.Println(primes)
 }
 ```
 
@@ -478,21 +478,21 @@ func main() {
 
 ```go
 func main() {
-	names := [4]string{
-		"John",
-		"Paul",
-		"George",
-		"Ringo",
-	}
-	fmt.Println(names)
+    names := [4]string{
+        "John",
+        "Paul",
+        "George",
+        "Ringo",
+    }
+    fmt.Println(names)
 
-	a := names[0:2]
-	b := names[1:3]
-	fmt.Println(a, b)
+    a := names[0:2]
+    b := names[1:3]
+    fmt.Println(a, b)
 
-	b[0] = "XXX"
-	fmt.Println(a, b)
-	fmt.Println(names)
+    b[0] = "XXX"
+    fmt.Println(a, b)
+    fmt.Println(names)
 }
 ```
 
@@ -503,10 +503,10 @@ func main() {
 ```go
 func main() {
     var a [10]int
-	a[0:10] // 0 ~ 9
-	a[:10] // 0 ~ 9
-	a[0:] // 0 ~ N
-	a[:] // 0 ~ N
+    a[0:10] // 0 ~ 9
+    a[:10] // 0 ~ 9
+    a[0:] // 0 ~ N
+    a[:] // 0 ~ N
 }
 ```
 
@@ -518,24 +518,24 @@ func main() {
 
 ```go
 func main() {
-	s := []int{2, 3, 5, 7, 11, 13}
-	printSlice(s) // len=6 cap=6 [2 3 5 7 11 13]
+    s := []int{2, 3, 5, 7, 11, 13}
+    printSlice(s) // len=6 cap=6 [2 3 5 7 11 13]
 
-	// Slice the slice to give it zero length.
-	s = s[:0]
-	printSlice(s) // len=0 cap=6 []
+    // Slice the slice to give it zero length.
+    s = s[:0]
+    printSlice(s) // len=0 cap=6 []
 
-	// Extend its length.
-	s = s[:4]
-	printSlice(s) // len=4 cap=6 [2 3 5 7]
+    // Extend its length.
+    s = s[:4]
+    printSlice(s) // len=4 cap=6 [2 3 5 7]
 
-	// Drop its first two values.
-	s = s[2:]
-	printSlice(s) // len=2 cap=4 [5 7]
+    // Drop its first two values.
+    s = s[2:]
+    printSlice(s) // len=2 cap=4 [5 7]
 }
 
 func printSlice(s []int) {
-	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+    fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
 ```
 
@@ -546,11 +546,11 @@ func printSlice(s []int) {
 
 ```go
 func main() {
-	var s []int
-	fmt.Println(s, len(s), cap(s))
-	if s == nil {
-		fmt.Println("nil!")
-	}
+    var s []int
+    fmt.Println(s, len(s), cap(s))
+    if s == nil {
+        fmt.Println("nil!")
+    }
 }
 ```
 
@@ -560,21 +560,21 @@ func main() {
 
 ```go
 func main() {
-	a := make([]int, 5)
-	printSlice2("a", a) // a len=5 cap=5 [0 0 0 0 0]
+    a := make([]int, 5)
+    printSlice2("a", a) // a len=5 cap=5 [0 0 0 0 0]
 
-	b := make([]int, 0, 5) // type, length, capacity
-	printSlice2("b", b) // b len=0 cap=5 []
+    b := make([]int, 0, 5) // type, length, capacity
+    printSlice2("b", b) // b len=0 cap=5 []
 
-	c := b[:2]
-	printSlice2("c", c) // c len=2 cap=5 [0 0]
+    c := b[:2]
+    printSlice2("c", c) // c len=2 cap=5 [0 0]
 
-	d := c[2:5]
-	printSlice2("d", d) // d len=3 cap=3 [0 0 0]
+    d := c[2:5]
+    printSlice2("d", d) // d len=3 cap=3 [0 0 0]
 }
 
 func printSlice2(s string, x []int) {
-	fmt.Printf("%s len=%d cap=%d %v\n", s, len(x), cap(x), x)
+    fmt.Printf("%s len=%d cap=%d %v\n", s, len(x), cap(x), x)
 }
 ```
 
@@ -587,16 +587,16 @@ func printSlice2(s string, x []int) {
 
 ```go
 type Vertex struct {
-	X, Y float64
+    X, Y float64
 }
 
 func (v Vertex) Abs() float64 {
-	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+    return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
 func main() {
-	v := Vertex{3, 4}
-	fmt.Println(v.Abs())
+    v := Vertex{3, 4}
+    fmt.Println(v.Abs())
 }
 ```
 
@@ -607,7 +607,7 @@ type MyFloat float64
 
 func (f MyFloat) Abs() float64 {
     if f < 0 {
-		return float64(-f)
+        return float64(-f)
     }
     return float64(f)
 }
@@ -625,18 +625,18 @@ func main() {
 
 ```go
 type Vertex2 struct {
-	X, Y float64
+    X, Y float64
 }
 
 func (v *Vertex2) Scale(f float64) {
-	v.X = v.X * f
-	v.Y = v.Y * f
+    v.X = v.X * f
+    v.Y = v.Y * f
 }
 
 func main() {
-	v := Vertex2{3, 4}
-	v.Scale(10)
-	fmt.Println(v.X, v.Y)
+    v := Vertex2{3, 4}
+    v.Scale(10)
+    fmt.Println(v.X, v.Y)
 }
 ```
 
@@ -646,18 +646,18 @@ func main() {
 
 ```go
 type Vertex3 struct {
-	X, Y float64
+    X, Y float64
 }
 
 func Scale(v *Vertex3, f float64) {
-	v.X = v.X * f
-	v.Y = v.Y * f
+    v.X = v.X * f
+    v.Y = v.Y * f
 }
 
 func main() {
-	v := Vertex3{3, 4}
-	Scale(&v, 10)
-	fmt.Println(v)
+    v := Vertex3{3, 4}
+    Scale(&v, 10)
+    fmt.Println(v)
 }
 ```
 
@@ -668,29 +668,29 @@ func main() {
 
 ```go
 type Vertex4 struct {
-	X, Y float64
+    X, Y float64
 }
 
 func (v *Vertex4) Scale(f float64) {
-	v.X = v.X * f
-	v.Y = v.Y * f
+    v.X = v.X * f
+    v.Y = v.Y * f
 }
 
 func ScaleFunc(v *Vertex4, f float64) {
-	v.X = v.X * f
-	v.Y = v.Y * f
+    v.X = v.X * f
+    v.Y = v.Y * f
 }
 
 func main() {
-	v := Vertex4{3, 4}
-	v.Scale(2)
-	ScaleFunc(&v, 10)
+    v := Vertex4{3, 4}
+    v.Scale(2)
+    ScaleFunc(&v, 10)
 
-	p := &Vertex4{4, 3}
-	p.Scale(3)
-	ScaleFunc(p, 8)
+    p := &Vertex4{4, 3}
+    p.Scale(3)
+    ScaleFunc(p, 8)
 
-	fmt.Println(v, p)
+    fmt.Println(v, p)
 }
 ```
 
@@ -703,7 +703,7 @@ func (v Vertex4) Abs() float64 {
 }
 
 func AbsFunc(v Vertex4) float64 {
-	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+    return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
 func main() {
@@ -720,36 +720,36 @@ func main() {
 
 ```go
 type Abser interface {
-	Abs() float64
+    Abs() float64
 }
 
 func main() {
-	var a Abser
-	f := MyFloat2(-math.Sqrt2)
-	v := Vertex5{3, 4}
+    var a Abser
+    f := MyFloat2(-math.Sqrt2)
+    v := Vertex5{3, 4}
 
-	a = f
-	a = &v
-	a = v // Error
+    a = f
+    a = &v
+    a = v // Error
 
-	fmt.Println(a.Abs())
+    fmt.Println(a.Abs())
 }
 
 type MyFloat2 float64
 
 func (f MyFloat2) Abs() float64 {
-	if f < 0 {
-		return float64(-f)
-	}
-	return float64(f)
+    if f < 0 {
+        return float64(-f)
+    }
+    return float64(f)
 }
 
 type Vertex5 struct {
-	X, Y float64
+    X, Y float64
 }
 
 func (v *Vertex5) Abs() float64 {
-	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+    return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 ```
 
@@ -759,20 +759,20 @@ func (v *Vertex5) Abs() float64 {
 
 ```go
 type I interface {
-	M()
+    M()
 }
 
 type T struct {
-	S string
+    S string
 }
 
 func (t T) M() {
-	fmt.Println(t.S)
+    fmt.Println(t.S)
 }
 
 func main() {
-	var i I = T{"hello"}
-	i.M()
+    var i I = T{"hello"}
+    i.M()
 }
 ```
 
@@ -782,36 +782,36 @@ func main() {
 
 ```go
 type I2 interface {
-	M()
+    M()
 }
 
 type T2 struct {
-	S string
+    S string
 }
 
 func (t *T2) M() {
-	if t == nil {
-		fmt.Println("<nil>")
-		return
-	}
-	fmt.Println(t.S)
+    if t == nil {
+        fmt.Println("<nil>")
+        return
+    }
+    fmt.Println(t.S)
 }
 
 func main() {
-	var i I2
+    var i I2
 
-	var t *T2
-	i = t
-	describe(i) // (<nil>, *main.T)
-	i.M() // <nil>
+    var t *T2
+    i = t
+    describe(i) // (<nil>, *main.T)
+    i.M() // <nil>
 
-	i = &T2{"hello"}
-	describe(i) // (&{hello}, *main.T)
-	i.M() // hello
+    i = &T2{"hello"}
+    describe(i) // (&{hello}, *main.T)
+    i.M() // hello
 }
 
 func describe(i I2) {
-	fmt.Printf("(%v, %T)\n", i, i)
+    fmt.Printf("(%v, %T)\n", i, i)
 }
 ```
 
@@ -822,17 +822,17 @@ func describe(i I2) {
 
 ```go
 type I3 interface {
-	M()
+    M()
 }
 
 func main() {
-	var i I
-	describe2(i)
-	i.M() // panic: runtime error: invalid memory address or nil pointer dereference
+    var i I
+    describe2(i)
+    i.M() // panic: runtime error: invalid memory address or nil pointer dereference
 }
 
 func describe2(i I3) {
-	fmt.Printf("(%v, %T)\n", i, i)
+    fmt.Printf("(%v, %T)\n", i, i)
 }
 ```
 
@@ -843,18 +843,18 @@ func describe2(i I3) {
 
 ```go
 func main() {
-	var i interface{}
-	describe3(i) // (<nil>, <nil>)
+    var i interface{}
+    describe3(i) // (<nil>, <nil>)
 
-	i = 42
-	describe3(i) // (42, int)
+    i = 42
+    describe3(i) // (42, int)
 
-	i = "hello"
-	describe3(i) // (hello, string)
+    i = "hello"
+    describe3(i) // (hello, string)
 }
 
 func describe3(i interface{}) {
-	fmt.Printf("(%v, %T)\n", i, i)
+    fmt.Printf("(%v, %T)\n", i, i)
 }
 ```
 
@@ -866,19 +866,19 @@ func describe3(i interface{}) {
 
 ```go
 func main() {
-	var i interface{} = "hello"
+    var i interface{} = "hello"
 
-	s := i.(string)
-	fmt.Println(s) // hello
+    s := i.(string)
+    fmt.Println(s) // hello
 
-	s, ok := i.(string)
-	fmt.Println(s, ok) // hello true
+    s, ok := i.(string)
+    fmt.Println(s, ok) // hello true
 
-	f, ok := i.(float64)
-	fmt.Println(f, ok) // 0 false
+    f, ok := i.(float64)
+    fmt.Println(f, ok) // 0 false
 
-	f = i.(float64) // panic
-	fmt.Println(f)
+    f = i.(float64) // panic
+    fmt.Println(f)
 }
 ```
 
@@ -888,20 +888,20 @@ func main() {
 
 ```go
 func do(i interface{}) {
-	switch v := i.(type) {
-	case int:
-		fmt.Printf("Twice %v is %v\n", v, v*2) // Twice 21 is 42
-	case string:
-		fmt.Printf("%q is %v bytes long\n", v, len(v)) // "hello" is 5 bytes long
-	default:
-		fmt.Printf("I don't know about type %T!\n", v) // I don't know about type bool!
-	}
+    switch v := i.(type) {
+    case int:
+        fmt.Printf("Twice %v is %v\n", v, v*2) // Twice 21 is 42
+    case string:
+        fmt.Printf("%q is %v bytes long\n", v, len(v)) // "hello" is 5 bytes long
+    default:
+        fmt.Printf("I don't know about type %T!\n", v) // I don't know about type bool!
+    }
 }
 
 func main() {
-	do(21)
-	do("hello")
-	do(true)
+    do(21)
+    do("hello")
+    do(true)
 }
 ```
 
