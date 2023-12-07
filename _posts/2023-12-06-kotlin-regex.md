@@ -137,7 +137,9 @@ fun split(input: CharSequence, limit: Int = 0): List<String>
 - X\|Y : X 또는 Y
 - (X) : X 그룹화. (abc)+ : **abcabc**bac
 
-> [https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+> 공식 문서 : [https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+> 
+> 정규 표현식 테스트 : [https://www.regexplanet.com/advanced/java/index.html](https://www.regexplanet.com/advanced/java/index.html)
 
 ## References
 
