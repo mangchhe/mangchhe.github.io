@@ -5,23 +5,25 @@ categories: cs
 tags: cs
 ---
 
-#### Gitlab runner binary 설치 및 권한 부여
+#### Install Gitlab Runner
 
-```bash
+```sh
 sudo curl --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-darwin-arm64"
 sudo chmod +x /usr/local/bin/gitlab-runner
-```
 
-#### Gitlab runner 설치
-
-```bash
 cd ~
 gitlab-runner install
 gitlab-runner start
 gitlab-runner register --url https://gitlab.com/ --registration-token {token}
 ```
 
-```shell
+> [https://docs.gitlab.com/runner/register/index.html](https://docs.gitlab.com/runner/register/index.html)
+>
+> [https://docs.gitlab.com/runner/install/osx.html](https://docs.gitlab.com/runner/install/osx.html)
+
+#### Config File
+
+```sh
 # /Users/{username}/.gitlab-runner/config.toml
 
 concurrent = 1
@@ -43,27 +45,34 @@ shutdown_timeout = 0
     MaxUploadedArchiveSize = 0
 ```
 
-##### 설정 파일 위치
-
-> [설정 파일](https://docs.gitlab.com/runner/commands/#configuration-file)
+> [설정 파일 위치](https://docs.gitlab.com/runner/commands/#configuration-file)
 > 
 > UNIX 계열 운영체제에서 root 권한으로 러너를 실행했을 경우: /etc/gitlab-runner/config.toml
 > 
 > UNIX 계열 운영체제에서 사용자 권한으로 러너를 실행했을 경우: ~/.gitlab-runner/config.toml
 > 
 > 그 외 운영체제: ./config.toml
-> 
 
-#### Gitlab 활성화 확인
+#### Verify Gitlab Runner
 
-```bash
+```sh
 gitlab-runner list
 gitlab-runner verify
 ```
 
 ![persistence_lifecycle](/assets/postImages/RegisterGitlabRunner/runnerActive.png)
 
-## References
+#### Install Gitlab Runner In Docker
 
-- [https://docs.gitlab.com/runner/install/osx.html](https://docs.gitlab.com/runner/install/osx.html)
-- [https://docs.gitlab.com/runner/register/index.html](https://docs.gitlab.com/runner/register/index.html)
+```sh
+docker run -d --name gitlab-runner --restart always \
+  -v {config mount 파일 경로}:/etc/gitlab-runner \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  gitlab/gitlab-runner:latest
+  
+docker exec -it gitlab-runner bash
+
+gitlab-runner register --url https://gitlab.com/ --registration-token {token}
+```
+
+> [https://docs.gitlab.com/runner/install/docker.html](https://docs.gitlab.com/runner/install/docker.html)
