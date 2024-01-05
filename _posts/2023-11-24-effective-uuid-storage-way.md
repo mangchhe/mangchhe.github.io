@@ -17,19 +17,19 @@ tags: cs
 
 **값의 커진 공간을 줄이기 위해** 구분자(-)를 모두 제거하고 바이너리 형태로 변경하여 저장하면 공간을 줄이는 것이 가능해진다. 36byte에서 구분자 총 4byte를 제거하고 32byte의 각 문자는 16진수, 즉 하나당 4bit를 나타내니까 총 128bit로 16byte BINARY(16)으로 저장할 수 있다.
 
-**sequential 한 값을 만들기 위해** uuid에 포함되어 있는 timestamp 값을 활용한다. 만약 없다고 한다면 추가해서 하는 방법을 고려해야 한다. 
-
-v1의 경우 **58e0a7d7–eebc–11d8**-9669-0800200c9a66 앞에 세 개의 섹션의 uuid가 timestamp를 가르킨다. 좀 더 sequential한 정렬을 만들기 위해서 ⓷-⓶-⓵ 섹션으로 UUID를 11d8-eebc-58e0a7d7로 재정렬을 한다.
+**sequential 한 값을 만들기 위해** uuid에 포함되어 있는 timestamp 값을 활용한다. 만약 없다고 한다면 추가해서 하는 방법을 고려해야 한다.
 
 ## Implementation
 
-의존성 : [github](https://github.com/cowtowncoder/java-uuid-generator)
+v1의 경우 **58e0a7d7–eebc–11d8**-9669-0800200c9a66 앞에 세 개의 섹션의 uuid가 timestamp를 가르킨다. 좀 더 sequential한 정렬을 만들기 위해서 ⓷-⓶-⓵ 섹션으로 UUID를 11d8-eebc-58e0a7d7로 재정렬을 한다.
+
+> [https://github.com/cowtowncoder/java-uuid-generator](https://github.com/cowtowncoder/java-uuid-generator)
+> 
+> UUID version1 = Generators.timeBasedGenerator().generate();
 
 ```gradle
 implementation("com.fasterxml.uuid:java-uuid-generator:4.3.0")
 ```
-
-다음과 같이 
 
 ```kotlin
 fun generateUUID(): String {
