@@ -12,7 +12,7 @@ tags: aws
 AWS에서 2024년 2월 1일부터 모든 공개 IPv4 주소에 대해 시간당 $0.005의 요금을 부과하기 시작했다. 이는 IPv4 주소의 부족 문제와 비용 상승 때문인데, 이 새로운 요금제는 모든 AWS 서비스와 지역에 적용된다.
 
 <p align="center">
-    <img src="/assets/postImages/NewAwsPublicIpv4Address/awsPublicIpv4Price.PNG" width="450" height="250">
+    <img src="/assets/postImages/NewAwsPublicIpv4Address/awsPublicIpv4Price.png" width="450" height="250">
 </p>
 
 AWS free tier 는 첫 12개월 동안 매달 750시간의 IPv4 주소 사용을 포함한다. 단, **EC2 전용만 프리티어 전용이라는 것을 명심해야 한다.**
