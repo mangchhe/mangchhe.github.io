@@ -16,7 +16,7 @@ tags: devops
 
 > [https://developer.hashicorp.com/terraform/tutorials/aws-get-started/infrastructure-as-code](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/infrastructure-as-code)
 
-### Install
+### Install Terraform
 
 ```sh
 # terraform
@@ -34,7 +34,7 @@ brew install aws-session-manager-plugin
 
 > [https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
-### Build
+### Build infrastructure
 
 IAM 자격 증명을 이용하여 AWS provider를 인증
 
@@ -109,10 +109,84 @@ $ terraform apply
 ```sh
 # 현재 상태를 검사할 때 사용
 # 리소스를 생성할 때 얻은 메타 데이터들을 상태 파일에 저장한다.
-terraform show
+$ terraform show
 # 상태 관리를 전문적으로 다루기 위해 사용
 # list 서브 커맨드는 프로젝트 리소스들을 나열해서 출력한다.
-terraform state list
+$ terraform state list
 ```
 
 > [https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-build](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-build)
+
+### Change infrastructure
+
+```tf
+# main.tf
+terraform {
+...blah blah
+resource "aws_instance" "app_server" {
+  ami           = "ami-08d70e59c07c61a3a"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "ExampleAppServerInstance"
+  }
+}
+```
+
+```sh
+$ terraform apply
+Terraform will perform the following actions:
+
+  # aws_instance.app_server must be replaced
+-/+ resource "aws_instance" "app_server" {
+      ~ ami                                  = "ami-830c94e3" -> "ami-08d70e59c07c61a3a" # forces replacement
+```
+
+> [https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-change](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-change)
+
+### Destroy infrastructure
+
+`terraform destroy` 명령어는 테라폼에서 관리하고 있는 리소스를 종료한다.
+
+```sh
+$ terraform destroy
+Terraform will perform the following actions:
+
+  # aws_instance.app_server will be destroyed
+  - resource "aws_instance" "app_server" {
+      - ami                                  = "ami-08d70e59c07c61a3a" -> null
+```
+
+> [https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-destroy](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-destroy)
+
+### Define input variables
+
+하드 코딩된 값이 아닌 변수를 이용해 동적이고 유연한 설정을 만들 수 있다.
+
+```tf
+# variables.tf
+variable "instance_name" {
+  description = "Value of the Name tag for the EC2 instance"
+  type        = string
+  default     = "AppServerInstance"
+}
+```
+
+`-var` 옵션을 이용하여 변수를 할당할 수 있고 그렇지 않으면 `default`의 값이 설정된다.
+
+```sh
+$ terraform apply -var "instance_name=ChangedAppServerInstance"
+Terraform will perform the following actions:
+
+  # aws_instance.app_server will be updated in-place
+  ~ resource "aws_instance" "app_server" {
+        id                                   = "i-0faacb7af0a626dda"
+      ~ tags                                 = {
+          ~ "Name" = "AppServerInstance" -> "ChangedAppServerInstance"
+        }
+      ~ tags_all                             = {
+          ~ "Name" = "AppServerInstance" -> "ChangedAppServerInstance"
+        }
+```
+
+> [https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-variables](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-variables)
