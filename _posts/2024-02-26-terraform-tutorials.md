@@ -190,3 +190,113 @@ Terraform will perform the following actions:
 ```
 
 > [https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-variables](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-variables)
+
+### Query data with outputs
+
+`output` 은 테라폼을 실행한 후 생성된 인프라에 대한 정보를 출력하거나 다른 테라폼 모듈에서 이 값을 참조할 수 있다.
+
+```sh
+# outputs.tf
+output "instance_id" {
+  description = "ID of the EC2 instance"
+  value       = aws_instance.app_server.id
+}
+
+output "instance_public_ip" {
+  description = "Public IP address of the EC2 instance"
+  value       = aws_instance.app_server.public_ip
+}
+```
+
+```sh
+$ terraform apply
+
+Changes to Outputs:
+  + instance_id        = (known after apply)
+  + instance_public_ip = (known after apply)
+...blah blah 
+Outputs:
+
+instance_id = "i-02c34550825b6e339"
+instance_public_ip = "18.236.168.140"
+
+$ terraform output
+
+instance_id = "i-02c34550825b6e339"
+instance_public_ip = "18.236.168.140"
+```
+
+> [https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-outputs](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-outputs)
+
+### Store remote state
+
+테스트 환경에서는 로컬에서 인프라를 빌드, 변경, 제거하는 것은 좋은 개발일 수 있다. 하지만 실제 제품에서 팀원들만 접근하여 협업할 수 있도록 상태를 안전하게 유지해야 한다.
+
+이를 위해 가장 좋은 방법은 테라폼 클라우드에서 상태 접근 권한을 받아 원격 환경에서 테라폼을 실행시키는 것이다.
+
+```sh
+# main.tf
+terraform {
+  cloud {
+    organization = "organization-name"
+    workspaces {
+      name = "learn-tfc-aws"
+    }
+  }
+  ...blah blah 
+}
+
+Token for app.terraform.io:
+  Enter a value: {TOKEN}
+
+                                          -
+                                          -----                           -
+                                          ---------                      --
+                                          ---------  -                -----
+                                           ---------  ------        -------
+                                             -------  ---------  ----------
+                                                ----  ---------- ----------
+                                                  --  ---------- ----------
+   Welcome to Terraform Cloud!                     -  ---------- -------
+                                                      ---  ----- ---
+   Documentation: terraform.io/docs/cloud             --------   -
+                                                      ----------
+                                                      ----------
+                                                       ---------
+                                                           -----
+                                                               -
+```
+
+```sh
+$ terraform init
+
+Initializing Terraform Cloud...
+Do you wish to proceed?
+  As part of migrating to Terraform Cloud, Terraform can optionally copy your
+  current workspace state to the configured Terraform Cloud workspace.
+
+  Answer "yes" to copy the latest state snapshot to the configured
+  Terraform Cloud workspace.
+
+$ yes
+
+Terraform Cloud has been successfully initialized!
+```
+
+테라폼 클라우드에 상태를 마이그레이션 한 후에는 로컬에 있는 상태 파일을 삭제한다.
+
+```sh
+$ rm terraform.tfstate
+```
+
+이제 로컬이 아닌 원격에서 provider에 접근하기 때문에 관련해서 인증 토큰이 필요하다.
+
+**Workspace variables**에 들어가서 **Environment variable**에 'Sensitive'를 체크하여 `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`를 등록한다.
+
+`apply` 명령어를 통해 트리거를 작동시키면 원격에서 수행하는 것을 볼 수 있다.
+
+```sh
+$ terraform apply
+```
+
+> [https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-remote](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-remote)
