@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to use nginx X-Forwarded-For Header
+title: How to use nginx X-Forwarded-For Header?
 categories: etc
 tags: etc
 ---
