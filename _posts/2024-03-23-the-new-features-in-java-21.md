@@ -42,7 +42,7 @@ tags: java
 
 순서를 지원하는 것이 여러 계층에 분산되어 있어서 API에서 특정 유용한 개념을 표현하기 어렵게 한다.
 
-![java-collection](/assets/postImages/TheNewFeaturesInJava21/java-collection.PNG)
+![java-collection](/assets/postImages/TheNewFeaturesInJava21/java-collection.png)
 
 ||First element|Last element|
 |List|list.get(0)|list.get(list.size() - 1)|
@@ -54,7 +54,7 @@ tags: java
 
 Sequenced Collections는 요소들의 명시적인 순서를 가지는 컬렉션을 나타내며 컬렉션 프레임워크 내에서 요소의 순서를 명확하고 일관되게 표현할 수 있는 방법이 생겨났다.
 
-![java-collection-to-be](/assets/postImages/TheNewFeaturesInJava21/java-collection-to-be.PNG)
+![java-collection-to-be](/assets/postImages/TheNewFeaturesInJava21/java-collection-to-be.png)
 
 ```java
 interface SequencedCollection<E> extends Collection<E> {
@@ -313,7 +313,7 @@ catch (NumberFormatException _) {
 
 [weak generational hypothesis](https://docs.oracle.com/en/java/javase/17/gctuning/garbage-collector-implementation.html#GUID-16166ED9-32C6-402D-BB22-FD85BCB04E57) 이라는 가설은 대부분의 객체는 젊고 늙기 전에 GC에 의해 수거된다. 즉, 비교적 짧은 시간만 생존한다는 말이다.
 
-![weak-generational-hypothesis](/assets/postImages/TheNewFeaturesInJava21/weak-generational-hypothesis.PNG)
+![weak-generational-hypothesis](/assets/postImages/TheNewFeaturesInJava21/weak-generational-hypothesis.png)
 
 이전 세대 GC에서는 Young Generation, Old Generation 영역을 나누어 효율적으로 관리하였지만 ZGC는 
 
