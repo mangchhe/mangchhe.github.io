@@ -93,7 +93,7 @@ code {
   border-radius: 0;
   border: none;
   font-family: "SFMono-Regular",Menlo,Consolas,"Inconsolata",monospace;
-  font-size: 1em;
+  font-size: 0.8em;
   margin: 0;
   padding: 0 5px;
   background-color: lighten($light-gray-color, 13%);
@@ -129,7 +129,7 @@ ol,
 dl {
     margin-top: 0;
     margin-left: 1.2em;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     list-style-type: square;
     list-style-position: outside;
     list-style-image: none;
