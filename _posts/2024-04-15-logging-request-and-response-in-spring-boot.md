@@ -23,7 +23,6 @@ class LoggingConfig {
         """
     )
     fun loggingPointcut() {
-        logger.info("restApi pointcut...")
     }
 
     @Around("loggingPointcut()")
@@ -41,10 +40,14 @@ class LoggingConfig {
         requestInfo["Headers"] = headers
 
         val objectMapper = ObjectMapper()
+
         val requestBody = joinPoint.args.firstOrNull { it is Any && it !is HttpServletRequest }
         if (requestBody != null) {
             requestInfo["Body"] = objectMapper.writeValueAsString(requestBody)
         }
+
+        val requestInfoJson = objectMapper.writeValueAsString(requestInfo)
+        logger.info(requestInfoJson)
 
         val response = try {
             joinPoint.proceed()
@@ -56,9 +59,6 @@ class LoggingConfig {
         val responseInfo = mutableMapOf<String, Any>()
         responseInfo["Response"] = response
 
-        val requestInfoJson = objectMapper.writeValueAsString(requestInfo)
-        logger.info(requestInfoJson)
-
         val responseInfoJson = objectMapper.writeValueAsString(responseInfo)
         logger.info(responseInfoJson)
 
@@ -69,7 +69,7 @@ class LoggingConfig {
 
 요청과 응답을 로깅하는 것은 중요하지만, 로깅하는 데이터의 양을 고려해야 한다. 과도한 로깅은 비용을 초래할 수 있기 때문에 필요한 정보에 중점을 두는 것이 좋다.
 
-코드에서는 나타나지 않았지만, 추적을 개선하기 위해 traceId와 spanId를 함께 포함하는 것이 좋다.
+코드에서는 나타나지 않았지만, 추적을 개선하기 위해 `traceId`와 `spanId`를 함께 포함하는 것이 좋다.
 
 ```kotlin
 @RestController
@@ -134,6 +134,85 @@ API 테스트를 진행하면 아래와 같이 로깅되어 나오는 걸 볼 �
 {
     "Response": {
         "name": "hajoo"
+    }
+}
+```
+
+로그를 남기고 싶지 않은 API도 있는 경우 어노테이션을 만들어서 로그에서 제외할 수 있다.
+
+`ExcludeLog` 어노테이션으로 만들고 메서드에 해당 어노테이션이 없을 경우에만 AOP를 로직을 거칠 수 있게 설정 후 제외하는 싶은 API에 어노테이션을 달아주면 된다.
+
+```kotlin
+// ExcludeLog.kt
+@Retention(AnnotationRetention.RUNTIME)
+@Target(AnnotationTarget.FUNCTION)
+annotation class ExcludeLog
+
+// LoggingConfig.kt
+@Pointcut("@annotation(me.hajoo.loggingaop.annotation.ExcludeLog)")
+fun excludeLogPointcut() {}
+
+@Pointcut("""
+    (within(me.hajoo..*)
+    &&
+    @within(org.springframework.web.bind.annotation.RestController))
+    && !excludeLogPointcut()
+    """
+)
+```
+
+아래와 같이 로깅이 필요 없는 메서드에 어노테이션을 달아 제외시킨다.
+
+```kotlin
+@RestController
+class UserController {
+
+    @PostMapping("sign-in")
+    fun signIn(@RequestBody request: SignIn.Request): SignIn.Response {
+        return SignIn.Response(request.name)
+    }
+
+    @ExcludeLog
+    @GetMapping("profile")
+    fun getProfile() {
+    }
+}
+```
+
+만약에 로그만 안 남기는 거고 AOP를 거쳐 일부 로직을 진행해야 하는 경우에는 리플렉션을 이용하여 메서드에 어노테이션을 추출하여 일부 로직만 분기 처리하면 된다.
+
+```kotlin
+@Aspect
+@Component
+class LoggingConfig {
+    @Around("loggingPointcut()")
+    fun logging(joinPoint: ProceedingJoinPoint): Any? {
+        ...
+
+        // 메서드에서 어노테이션 추출
+        val methodSignature = joinPoint.signature as MethodSignature
+        val method = methodSignature.method
+        val excludeLogAnnotation = method.getAnnotation(ExcludeLog::class.java)
+
+        val requestInfoJson = objectMapper.writeValueAsString(requestInfo)
+        // 어노테이션이 없는 경우에만 로깅
+        excludeLogAnnotation?: logger.info(requestInfoJson)
+
+        val response = try {
+            joinPoint.proceed()
+        } catch (ex: Throwable) {
+            requestInfo["Exception"] = ex.message ?: "Unknown exception"
+            throw ex
+        }
+
+        val responseInfo = mutableMapOf<String, Any>()
+        responseInfo["Response"] = response
+
+        val responseInfoJson = objectMapper.writeValueAsString(responseInfo)
+        // 어노테이션이 없는 경우에만 로깅
+        excludeLogAnnotation?: logger.info(responseInfoJson)
+
+        return response
     }
 }
 ```
