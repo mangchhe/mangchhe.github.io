@@ -57,7 +57,7 @@ class LoggingConfig {
         }
 
         val responseInfo = mutableMapOf<String, Any>()
-        responseInfo["Response"] = response
+        responseInfo["Response"] = response ?: ""
 
         val responseInfoJson = objectMapper.writeValueAsString(responseInfo)
         logger.info(responseInfoJson)
