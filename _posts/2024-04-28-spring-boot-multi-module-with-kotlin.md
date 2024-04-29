@@ -9,6 +9,8 @@ tags: spring
 
 #### gradle.properties (root)
 
+프로젝트의 전역 속성을 설정한다. 프로젝트 버전, 그룹 ID 및 사용되는 주요 라이브러리의 버전을 작성하여 관리를 수월하게 한다.
+
 ```kotlin
 applicationVersion = 0.0.1
 projectGroup = me.hajoo
@@ -20,6 +22,8 @@ kotlinVersion = 1.9.23
 ```
 
 #### build.gradle.kts (root)
+
+프로젝트의 빌드 과정을 구성한다. Kotlin과 Spring Boot 플러그인을 포함하여 필요한 플러그인을 적용하고, 모든 프로젝트와 하위 프로젝트의 공통 설정을 정의한다.
 
 ```kotlin
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -71,6 +75,8 @@ subprojects {
 
 #### settings.gradle.kts (root)
 
+프로젝트 플러그인 버전 관리를 통합적으로 적용한다.
+
 ```kotlin
 rootProject.name = "multi-module"
 
@@ -95,6 +101,8 @@ pluginManagement {
 
 #### settings.gradle.kts
 
+필요한 모듈을 포함시켜 Gradle이 프로젝트 구조를 인식할 수 있도록 한다.
+
 ```kotlin
 rootProject.name = "multi-module"
 
@@ -111,6 +119,8 @@ include(
 ```
 
 #### build.gradle.kts
+
+실행 가능한 애플리케이션의 경우 `bootJar`를 true로 하고 그렇지 않은 경우 `jar`를 true로 한다.
 
 ##### 애플리케이션 (api)
 
