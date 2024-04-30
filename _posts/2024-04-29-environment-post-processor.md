@@ -54,6 +54,7 @@ class HjEnvironmentPostProcessor : EnvironmentPostProcessor {
 
     override fun postProcessEnvironment(environment: ConfigurableEnvironment, application: SpringApplication) {
         val sources = environment.propertySources
+        val activeProfiles = environment.activeProfiles
         val resolver = PathMatchingResourcePatternResolver()
 
         try {
@@ -63,6 +64,9 @@ class HjEnvironmentPostProcessor : EnvironmentPostProcessor {
             }
             resources.forEach { resource ->
                 YamlPropertySourceLoader().load(resource.filename, resource)
+                    .filter {
+                        activeProfiles.any { activeProfile -> activeProfile == (it.source as Map<*, *>)["spring.config.activate.on-profile"]?.toString() }
+                    }
                     .forEach {
                         sources.addLast(it)
                     }
