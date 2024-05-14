@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Various Ways to Create an ID
-categories: architecture
-tags: architecture
+categories: cs
+tags: cs
 ---
 
 **Oracle Sequence 및 MySQL Auto Increment**
@@ -33,8 +33,6 @@ UUID v7은 클러스터형 인덱스의 단점을 보완한다. 앞자리 48비�
 - 타임스탬프(41) : 밀리초 단위의 epoch timestamp. 시작 시점부터 대략 70년 사용 가능
 - 머신ID(10) : 1024개의 개별 프로세스 수용
 - 시퀀스(12) : 각 프로세스 당 1씩 증가하여 카운트. 밀리초마다 0으로 재설정
-
-<br>
 
 Snowflake ID는 64비트 (8바이트) 구조로, 구 트위터에서 개발되었다. 이 구조는 타임스탬프, 머신 ID, 시퀀스를 포함하여 한 머신 ID 기준으로 초당 최대 40만개의 ID를 생성할 수 있다. 이 ID 생성 방식은 약 70년 동안 사용할 수 있으며, 대규모 시스템에 적합하다.
 
