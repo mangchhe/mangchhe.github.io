@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "@TransactionalEventListener"
+title: TransactionalEventListener
 categories: spring
 tags: spring
 ---
