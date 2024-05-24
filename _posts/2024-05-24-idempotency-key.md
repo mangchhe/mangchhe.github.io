@@ -38,7 +38,7 @@ HTTP API 영역에서의 멱등성 여부
 다이어그램에서 클라이언트가 유니크 키를 생성하고 서버에 보내게 되면 추출하여 값이 존재하면 캐싱해 둔 응답을 내려주고 그렇지 않으면 새로 생성하여 응답을 내려준다.
 
 <p align="center">
-    <img src="/assets/postImages/Idempotency/idempotency.png" width="450">
+    <img src="/assets/postImages/IdempotencyKey/idempotency.png" width="450">
 </p>
 
 해당 스펙에서 발생할 수 있는 오류 시나리오는 세 가지이다.
