@@ -17,7 +17,70 @@ Server Push는 클라이언트가 아닌 서버가 통신을 시작하는 통신
     <img src="/assets/postImages/ServerSentEventsSse/sse.png" width="650">
 </p>
 
-Server-Sent Events(SSE)는 서버 푸시 기술의 일종으로 HTTP 연결을 통해 클라이언트가 자동 업데이트를 받을 수 있게 한다. 이 기술은 클라이언트가 초기 연결을 설정한 후 서버가 클라이언트로 데이터를 전송할 수 있게 하고 주로 메시지 업데이트나 연속적인 데이터 스트림을 브라우저 클라이언트에 보내는 데 사용된다. 클라이언트는 EventSource API를 사용해 특정 URL을 요청하여 이벤트 스트림을 수신한다. 이때 SSE의 `Media-Type`은 `text/event-stream`이다.
+Server-Sent Events는 서버 푸시 기술의 일종으로 HTTP 연결을 통해 클라이언트가 자동 업데이트를 받을 수 있게 한다. 이 기술은 클라이언트가 초기 연결을 설정한 후 서버가 클라이언트로 데이터를 전송할 수 있게 하고 주로 메시지 업데이트나 연속적인 데이터 스트림을 브라우저 클라이언트에 보내는 데 사용된다. 클라이언트는 EventSource API를 사용해 특정 URL을 요청하여 이벤트 스트림을 수신한다. 이때 SSE의 `Media-Type`은 `text/event-stream`이다.
+
+```sh
+// request
+GET /subscribe HTTP/1.1
+Accept: text/event-stream
+
+// response
+HTTP/1.1 200 OK
+Content-Type: text/event-stream
+Cache-Control: no-cache
+Connection: keep-alive
+Transfer-Encoding: chunked
+```
+
+**구현**
+
+```kotlin
+@Component
+class UserSseEmitterManager {
+
+    private val emitters = ConcurrentHashMap<String, SseEmitter>()
+
+    fun register(userId: String, emitter: SseEmitter) {
+        emitters[userId] = emitter
+        emitter.onCompletion { emitters.remove(userId) }
+        emitter.onTimeout { emitters.remove(userId) }
+        emitter.onError { emitters.remove(userId) }
+    }
+
+    fun send(data: Any) {
+        val users = emitters.iterator()
+        while (users.hasNext()) {
+            val user = users.next()
+            val userId = user.key
+            val emitter = user.value
+            try {
+                emitter.send("userId : $userId, data : $data")
+            } catch (e: Exception) {
+                emitter.complete()
+                users.remove()
+            }
+        }
+    }
+}
+
+@RestController
+class SseController(
+    private val userSseEmitterManager: UserSseEmitterManager
+) {
+
+    @GetMapping("subscribe", produces = [MediaType.TEXT_EVENT_STREAM_VALUE])
+    fun subscribe(@RequestParam userId: String): SseEmitter {
+        val sseEmitter = SseEmitter()
+        userSseEmitterManager.register(userId, sseEmitter)
+        return sseEmitter
+    }
+
+    @GetMapping("publish")
+    fun publish() {
+        userSseEmitterManager.send(LocalDateTime.now())
+    }
+}
+```
 
 > [https://en.wikipedia.org/wiki/Push_technology](https://en.wikipedia.org/wiki/Push_technology)
 > 
