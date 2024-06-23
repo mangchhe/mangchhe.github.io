@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Http Methods (POST, PUT, PATCH)
-categories: git
-tags: git
+categories: cs
+tags: cs
 ---
 
 > [https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
@@ -17,8 +17,8 @@ tags: git
 
 `PUT`은 주로 전체 리소스를 생성하거나 대체하기 위해 사용하고 `PATCH`는 리소스의 일부를 수정하기 위해 사용한다. `PATCH`는 멱등성을 가지고 있지 않다.
 
-| Method | 목적               | Idempotent | URI                  | 데이터양         |
-|--------|------------------|------------|----------------------|--------------|
-| POST   | 새로운 리소스 생성       | No         | 리소스 URI와 반드시 일치하지 않음 | 리소스 전체 또는 일부 |
-| PUT    | 리소스 전체를 생성하거나 대체 | Yes        | 리소스 URI와 일치해야 함      | 리소스 전체       |
-| PATCH  | 리소스 일부 수정        | No         | 리소스 URI와 일치해야 함      | 리소스 일부       |
+| Method | 목적               | Idempotent | 데이터양         |
+|--------|------------------|------------|--------------|
+| POST   | 새로운 리소스 생성       | No         | 리소스 전체 또는 일부 |
+| PUT    | 리소스 전체를 생성하거나 대체 | Yes       | 리소스 전체       |
+| PATCH  | 리소스 일부 수정        | No         | 리소스 일부       |
