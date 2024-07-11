@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to Obtain Administrative Polygon Data in South Korea
-categories: map
+categories: domain
 tags: map
 ---
 

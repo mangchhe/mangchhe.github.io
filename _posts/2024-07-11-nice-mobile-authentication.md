@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Guide to Integrating NICE Mobile Authentication API
-categories: etc
-tags: etc
+categories: domain
+tags: member
 ---
 
 > [https://www.niceapi.co.kr/#/apis/guide?ctgrCd=0100&prdId=38&prdNm=휴대폰본인인증](https://www.niceapi.co.kr/#/apis/guide?ctgrCd=0100&prdId=38&prdNm=휴대폰본인인증)
