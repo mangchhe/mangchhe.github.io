@@ -19,6 +19,7 @@
     margin-bottom: 0;
     word-break: inherit;
     word-wrap: inherit;
+    max-height: none;
 
     &, code {
       color: $base-font-color;
