@@ -5,6 +5,12 @@ categories: spring
 tags: spring
 ---
 
+> [개발자 대상 개인정보 보호조치 적용 안내서](https://www.kisa.or.kr/2060301/form?postSeq=10&page=1)
+
+![masking-rules](/assets/postImages/KotlinJsonFieldMaskingWithJackson/masking-rules.png)
+
+**Enum and Annotation**
+
 ```kotlin
 enum class MaskType {
     NAME, CONTACT
@@ -21,6 +27,8 @@ data class UserInfo(
     val phoneNumber: String
 ) 
 ```
+
+**Custom Serializers**
 
 ```kotlin
 class NameMaskingSerializer : JsonSerializer<Any>() {
@@ -40,7 +48,19 @@ class ContactMaskingSerializer : JsonSerializer<Any>() {
         gen.writeString(maskedValue)
     }
 }
+```
 
+**Serializer Module**
+
+> [SimpleModule](https://fasterxml.github.io/jackson-databind/javadoc/2.4/com/fasterxml/jackson/databind/module/SimpleModule.html)
+>
+> Jackson의 Module 클래스를 상속하여 만들어진 클래스이며 해당 모듈은 커스텀한 serializers와 deserializers을 등록할 수 있게 한다.
+>
+> [BeanSerializerModifier](https://fasterxml.github.io/jackson-databind/javadoc/2.5/com/fasterxml/jackson/databind/ser/BeanSerializerModifier.html)
+>
+> Jackson에서 제공하는 추상 클래스이며 Bean의 직렬화 과정에서 커스텀할 수 있는 API를 정의한다.
+
+```kotlin
 class MaskingModule : SimpleModule() {
     init {
         setSerializerModifier(object : BeanSerializerModifier() {
@@ -69,6 +89,8 @@ class MaskingModule : SimpleModule() {
     }
 }
 ```
+
+**Test**
 
 ```kotlin
 fun main() {
