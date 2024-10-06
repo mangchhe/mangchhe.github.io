@@ -11,6 +11,7 @@ th {
   font-weight: 600;
   padding: $small-spacing 0;
   text-align: left;
+  font-size: 16px;
 }
 
 td {
@@ -19,7 +20,7 @@ td {
 }
 
 tr,
-td,
-th {
+td {
   vertical-align: middle;
+  font-size: 13px;
 }
