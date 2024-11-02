@@ -130,7 +130,7 @@ ol,
 dl {
     margin-top: 0;
     margin-left: 1.2em;
-    margin-bottom: 1.2rem;
+    margin-bottom: .6rem;
     list-style-type: square;
     list-style-position: outside;
     list-style-image: none;
@@ -144,5 +144,6 @@ blockquote ul {
 ul, ol {
   li {
     font-size: 14px;
+    margin-bottom: .1rem;
   }
 }
