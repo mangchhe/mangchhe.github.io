@@ -66,6 +66,11 @@ tags: etc
   - D-n 규칙, Pn 규칙, pre-commit
 - [우린 Git-flow를 사용하고 있어요](https://techblog.woowahan.com/2553/)
 
+
+##### Fuction
+
+- [매일 배포하는 팀이 되는 여정(2) — Feature Toggle 활용하기](https://medium.com/daangn/매일-배포하는-팀이-되는-여정-2-feature-toggle-활용하기-b52c4a1810cd)
+
 ##### Performance
 
 - [채널톡 실시간 채팅 서버 개선 여정 - 1편 : 레디스의 'Pub/Sub'](https://channel.io/ko/blog/real-time-chat-server-1-redis-pub-sub)
