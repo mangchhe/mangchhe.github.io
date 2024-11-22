@@ -55,6 +55,7 @@ tags: etc
 
 - [좌충우돌 Terraform 입문기](https://techblog.woowahan.com/2646/)
   - cycle error, aws_sqs_queue_policy
+- [Datadog - "저는 모니터링 요정입니다. ✋🏻"](https://oliveyoung.tech/blog/2022-06-22/How-to-Set-up-Build-ECS-Fargate-And-Datadog/)
 
 ##### Architecture
 
@@ -65,7 +66,6 @@ tags: etc
 - [공통시스템개발팀 코드 리뷰 문화 개선 이야기](https://techblog.woowahan.com/7152/)
   - D-n 규칙, Pn 규칙, pre-commit
 - [우린 Git-flow를 사용하고 있어요](https://techblog.woowahan.com/2553/)
-
 
 ##### Fuction
 
