@@ -77,6 +77,8 @@ tags: etc
   - Redis, Socket.io, broadcast - O(NM)
 - [WMS 재고 이관을 위한 분산 락 사용기](https://techblog.woowahan.com/17416/)
 - [대량의 트래픽이 몰려올 때 나는 어떻게 해야하나? - (feat. Cache, 대기열 구현)](https://velog.io/@joshuara7235/대량의-트래픽이-몰려올-때-나는-어떻게-해야하나-feat.-Cache-대기열-구현)
+- [이젠 보내줄 때가 되었다. 대규모 트래픽의 C++ 시스템 Java로 전환하기](https://techblog.woowahan.com/20763/)
+  - fastutil, jstat
 
 ##### Chat
 
