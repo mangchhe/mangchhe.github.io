@@ -27,6 +27,7 @@ tags: tool
 |해당 글자를 포함하는 파일 모두 찾기|Command + Shift + F|
 |모두 찾기|Shift + Shift|
 |최근 열었던 파일 목록 보기|Command + E|
+|다음 동일한 단어 선택|Control + G|
 
 ## Refactor
 
