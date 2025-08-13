@@ -33,6 +33,7 @@ tags: etc
 
 - [Kotlin으로 Spring AOP 극복하기!](https://tech.kakaopay.com/post/overcome-spring-aop-with-kotlin/)
   - Trailing Lambdas, Reverse Argument, Self Invocation
+- [자바 프로젝트 3개 코틀린 점진적 전환기(feat. lombok 됩니다.)](https://tech.kakaopay.com/post/kotlin-migration/#%EB%8D%94-%EC%86%90%EC%89%AC%EC%9B%8C%EC%A7%84-%EC%9E%90%EB%B0%94-to-%EC%BD%94%ED%8B%80%EB%A6%B0-%EB%B3%80%ED%99%98-thanks-to-%EC%BD%94%ED%8B%80%EB%A6%B0--1720)
 
 ##### JPA
 
@@ -79,6 +80,12 @@ tags: etc
 - [대량의 트래픽이 몰려올 때 나는 어떻게 해야하나? - (feat. Cache, 대기열 구현)](https://velog.io/@joshuara7235/대량의-트래픽이-몰려올-때-나는-어떻게-해야하나-feat.-Cache-대기열-구현)
 - [이젠 보내줄 때가 되었다. 대규모 트래픽의 C++ 시스템 Java로 전환하기](https://techblog.woowahan.com/20763/)
   - fastutil, jstat
+- [캐시를 적용하기 까지의 험난한 길 (TPS 1만 안정적으로 서비스하기)](https://toss.tech/article/34481)
+  - Strong Consistency, Replication Delay, Look aside
+- [카카오내비의 성장 이야기 - 안정적인 내비 서비스 제공하기](https://developers.kakaomobility.com/docs/techblogs/kakao-navi-stability/)
+  - 응답 데이터 바이너리로 직렬화하여 응답 데이터 줄이기, warm-up, 모니터링
+- [Redis 캐시로 몰려드는 트래픽을 견디다 — 토니모리 공식몰 성능 개선기](https://tonymoly-tech.medium.com/redis-cache-tonymoly-performance-c5a5e18ae83c)
+  - 캐시를 이용한 불필요한 DB 반복 조회 개선
 
 ##### Chat
 
