@@ -140,6 +140,8 @@ fun split(input: CharSequence, limit: Int = 0): List<String>
 > 공식 문서 : [https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
 > 
 > 정규 표현식 테스트 : [https://www.regexplanet.com/advanced/java/index.html](https://www.regexplanet.com/advanced/java/index.html)
+> 
+> 정규 표현식 테스트 및 시각화 : [https://softwium.com/javex/](https://softwium.com/javex/)
 
 ## References
 
